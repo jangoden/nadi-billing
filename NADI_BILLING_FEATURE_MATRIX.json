@@ -1,0 +1,195 @@
+{
+  "product": "NADI BILLING",
+  "generatedAt": "2026-09-12",
+  "modules": [
+    {
+      "name": "SaaS Subscription & Billing",
+      "description": "Mesin langganan NADI Billing sendiri untuk operator ISP (tenant) berlangganan platform ini.",
+      "status": "implemented",
+      "features": [
+        {"id": "SAAS-001", "name": "Manajemen Plan & Harga", "description": "Plan bertingkat dengan harga per siklus billing dan batasan per plan.", "status": "implemented", "businessBenefit": "Fleksibilitas penawaran paket sesuai skala operator.", "marketingMessage": "Pilih paket sesuai kebutuhan bisnis Anda.", "evidence": ["app/Models/Plan.php", "app/Http/Controllers/Admin/Billing/PlanController.php"]},
+        {"id": "SAAS-002", "name": "Manajemen Organisasi (Tenant)", "description": "CRUD organisasi, invite member, seat status.", "status": "implemented", "businessBenefit": "Tim operator bisa kolaborasi dalam satu akun.", "marketingMessage": "Undang tim Anda, kelola akses bersama.", "evidence": ["app/Models/Organization.php", "app/Services/OrganizationMembershipService.php"]},
+        {"id": "SAAS-003", "name": "Siklus Hidup Langganan", "description": "Trial, upgrade/downgrade, pause/resume, cancel-at-period-end.", "status": "implemented", "businessBenefit": "Fleksibilitas mengatur langganan sesuai kondisi bisnis.", "marketingMessage": "Coba gratis, upgrade kapan saja.", "evidence": ["app/Services/SubscriptionService.php"]},
+        {"id": "SAAS-004", "name": "Kode Voucher/Promo SaaS", "description": "Diskon percent/fixed dengan durasi once/repeating/forever.", "status": "implemented", "businessBenefit": "Mendukung kampanye akuisisi pelanggan baru.", "marketingMessage": "Dapatkan diskon dengan kode promo.", "evidence": ["app/Models/Voucher.php"]},
+        {"id": "SAAS-005", "name": "Add-on & Seat Billing", "description": "Add-on per subscription dan penambahan seat otomatis dengan proration harian.", "status": "partial", "businessBenefit": "Skalabilitas biaya sesuai jumlah pengguna.", "marketingMessage": "Bayar sesuai jumlah tim yang aktif.", "evidence": ["app/Services/SubscriptionService.php::syncSeatQuantity"]},
+        {"id": "SAAS-006", "name": "Invoice, Pajak & Pembayaran Manual", "description": "Invoice otomatis dengan pajak, upload bukti transfer, approval admin.", "status": "implemented", "businessBenefit": "Proses pembayaran sesuai kebiasaan transfer bank lokal.", "marketingMessage": "Bayar via transfer bank, mudah diverifikasi.", "evidence": ["app/Services/InvoiceService.php", "app/Services/PaymentService.php"]},
+        {"id": "SAAS-007", "name": "Grace Period & Dunning", "description": "Reminder email bertahap dan downgrade otomatis ke plan Free jika menunggak.", "status": "implemented", "businessBenefit": "Mengurangi churn akibat lupa bayar.", "marketingMessage": "Pengingat otomatis sebelum jatuh tempo.", "evidence": ["app/Console/Commands/SendPaymentReminders.php", "config/billing.php"]},
+        {"id": "SAAS-008", "name": "Portal Billing Self-Service", "description": "Kelola plan, member, add-on, voucher, invoice, dan lifecycle langganan mandiri.", "status": "implemented", "businessBenefit": "Operator tidak perlu hubungi support untuk hal rutin.", "marketingMessage": "Kelola langganan Anda sendiri, kapan saja.", "evidence": ["app/Http/Controllers/App/Billing"]},
+        {"id": "SAAS-009", "name": "Referral/Affiliate", "description": "Kode referral dengan komisi otomatis, approval dan payout manual.", "status": "partial", "businessBenefit": "Kanal akuisisi pelanggan baru lewat rujukan.", "marketingMessage": "Ajak rekan, dapatkan komisi.", "evidence": ["app/Services/AffiliateService.php"]}
+      ]
+    },
+    {
+      "name": "RBAC & Staff Roles",
+      "description": "Kontrol akses granular untuk staf console back-office ISP.",
+      "status": "implemented",
+      "features": [
+        {"id": "RBAC-001", "name": "Peran & Console Role Granular", "description": "4 role console dengan 11 hak akses spesifik per modul.", "status": "implemented", "businessBenefit": "Delegasi operasional tanpa risiko akses berlebih.", "marketingMessage": "Setiap staf hanya melihat apa yang perlu mereka lihat.", "evidence": ["app/Policies/OrganizationPolicy.php"]}
+      ]
+    },
+    {
+      "name": "Network Core",
+      "description": "Manajemen infrastruktur jaringan inti ISP.",
+      "status": "implemented",
+      "features": [
+        {"id": "NET-001", "name": "Manajemen Router MikroTik", "description": "CRUD router, test connection, sync resource usage terjadwal.", "status": "implemented", "businessBenefit": "Kelola banyak router dari satu dashboard.", "marketingMessage": "Bukan simulasi, terhubung ke router Anda.", "evidence": ["app/Services/Network/MikrotikRouterConnectionService.php"]},
+        {"id": "NET-002", "name": "Server RADIUS", "description": "Sesi aktif, log autentikasi, disconnect/CoA nyata.", "status": "implemented", "businessBenefit": "Kontrol sesi pelanggan real-time.", "marketingMessage": "Putuskan sesi bermasalah langsung dari dashboard.", "evidence": ["app/Services/Network/SqlRadiusSessionService.php"]},
+        {"id": "NET-003", "name": "VPN Bridge Multi-Protokol", "description": "OpenVPN/L2TP/WireGuard dengan cek konektivitas nyata per-protokol.", "status": "implemented", "businessBenefit": "Monitoring tunnel akurat.", "marketingMessage": "Tahu status VPN Anda, bukan tebakan.", "evidence": ["app/Services/Network/VpnConnectionServiceResolver.php"]},
+        {"id": "NET-004", "name": "Profil Bandwidth & QoS", "description": "Rate-limit/burst/priority, push langsung ke MikroTik.", "status": "implemented", "businessBenefit": "Atur kualitas layanan per paket pelanggan.", "marketingMessage": "Atur bandwidth, terapkan langsung ke router.", "evidence": ["app/Http/Controllers/Console/BandwidthProfileController.php"]},
+        {"id": "NET-005", "name": "Backup Router Otomatis", "description": "Backup terjadwal harian dan unduh file ke storage via FTP.", "status": "implemented", "businessBenefit": "Pemulihan cepat saat ada kerusakan konfigurasi.", "marketingMessage": "Konfigurasi router aman, tercadangkan tiap hari.", "evidence": ["app/Http/Controllers/Console/RouterBackupController.php", "commit b93b98f"]}
+      ]
+    },
+    {
+      "name": "GIS, Topologi FTTH & Inventaris",
+      "description": "Visualisasi dan manajemen infrastruktur fisik jaringan fiber.",
+      "status": "implemented",
+      "features": [
+        {"id": "GIS-001", "name": "Peta Jaringan Spasial", "description": "Peta interaktif node dan jalur kabel fiber.", "status": "implemented", "businessBenefit": "Visibilitas topologi jaringan menyeluruh.", "marketingMessage": "Peta jaringan fiber Anda, selalu terkini.", "evidence": ["app/Http/Controllers/Console/NetworkMapController.php"]},
+        {"id": "GIS-002", "name": "Manajemen ODP/ODC", "description": "Hierarki parent-child dengan rasio port terpakai/rusak.", "status": "implemented", "businessBenefit": "Tahu kapasitas port sebelum pasang pelanggan baru.", "marketingMessage": "Tahu slot ODP kosong sebelum ke lapangan.", "evidence": ["app/Http/Controllers/Console/NetworkNodeController.php"]},
+        {"id": "GIS-003", "name": "Manajemen OLT & Port PON", "description": "CRUD OLT dengan polling SNMP nyata.", "status": "implemented", "businessBenefit": "Monitoring kesehatan OLT otomatis.", "marketingMessage": "Pantau OLT Anda secara otomatis.", "evidence": ["app/Services/Network/SnmpOltService.php"]},
+        {"id": "GIS-004", "name": "Daftar ONU/ONT", "description": "Status registrasi dan badge redaman optik 4 ambang.", "status": "implemented", "businessBenefit": "Deteksi dini masalah kualitas sinyal.", "marketingMessage": "Tahu kondisi sinyal tiap pelanggan.", "evidence": ["app/Http/Controllers/Console/OnuDeviceController.php"]},
+        {"id": "GIS-005", "name": "Inventaris Logistik", "description": "Stok gudang dengan mutasi in/out dan alert stok rendah.", "status": "implemented", "businessBenefit": "Hindari kehabisan stok perangkat instalasi.", "marketingMessage": "Peringatan otomatis sebelum stok habis.", "evidence": ["app/Http/Controllers/Console/InventoryItemController.php"]}
+      ]
+    },
+    {
+      "name": "CPE & TR-069 GenieACS",
+      "description": "Kendali jarak jauh perangkat pelanggan via protokol TR-069.",
+      "status": "implemented",
+      "features": [
+        {"id": "CPE-001", "name": "Klien GenieACS", "description": "Integrasi NBI REST real, toleran ke 2 skema TR-069.", "status": "implemented", "businessBenefit": "Manajemen ONT terpusat dari satu sistem.", "marketingMessage": "Kendali penuh perangkat pelanggan dari jarak jauh.", "evidence": ["app/Services/Cpe/GenieAcsClient.php"]},
+        {"id": "CPE-002", "name": "Kontrol Remote ONT", "description": "Reboot/reset individual dan massal per-wilayah.", "status": "implemented", "businessBenefit": "Kurangi kunjungan lapangan yang tidak perlu.", "marketingMessage": "Reboot modem tanpa kunjungan lapangan.", "evidence": ["app/Http/Controllers/Console/CpeMassActionController.php"]},
+        {"id": "CPE-003", "name": "Audit Log Perubahan CPE", "description": "Jejak siapa-ubah-apa-kapan-dari-mana.", "status": "implemented", "businessBenefit": "Akuntabilitas perubahan konfigurasi pelanggan.", "marketingMessage": "Setiap perubahan tercatat rapi.", "evidence": ["app/Http/Controllers/Console/CpeAuditLogController.php"]},
+        {"id": "CPE-004", "name": "Self-Service WiFi Pelanggan", "description": "Ganti SSID/password/reboot mandiri, maks 3x/hari.", "status": "implemented", "businessBenefit": "Kurangi beban CS untuk permintaan rutin.", "marketingMessage": "Pelanggan ganti WiFi sendiri.", "evidence": ["app/Http/Controllers/Portal/WifiController.php"]}
+      ]
+    },
+    {
+      "name": "Fault Detection Engine",
+      "description": "Deteksi dan lokalisasi gangguan jaringan fiber secara otomatis dan proaktif.",
+      "status": "implemented",
+      "features": [
+        {"id": "FLT-001", "name": "Lokalisasi Gangguan 3-Level", "description": "Deteksi otomatis dropcore/distribusi/cascading.", "status": "implemented", "businessBenefit": "NOC tahu akar masalah tanpa penelusuran manual.", "marketingMessage": "Tahu di mana kabel putus, sebelum teknisi berangkat.", "evidence": ["app/Services/Fault/FaultLocalizationService.php"]},
+        {"id": "FLT-002", "name": "Monitoring Redaman RX Power", "description": "Polling 15-30 menit dengan badge 4 ambang status.", "status": "implemented", "businessBenefit": "Visibilitas kualitas sinyal real-time.", "marketingMessage": "Pantau kualitas sinyal tiap pelanggan.", "evidence": ["app/Console/Commands/PollOnuRxPower.php"]},
+        {"id": "FLT-003", "name": "Deteksi Dini/Prediktif", "description": "Tren turun >3dB/7 hari dengan proyeksi hari kritis.", "status": "implemented", "businessBenefit": "Cegah gangguan sebelum terjadi.", "marketingMessage": "Peringatan dini sebelum sinyal jatuh kritis.", "evidence": ["app/Services/Fault/PredictiveDegradationService.php"]},
+        {"id": "FLT-004", "name": "Laporan SLA (MTTD/MTTR)", "description": "Rata-rata waktu deteksi dan pemulihan gangguan.", "status": "implemented", "businessBenefit": "Ukur performa tim operasional secara objektif.", "marketingMessage": "Ukur kecepatan respons tim Anda.", "evidence": ["app/Services/Fault/SlaMetricsService.php"]},
+        {"id": "FLT-005", "name": "Retensi & Rollup Data Optik", "description": "Data mentah 30 hari, rollup per jam 1 tahun, rollup harian permanen.", "status": "implemented", "businessBenefit": "Data historis tersedia tanpa membengkakkan database.", "marketingMessage": null, "evidence": ["app/Console/Commands/RollupRxPowerReadings.php"]},
+        {"id": "FLT-006", "name": "Auto-Task & Auto-Ticket", "description": "Insiden otomatis membuat tugas teknisi dan tiket pelanggan.", "status": "implemented", "businessBenefit": "Respons gangguan lebih cepat tanpa menunggu laporan.", "marketingMessage": "Gangguan terdeteksi, tiket dibuat, teknisi ditugaskan — otomatis.", "evidence": ["app/Services/Fault/FaultLocalizationService.php::createEmergencyTask"]}
+      ]
+    },
+    {
+      "name": "Customer Management & CRM",
+      "description": "CRUD pelanggan ISP, pipeline penjualan, dan deteksi risiko churn.",
+      "status": "implemented",
+      "features": [
+        {"id": "CRM-001", "name": "CRUD Pelanggan 360°", "description": "Data diri, ODP, paket, riwayat invoice dan tiket dalam satu layar.", "status": "implemented", "businessBenefit": "Pandangan lengkap pelanggan tanpa berpindah halaman.", "marketingMessage": "Satu layar untuk semua riwayat pelanggan.", "evidence": ["app/Http/Controllers/Console/CustomerController.php"]},
+        {"id": "CRM-002", "name": "Paket Layanan & FUP/Booster", "description": "Entity paket terpisah dengan snapshot harga historis.", "status": "partial", "businessBenefit": "Harga lama tidak berubah untuk pelanggan lama.", "marketingMessage": null, "evidence": ["app/Models/ServicePackage.php"]},
+        {"id": "CRM-003", "name": "CRM Pipeline (Kanban)", "description": "Lead ke Survei ke Instalasi ke Aktif, dengan riwayat interaksi.", "status": "implemented", "businessBenefit": "Proses penjualan terstruktur dan terlacak.", "marketingMessage": "Kelola prospek jadi pelanggan, terstruktur.", "evidence": ["app/Http/Controllers/Console/CustomerLeadController.php"]},
+        {"id": "CRM-004", "name": "Deteksi Risiko Churn", "description": "Tagging otomatis pelanggan berisiko berdasarkan aturan.", "status": "implemented", "businessBenefit": "Follow-up proaktif sebelum pelanggan berhenti.", "marketingMessage": "Tahu pelanggan yang butuh perhatian, sebelum mereka pergi.", "evidence": ["app/Services/Crm/ChurnRiskService.php"]},
+        {"id": "CRM-005", "name": "Impor Data Pelanggan", "description": "Upload CSV massal dengan validasi per baris.", "status": "partial", "businessBenefit": "Migrasi dari sistem lama lebih cepat.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/CustomerMigrationController.php"]}
+      ]
+    },
+    {
+      "name": "Voucher Hotspot & Prepaid",
+      "description": "Penerbitan dan pengelolaan voucher hotspot/prepaid.",
+      "status": "implemented",
+      "features": [
+        {"id": "VCH-001", "name": "Generator Voucher Batch", "description": "Kode unik, mode username=password, maksimal 500/batch.", "status": "implemented", "businessBenefit": "Terbitkan stok voucher dalam hitungan detik.", "marketingMessage": "Generate, cetak, dan jual voucher hotspot dalam hitungan menit.", "evidence": ["app/Services/Voucher/HotspotVoucherService.php"]},
+        {"id": "VCH-002", "name": "Stok & Inventory Voucher", "description": "Filter status available/used/expired/disabled.", "status": "implemented", "businessBenefit": "Kontrol stok voucher real-time.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/VoucherInventoryController.php"]},
+        {"id": "VCH-003", "name": "Template & QR Voucher", "description": "Editor template dengan preview live dan QR code.", "status": "implemented", "businessBenefit": "Voucher tampak profesional dan mudah dipindai.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/VoucherTemplateController.php"]},
+        {"id": "VCH-004", "name": "Cetak Voucher", "description": "Format A4 grid dan thermal 58/80mm.", "status": "implemented", "businessBenefit": "Siap cetak langsung dari browser.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/VoucherPrintController.php"]},
+        {"id": "VCH-005", "name": "Laporan Voucher", "description": "Rekap harian/mingguan/bulanan dengan ekspor CSV.", "status": "implemented", "businessBenefit": "Pantau omset voucher tanpa hitung manual.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/VoucherReportController.php"]},
+        {"id": "VCH-006", "name": "Push Voucher ke MikroTik Hotspot", "description": "Registrasi otomatis kredensial voucher sebagai hotspot-user di router.", "status": "planned", "businessBenefit": "Tidak perlu input manual di router.", "marketingMessage": null, "evidence": []}
+      ]
+    },
+    {
+      "name": "Billing, Invoice & Keuangan ISP",
+      "description": "Penagihan pelanggan internet oleh operator ISP.",
+      "status": "implemented",
+      "features": [
+        {"id": "BIL-001", "name": "CRUD Invoice Pelanggan", "description": "Invoice dengan item penyesuaian diskon/denda/instalasi/sewa.", "status": "implemented", "businessBenefit": "Fleksibilitas penyesuaian tagihan per kasus.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/CustomerInvoiceController.php"]},
+        {"id": "BIL-002", "name": "Generate Tagihan Bulanan Otomatis", "description": "Otomatis per siklus tagih masing-masing pelanggan, idempotent.", "status": "implemented", "businessBenefit": "Admin tidak perlu membuat tagihan satu per satu.", "marketingMessage": "Biarkan tagihan berjalan otomatis setiap periode.", "evidence": ["app/Console/Commands/GenerateMonthlyCustomerInvoices.php"]},
+        {"id": "BIL-003", "name": "Kasir Manual & Void", "description": "Catat dan batalkan pembayaran secara audit-safe.", "status": "implemented", "businessBenefit": "Fleksibilitas terima pembayaran tunai/transfer manual.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/CustomerPaymentController.php"]},
+        {"id": "BIL-004", "name": "Laporan Arus Kas", "description": "Kas masuk versus biaya operasional.", "status": "implemented", "businessBenefit": "Gambaran profitabilitas sederhana tanpa software akuntansi terpisah.", "marketingMessage": null, "evidence": ["app/Services/Billing/AccountingReportService.php"]},
+        {"id": "BIL-005", "name": "Cetak Invoice PDF", "description": "Export invoice ke format PDF.", "status": "planned", "businessBenefit": "Dokumen tagihan resmi untuk pelanggan.", "marketingMessage": null, "evidence": []}
+      ]
+    },
+    {
+      "name": "Payment Gateway ISP",
+      "description": "Otomasi penerimaan pembayaran pelanggan lewat gateway digital.",
+      "status": "planned",
+      "features": [
+        {"id": "PAY-001", "name": "Payment Gateway Terpusat/Custom", "description": "Charge otomatis via Midtrans/Xendit/dkk, webhook, QRIS dinamis.", "status": "planned", "businessBenefit": "Pembayaran instan tanpa verifikasi manual kasir.", "marketingMessage": null, "evidence": []}
+      ]
+    },
+    {
+      "name": "Reseller & Keagenan",
+      "description": "Manajemen mitra reseller/agen penjual voucher dan loket PPOB.",
+      "status": "implemented",
+      "features": [
+        {"id": "RSL-001", "name": "Manajemen Mitra", "description": "Daftar reseller dengan status aktif/suspend.", "status": "implemented", "businessBenefit": "Kontrol kualitas jaringan mitra.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/ResellerController.php"]},
+        {"id": "RSL-002", "name": "Deposit & Mutasi Saldo", "description": "Riwayat top-up dengan koreksi manual beralasan.", "status": "implemented", "businessBenefit": "Transparansi transaksi keuangan mitra.", "marketingMessage": null, "evidence": ["app/Models/AgentWallet.php"]},
+        {"id": "RSL-003", "name": "Skema Komisi Otomatis", "description": "Persen/flat per voucher atau tagihan.", "status": "implemented", "businessBenefit": "Mitra lebih percaya karena komisi transparan.", "marketingMessage": "Mitra jualan, sistem yang hitung komisinya.", "evidence": ["app/Services/Reseller/CommissionCalculationService.php"]},
+        {"id": "RSL-004", "name": "Laporan Penjualan Reseller", "description": "Omset voucher dan loket per agen.", "status": "implemented", "businessBenefit": "Evaluasi performa mitra berbasis data.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/ResellerReportController.php"]},
+        {"id": "RSL-005", "name": "Portal Agen Lengkap", "description": "Dashboard, jual voucher, kios pribadi, loket PPOB, laporan komisi.", "status": "implemented", "businessBenefit": "Operator bisa ekspansi tanpa buka cabang baru.", "marketingMessage": "Berkembang lewat mitra, bukan cabang baru.", "evidence": ["routes/agent.php"]}
+      ]
+    },
+    {
+      "name": "Toko Voucher Online",
+      "description": "Etalase publik untuk penjualan voucher hotspot langsung ke konsumen.",
+      "status": "partial",
+      "features": [
+        {"id": "STR-001", "name": "Katalog Produk Toko", "description": "Harga publik terpisah dari harga internal.", "status": "implemented", "businessBenefit": "Kanal penjualan tambahan tanpa staf jaga.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/StoreProductController.php"]},
+        {"id": "STR-002", "name": "Storefront Publik", "description": "Halaman toko per-operator tanpa perlu login.", "status": "implemented", "businessBenefit": "Pelanggan bisa beli kapan saja.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Store/StorefrontController.php"]},
+        {"id": "STR-003", "name": "Checkout & Order", "description": "Pembuatan order publik, status pending menunggu pembayaran.", "status": "partial", "businessBenefit": "Fondasi kanal jual otomatis (belum end-to-end).", "marketingMessage": null, "evidence": ["app/Http/Controllers/Store/CheckoutController.php"]},
+        {"id": "STR-004", "name": "Sistem Anti-Fraud", "description": "Rate limit per nomor HP/IP dan deteksi order duplikat.", "status": "implemented", "businessBenefit": "Cegah penyalahgunaan toko online.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/StoreAntiFraudController.php"]},
+        {"id": "STR-005", "name": "Pengaturan Storefront", "description": "Logo dan tema toko per operator.", "status": "implemented", "businessBenefit": "Branding toko sesuai identitas operator.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/StorefrontSettingsController.php"]}
+      ]
+    },
+    {
+      "name": "Notifikasi & Broadcast",
+      "description": "Notifikasi otomatis WhatsApp/SMS/Email dan broadcast massal.",
+      "status": "partial",
+      "features": [
+        {"id": "NTF-001", "name": "Pengaturan Gateway Notifikasi", "description": "Simpan kredensial WA/SMS/SMTP per organisasi.", "status": "implemented", "businessBenefit": "Siap ganti provider tanpa desain ulang.", "marketingMessage": null, "evidence": ["app/Models/NotificationGatewaySetting.php"]},
+        {"id": "NTF-002", "name": "Template & Trigger Otomatis", "description": "4 titik trigger: invoice jatuh tempo, isolir, pembayaran, tugas teknisi.", "status": "implemented", "businessBenefit": "Komunikasi pelanggan konsisten tanpa kerja manual.", "marketingMessage": null, "evidence": ["app/Services/Notification/NotificationDispatchService.php"]},
+        {"id": "NTF-003", "name": "Broadcast Massal", "description": "Manual dan otomatis dari Fault Engine ke pelanggan area terdampak.", "status": "implemented", "businessBenefit": "Informasi gangguan tersebar cepat ke pelanggan terdampak.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/BroadcastController.php"]},
+        {"id": "NTF-004", "name": "Antrian & Log Pengiriman", "description": "Retry otomatis dan rate-limit anti-blokir.", "status": "implemented", "businessBenefit": "Notifikasi gagal bisa dicoba ulang tanpa kehilangan data.", "marketingMessage": null, "evidence": ["app/Jobs/SendNotificationJob.php"]},
+        {"id": "NTF-005", "name": "Pengiriman WhatsApp/SMS Nyata", "description": "Pesan benar-benar terkirim ke penerima via provider resmi.", "status": "planned", "businessBenefit": "Notifikasi pelanggan otomatis dan real.", "marketingMessage": null, "evidence": ["app/Services/Notification/NullWhatsAppGatewayClient.php"]}
+      ]
+    },
+    {
+      "name": "Customer Service & Tiket",
+      "description": "Ticket desk, live chat, dan basis pengetahuan untuk layanan pelanggan.",
+      "status": "implemented",
+      "features": [
+        {"id": "SUP-001", "name": "Ticket Desk + Auto-Assign", "description": "Saran teknisi otomatis berdasarkan beban kerja dan area.", "status": "implemented", "businessBenefit": "Penugasan teknisi lebih cepat dan merata.", "marketingMessage": null, "evidence": ["app/Services/Support/TechnicianAssignmentService.php"]},
+        {"id": "SUP-002", "name": "Live Chat + Canned Response", "description": "Chat polling 4 detik dengan balasan cepat siap pakai.", "status": "implemented", "businessBenefit": "Respons CS lebih cepat dan konsisten.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/SupportChatController.php"]},
+        {"id": "SUP-003", "name": "Knowledge Base & FAQ Search", "description": "Pencarian kata kunci artikel bantuan mandiri.", "status": "implemented", "businessBenefit": "Pelanggan bisa cari solusi sendiri.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/KnowledgeBaseArticleController.php"]},
+        {"id": "SUP-004", "name": "Laporan SLA CS + Survei Kepuasan", "description": "First Response Time, Resolution Time, rating 1-5.", "status": "implemented", "businessBenefit": "Ukur dan tingkatkan kualitas layanan.", "marketingMessage": null, "evidence": ["app/Services/Support/SlaCsReportService.php"]}
+      ]
+    },
+    {
+      "name": "Keamanan Sistem & Tenant",
+      "description": "Keamanan platform dan pengaturan identitas tenant.",
+      "status": "partial",
+      "features": [
+        {"id": "SEC-001", "name": "Vault Enkripsi Kredensial", "description": "Password router, SNMP, gateway notifikasi terenkripsi.", "status": "implemented", "businessBenefit": "Kredensial sensitif aman dari kebocoran database.", "marketingMessage": null, "evidence": ["app/Models/Router.php"]},
+        {"id": "SEC-002", "name": "Rate Limiting Login", "description": "5x percobaan per menit per identitas dan IP.", "status": "implemented", "businessBenefit": "Cegah serangan brute-force akun.", "marketingMessage": null, "evidence": ["app/Providers/AppServiceProvider.php"]},
+        {"id": "SEC-003", "name": "Audit Log Sistem", "description": "Immutable, mencatat aksi sensitif.", "status": "implemented", "businessBenefit": "Kepatuhan dan investigasi insiden lebih mudah.", "marketingMessage": "Setiap perubahan penting tercatat, tidak bisa dihapus siapa pun.", "evidence": ["app/Services/Audit/AuditLogger.php"]},
+        {"id": "SEC-004", "name": "Pengaturan Identitas Tenant", "description": "Nama bisnis, NIB, mata uang, bahasa.", "status": "implemented", "businessBenefit": "Platform sesuai identitas bisnis operator.", "marketingMessage": null, "evidence": ["app/Http/Controllers/Console/TenantSettingsController.php"]},
+        {"id": "SEC-005", "name": "Autentikasi Dua Faktor (2FA)", "description": "Lapisan keamanan tambahan login staf.", "status": "planned", "businessBenefit": "Keamanan akun staf lebih tinggi.", "marketingMessage": null, "evidence": []},
+        {"id": "SEC-006", "name": "Cloud Backup Database", "description": "Cadangan otomatis ke penyimpanan cloud.", "status": "planned", "businessBenefit": "Pemulihan bencana lebih andal.", "marketingMessage": null, "evidence": []},
+        {"id": "SEC-007", "name": "Health Monitoring Server", "description": "Monitoring CPU/RAM/disk platform.", "status": "planned", "businessBenefit": "Deteksi dini masalah infrastruktur server.", "marketingMessage": null, "evidence": []}
+      ]
+    },
+    {
+      "name": "Portal Multi-Role",
+      "description": "Antarmuka self-service untuk Teknisi, Agen/Reseller, dan Pelanggan.",
+      "status": "implemented",
+      "features": [
+        {"id": "POR-001", "name": "Portal Pelanggan Lengkap", "description": "Home, billing, WiFi, voucher, support, profile.", "status": "implemented", "businessBenefit": "Pelanggan urus kebutuhan rutin sendiri.", "marketingMessage": null, "evidence": ["routes/portal.php"]},
+        {"id": "POR-002", "name": "Portal Teknisi Lapangan", "description": "Tugas, peta kerja, tools optik/CPE, survey topologi.", "status": "implemented", "businessBenefit": "Teknisi kerja lebih efisien di lapangan.", "marketingMessage": null, "evidence": ["routes/technician.php"]},
+        {"id": "POR-003", "name": "Portal Agen/Reseller", "description": "Dashboard, voucher, toko pribadi, billing, laporan.", "status": "implemented", "businessBenefit": "Mitra kelola bisnis sendiri secara mandiri.", "marketingMessage": null, "evidence": ["routes/agent.php"]},
+        {"id": "POR-004", "name": "Panel Admin SaaS NADI", "description": "Plan, rekening bank, voucher SaaS, approve pembayaran.", "status": "implemented", "businessBenefit": "Operasional internal NADI Billing terkelola rapi.", "marketingMessage": null, "evidence": ["routes/admin.php"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgHotspot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b" />
+      <stop offset="50%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#3a506b" />
+    </linearGradient>
+    <linearGradient id="voucherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgHotspot)" />
+
+  <!-- Radiating WiFi waves -->
+  <circle cx="600" cy="180" r="160" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.25" stroke-dasharray="8 8" />
+  <circle cx="600" cy="180" r="240" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.15" stroke-dasharray="10 10" />
+  <circle cx="600" cy="180" r="320" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.1" stroke-dasharray="12 12" />
+
+  <!-- Center WiFi Symbol -->
+  <g transform="translate(600, 150) scale(1.5)" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round">
+    <path d="M -30 -15 A 40 40 0 0 1 30 -15" />
+    <path d="M -20 -5 A 26 26 0 0 1 20 -5" />
+    <circle cx="0" cy="5" r="3" fill="#38bdf8" />
+  </g>
+
+  <!-- Dual Cards Layout: Left Captive Portal / Right Voucher Card -->
+  <g transform="translate(180, 230)">
+    <!-- Left: Captive Portal Screen -->
+    <g transform="translate(0, 0)">
+      <rect width="380" height="380" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2" />
+      <rect x="0" y="0" width="380" height="42" rx="20" fill="#1e293b" />
+      <circle cx="24" cy="21" r="5" fill="#ef4444" />
+      <circle cx="40" cy="21" r="5" fill="#f59e0b" />
+      <circle cx="56" cy="21" r="5" fill="#10b981" />
+      <text x="190" y="26" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">wifi.login/hotspot-portal</text>
+
+      <!-- Portal Body -->
+      <text x="190" y="80" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">HOTSPOT MANDIRI 24 JAM</text>
+      <text x="190" y="102" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Pilih durasi &amp; bayar QRIS instan</text>
+
+      <!-- Package Selection Pills -->
+      <g transform="translate(30, 120)">
+        <!-- Pkg 1 -->
+        <rect width="320" height="52" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+        <text x="16" y="28" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Paket 3 Jam (Speed 10 Mbps)</text>
+        <text x="16" y="44" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Aktif langsung setelah bayar</text>
+        <rect x="235" y="12" width="70" height="28" rx="6" fill="#0284c7" />
+        <text x="270" y="30" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Rp 3.000</text>
+
+        <!-- Pkg 2 -->
+        <g transform="translate(0, 62)">
+          <rect width="320" height="52" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+          <text x="16" y="28" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Paket 24 Jam Nonstop</text>
+          <text x="16" y="44" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Tanpa batasan kuota FUP</text>
+          <rect x="235" y="12" width="70" height="28" rx="6" fill="#334155" />
+          <text x="270" y="30" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Rp 10.000</text>
+        </g>
+      </g>
+
+      <!-- Bottom Button -->
+      <rect x="30" y="295" width="320" height="46" rx="10" fill="#2563eb" />
+      <text x="190" y="323" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">BAYAR VIA QRIS OTOMATIS &#8594;</text>
+    </g>
+
+    <!-- Right: High Tech Voucher Card -->
+    <g transform="translate(460, 20)">
+      <!-- Voucher Ticket Body -->
+      <rect width="380" height="340" rx="18" fill="url(#voucherGrad)" stroke="#60a5fa" stroke-width="1.5" />
+      
+      <!-- Top Section -->
+      <rect x="24" y="24" width="72" height="26" rx="6" fill="#ffffff" fill-opacity="0.2" />
+      <text x="60" y="41" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">VOUCHER</text>
+      <text x="356" y="42" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="end">NADI HOTSPOT</text>
+
+      <!-- Perforation Divider -->
+      <line x1="0" y1="80" x2="380" y2="80" stroke="#1e40af" stroke-width="2" stroke-dasharray="8 6" />
+
+      <!-- QR Box Center -->
+      <rect x="130" y="105" width="120" height="120" rx="12" fill="#ffffff" />
+      <!-- Stylized QR Code Pattern -->
+      <rect x="142" y="117" width="28" height="28" fill="#1e293b" />
+      <rect x="146" y="121" width="20" height="20" fill="#ffffff" />
+      <rect x="150" y="125" width="12" height="12" fill="#1e293b" />
+
+      <rect x="210" y="117" width="28" height="28" fill="#1e293b" />
+      <rect x="214" y="121" width="20" height="20" fill="#ffffff" />
+      <rect x="218" y="125" width="12" height="12" fill="#1e293b" />
+
+      <rect x="142" y="185" width="28" height="28" fill="#1e293b" />
+      <rect x="146" y="189" width="20" height="20" fill="#ffffff" />
+      <rect x="150" y="193" width="12" height="12" fill="#1e293b" />
+
+      <circle cx="190" cy="165" r="10" fill="#2563eb" />
+      <text x="190" y="169" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="800" text-anchor="middle">N</text>
+
+      <!-- Voucher Code -->
+      <rect x="60" y="245" width="260" height="38" rx="8" fill="#0f172a" />
+      <text x="190" y="269" fill="#38bdf8" font-family="monospace" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="4">NADI-9482-WIFI</text>
+
+      <text x="190" y="310" fill="#bfdbfe" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Scan QR di atas untuk langsung terhubung</text>
+    </g>
+  </g>
+</svg>

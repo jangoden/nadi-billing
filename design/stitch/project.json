@@ -1,0 +1,222 @@
+{
+  "createTime": "2026-09-10T11:05:06.395121Z",
+  "designTheme": {
+    "bodyFont": "INTER",
+    "bodyFontFamily": "Inter",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#2563eb",
+    "designMd": "---\nname: Telemetry Precision\ncolors:\n  surface: '#f8f9ff'\n  surface-dim: '#cbdbf5'\n  surface-bright: '#f8f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#eff4ff'\n  surface-container: '#e5eeff'\n  surface-container-high: '#dce9ff'\n  surface-container-highest: '#d3e4fe'\n  on-surface: '#0b1c30'\n  on-surface-variant: '#434655'\n  inverse-surface: '#213145'\n  inverse-on-surface: '#eaf1ff'\n  outline: '#737686'\n  outline-variant: '#c3c6d7'\n  surface-tint: '#0053db'\n  primary: '#004ac6'\n  on-primary: '#ffffff'\n  primary-container: '#2563eb'\n  on-primary-container: '#eeefff'\n  inverse-primary: '#b4c5ff'\n  secondary: '#00687a'\n  on-secondary: '#ffffff'\n  secondary-container: '#57dffe'\n  on-secondary-container: '#006172'\n  tertiary: '#632ecd'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#7d4ce7'\n  on-tertiary-container: '#f6edff'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#dbe1ff'\n  primary-fixed-dim: '#b4c5ff'\n  on-primary-fixed: '#00174b'\n  on-primary-fixed-variant: '#003ea8'\n  secondary-fixed: '#acedff'\n  secondary-fixed-dim: '#4cd7f6'\n  on-secondary-fixed: '#001f26'\n  on-secondary-fixed-variant: '#004e5c'\n  tertiary-fixed: '#e9ddff'\n  tertiary-fixed-dim: '#d0bcff'\n  on-tertiary-fixed: '#23005c'\n  on-tertiary-fixed-variant: '#5516be'\n  background: '#f8f9ff'\n  on-background: '#0b1c30'\n  surface-variant: '#d3e4fe'\ntypography:\n  display-xl:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 56px\n    letterSpacing: -0.025em\n  display-xl-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 32px\n    fontWeight: '600'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-lg-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: -0.015em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: -0.015em\n  title-md:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n    letterSpacing: -0.01em\n  body-lg:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '400'\n    lineHeight: 16px\n  label-md:\n    fontFamily: Geist\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 16px\n    letterSpacing: 0.01em\n  label-mono:\n    fontFamily: Geist\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\n    letterSpacing: 0.02em\n  caption:\n    fontFamily: Geist\n    fontSize: 11px\n    fontWeight: '500'\n    lineHeight: 14px\n    letterSpacing: 0.03em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  space-2xs: 0.25rem\n  space-xs: 0.5rem\n  space-sm: 0.75rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2rem\n  space-2xl: 3rem\n  space-3xl: 4rem\n  container-margin-desktop: 2rem\n  container-margin-mobile: 1rem\n  gutter-desktop: 1.5rem\n  gutter-mobile: 1rem\n---\n\n## Brand & Style\n\nThis design system establishes an architectural identity for mission-critical telecommunications and ISP infrastructure operations. It merges enterprise-grade dependability with the kinetic precision of modern observability platforms. The visual language evokes total network uptime, operational control, and financial integrity. \n\nThe aesthetic is anchored in **Precision Corporate Modernism**:\n- **Generous Spatial Rhythms**: Dense data density balanced by disciplined negative space to eliminate cognitive fatigue during mission-critical tasks.\n- **Micro-Luminescent Accents**: Electric blue and cyan signifiers against crisp neutral fields, directing user attention to throughput, anomalies, and recurring revenue vitals.\n- **Architectural Clarity**: Thin 1px structural gridlines, subtle diffused elevations, and precise geometric contours conveying technical supremacy and cloud-native velocity.\n\n## Colors\n\nThe palette is engineered for prolonged operational focus, leveraging clean whites and slate structural tones punctuated by high-signal spectral accents.\n\n### Application Hierarchy\n- **Canvas Base**: Pure white (`#FFFFFF`) for primary data panels, cards, and active focus zones.\n- **Structural Wash**: Slate-50 (`#F8FAFC`) for app-level canvases, switching to Slate-100 (`#F1F5F9`) for nested telemetry tables, sidebars, and input wells.\n- **Primary Accent (`#2563EB`)**: High-intent interactions, active route highlights, key conversion drivers, and system commit actions.\n- **Data Accents**:\n  - **Cyan (`#06B6D4`)**: Live bandwidth metrics, network throughput indicators, and active provisioning states.\n  - **Soft Purple (`#8B5CF6`)**: Subscription tiers, invoice recurring runs, and automated billing triggers.\n- **Executive Dark Tier (`#0F172A`)**: Deep Navy/Slate reserved for telemetry header bars, CLI consoles, NOC dashboard modes, and high-impact structural anchors.\n- **Borders & Dividers**: Slate-200 (`#E2E8F0`) at 1px fixed stroke for surgical delineation without visual noise.\n\n## Typography\n\nThe typographic hierarchy uses a triad structure:\n1. **Plus Jakarta Sans** governs editorial authority and metric scale in headers and dashboard KPIs.\n2. **Inter** handles narrative clarity, long-form billing itemization, and functional interface copy.\n3. **Geist** controls tabular data, IP addresses, bandwidth telemetry, and micro-metadata labels, lending terminal-grade legibility.\n\nAll tabular numerical records and bandwidth numbers must enforce `tabular-nums` via font-variant to maintain strict column alignment during real-time streaming updates.\n\n## Layout & Spacing\n\nThe system runs on an 8pt base grid with a 4pt micro-subgrid for technical components.\n\n### Grid Dynamics\n- **Desktop (1280px+)**: 12-column dynamic fluid grid with a maximum structural width of `1600px`. Standard margins set at `2rem` (32px), gutters set at `1.5rem` (24px).\n- **Tablet (768px - 1279px)**: 8-column layout with `1.5rem` gutters and margins. Sidebars collapse to icon-only rails (64px width).\n- **Mobile (< 768px)**: 4-column layout with `1rem` margins and gutters. Horizontal metric clusters convert to swipeable overflow rails or single-column stacks.\n\n### Density Tiers\n- **NOC / Telemetry Density**: Tighter 8px padding (`space-xs`) for live network tables and port maps.\n- **Executive / Billing Density**: Generous 24px padding (`space-lg`) for invoice summaries, customer billing cycles, and high-level platform reports.\n\n## Elevation & Depth\n\nVisual hierarchy uses physical stratification over heavy shadows, combining low-contrast boundary lines with wide ambient illumination.\n\n- **Level 0 (App Canvas)**: Solid `#F8FAFC`, zero shadow, pure structural base.\n- **Level 1 (Panels & Surface Cards)**: Pure `#FFFFFF`, encapsulated by a 1px border of `#E2E8F0`, with an ultra-soft ambient occlusion: `0px 1px 3px rgba(15, 23, 42, 0.04), 0px 6px 16px rgba(15, 23, 42, 0.02)`.\n- **Level 2 (Dropdowns, Overlays, Active Filters)**: Floating `#FFFFFF` surface with border `#E2E8F0`, elevated by `0px 4px 6px -1px rgba(15, 23, 42, 0.06), 0px 10px 24px -3px rgba(15, 23, 42, 0.08)`.\n- **Level 3 (Modals, Provisioning Drawers)**: Surface `#FFFFFF` bordered by Slate-300 (`#CBD5E1`), cast against an enterprise backdrop blur (`backdrop-filter: blur(8px); background: rgba(15, 23, 42, 0.4)`), lifted by `0px 20px 25px -5px rgba(15, 23, 42, 0.12), 0px 10px 10px -5px rgba(15, 23, 42, 0.04)`.\n- **Luminescent Depth (Status Elements)**: Real-time network pulses and active throughput bars employ a soft colored glow: `0px 0px 12px rgba(6, 182, 212, 0.35)`.\n\n## Shapes\n\nThe interface balances soft humanized interaction zones with structured technical frames:\n- **Cards & Data Modules**: Standardized between `16px` (`rounded-lg`) and `24px` (`rounded-xl`) outer radius. When cards feature interior panels, nested content retains an 8px radius to preserve corner concentricity.\n- **Interactive Controls (Inputs, Buttons)**: Form fields and segmented tabs use `8px` (`rounded-md`). High-priority buttons and dynamic status badges utilize the maximum `9999px` full-pill contour.\n- **Terminal & Metric Panels**: Fixed at `12px` to emphasize structural density.\n\n## Components\n\n### Buttons\n- **Primary Action**: Pill or 8px rounded rectangle. Solid Electric Blue (`#2563EB`) fill, `#FFFFFF` Geist medium typography. Hover initiates background transition to Indigo (`#4F46E5`) with an ambient blue shadow (`0px 4px 12px rgba(37, 99, 235, 0.25)`).\n- **Secondary / Outline**: Crisp 1px border (`#E2E8F0`), `#FFFFFF` surface, Slate-700 (`#334155`) text. On hover: Border shifts to Slate-400 (`#94A3B8`) with Slate-50 (`#F8FAFC`) fill.\n- **Ghost / Utility**: No border, Slate-600 (`#475569`) text, shifting to Slate-100 on hover.\n\n### Cards & Telemetry Containers\n- Enclosed in a 1px border (`#E2E8F0`) with 16px or 24px corner radius.\n- Headers are divided with a 1px horizontal rule (`#F1F5F9`) spanning edge-to-edge.\n- Metric values display in Plus Jakarta Sans bold with an accompanying Geist mono trend tag (+14.2% Gbps).\n\n### Chips & Badges\n- **Active Subscription / Healthy Node**: Mint surface (`rgba(16, 185, 129, 0.1)`), Emerald-700 text (`#047857`), pill-shaped, holding an internal 6px pulsing dot.\n- **Provisioning / Pending Invoice**: Cyan surface (`rgba(6, 182, 212, 0.1)`), Cyan-800 text (`#155E75`).\n- **Overdue / Node Failure**: Crimson surface (`rgba(239, 68, 68, 0.1)`), Rose-700 text (`#B91C1C`).\n\n### Input Fields & Controls\n- Base state: Height 40px, Slate-50 background, 1px border `#E2E8F0`, 8px corner radius.\n- Active/Focus: Background becomes pure `#FFFFFF`, border changes to Electric Blue (`#2563EB`), flanked by an electric ring `0 0 0 3px rgba(37, 99, 235, 0.15)`.\n- Monospaced inputs (MAC addresses, IPv4/IPv6, CIDR blocks) automatically render using Geist.\n\n### Tables & Billing Itemization\n- Zero zebra striping. Alternation is marked solely through 1px horizontal rules in `#F1F5F9`.\n- Header rows use Slate-50 background with Geist all-caps micro-copy (`11px`, letter-spacing `0.05em`).\n- Row hover triggers an immediate switch to Slate-50/70 across the row with active operational actions revealing at the terminal right.",
+    "font": "PLUS_JAKARTA_SANS",
+    "headlineFont": "PLUS_JAKARTA_SANS",
+    "headlineFontFamily": "Plus Jakarta Sans",
+    "labelFont": "GEIST",
+    "labelFontFamily": "Geist",
+    "namedColors": {
+      "background": "#f8f9ff",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#eaf1ff",
+      "inverse_primary": "#b4c5ff",
+      "inverse_surface": "#213145",
+      "on_background": "#0b1c30",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#eeefff",
+      "on_primary_fixed": "#00174b",
+      "on_primary_fixed_variant": "#003ea8",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#006172",
+      "on_secondary_fixed": "#001f26",
+      "on_secondary_fixed_variant": "#004e5c",
+      "on_surface": "#0b1c30",
+      "on_surface_variant": "#434655",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#f6edff",
+      "on_tertiary_fixed": "#23005c",
+      "on_tertiary_fixed_variant": "#5516be",
+      "outline": "#737686",
+      "outline_variant": "#c3c6d7",
+      "primary": "#004ac6",
+      "primary_container": "#2563eb",
+      "primary_fixed": "#dbe1ff",
+      "primary_fixed_dim": "#b4c5ff",
+      "secondary": "#00687a",
+      "secondary_container": "#57dffe",
+      "secondary_fixed": "#acedff",
+      "secondary_fixed_dim": "#4cd7f6",
+      "surface": "#f8f9ff",
+      "surface_bright": "#f8f9ff",
+      "surface_container": "#e5eeff",
+      "surface_container_high": "#dce9ff",
+      "surface_container_highest": "#d3e4fe",
+      "surface_container_low": "#eff4ff",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#cbdbf5",
+      "surface_tint": "#0053db",
+      "surface_variant": "#d3e4fe",
+      "tertiary": "#632ecd",
+      "tertiary_container": "#7d4ce7",
+      "tertiary_fixed": "#e9ddff",
+      "tertiary_fixed_dim": "#d0bcff"
+    },
+    "overrideNeutralColor": "#64748b",
+    "overridePrimaryColor": "#2563eb",
+    "overrideSecondaryColor": "#06b6d4",
+    "overrideTertiaryColor": "#8b5cf6",
+    "roundness": "ROUND_EIGHT",
+    "spacing": {
+      "container-margin-desktop": "2rem",
+      "container-margin-mobile": "1rem",
+      "gutter-desktop": "1.5rem",
+      "gutter-mobile": "1rem",
+      "space-2xl": "3rem",
+      "space-2xs": "0.25rem",
+      "space-3xl": "4rem",
+      "space-lg": "1.5rem",
+      "space-md": "1rem",
+      "space-sm": "0.75rem",
+      "space-xl": "2rem",
+      "space-xs": "0.5rem"
+    },
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "body-md": {
+        "fontFamily": "Inter",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px"
+      },
+      "body-sm": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "16px"
+      },
+      "caption": {
+        "fontFamily": "Geist",
+        "fontSize": "11px",
+        "fontWeight": "500",
+        "letterSpacing": "0.03em",
+        "lineHeight": "14px"
+      },
+      "display-xl": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "48px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.025em",
+        "lineHeight": "56px"
+      },
+      "display-xl-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "40px"
+      },
+      "headline-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "40px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.015em",
+        "lineHeight": "32px"
+      },
+      "headline-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.015em",
+        "lineHeight": "32px"
+      },
+      "label-md": {
+        "fontFamily": "Geist",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "letterSpacing": "0.01em",
+        "lineHeight": "16px"
+      },
+      "label-mono": {
+        "fontFamily": "Geist",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "letterSpacing": "0.02em",
+        "lineHeight": "16px"
+      },
+      "title-md": {
+        "fontFamily": "Inter",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "26px"
+      }
+    }
+  },
+  "deviceType": "DESKTOP",
+  "metadata": {
+    "userRole": "OWNER"
+  },
+  "name": "projects/4855495169480517956",
+  "origin": "STITCH",
+  "projectType": "TEXT_TO_UI_PRO",
+  "screenInstances": [
+    {
+      "height": 5644,
+      "id": "4bdf1c48567a41e48f825166e82e7ee2",
+      "sourceScreen": "projects/4855495169480517956/screens/4bdf1c48567a41e48f825166e82e7ee2",
+      "width": 1280,
+      "x": 2975
+    },
+    {
+      "height": 11166,
+      "id": "60cb3d62713b42159cdcec0e412bf2dc",
+      "isResized": true,
+      "sourceScreen": "projects/4855495169480517956/screens/60cb3d62713b42159cdcec0e412bf2dc",
+      "width": 1280,
+      "x": 1600
+    },
+    {
+      "height": 5871,
+      "id": "722bffe2a9524719803b06cbb531ba1c",
+      "sourceScreen": "projects/4855495169480517956/screens/722bffe2a9524719803b06cbb531ba1c",
+      "width": 1280,
+      "x": 4338,
+      "y": 10
+    },
+    {
+      "height": 127,
+      "id": "990b1ff412404608814173f344e4daab",
+      "sourceScreen": "projects/4855495169480517956/screens/990b1ff412404608814173f344e4daab",
+      "width": 512,
+      "x": 237,
+      "y": 958
+    },
+    {
+      "height": 540,
+      "id": "assets_2f2b508063304b00accf34ed80c322d8",
+      "sourceAsset": "assets/2f2b508063304b00accf34ed80c322d8",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960
+    }
+  ],
+  "thumbnailScreenshot": {
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VXGhvTzK8Bx15dh_Irq2RuLIF4WcFJnAn1DEav_KvN6tobEPk1BiTBPFZRnEJeifWLlSQRsCrTTpyR-ZCJvWECjERewIR2tf6ReNzV2ZfO5u6LkxbCOXfR14CzvL2Qjjw3THukY201HX9WTQFdkMDm1ESJiRBI_leIiBbigJ7jhyeaPc75iYH4tsgGtuo1ZyR5NugF9wol12ZGVHcnjXfy4Ciw3l7dKhkE7AKNnt4oCHiy3DBYyKDL1A",
+    "name": "projects/4855495169480517956/screens/f14b9c1912e92e3edfc2f551f4b55e6d616b2528295bd341f9ce271597468a9a/fileEntries/screenshot"
+  },
+  "title": "NADI BILLING - ISP Platform Website",
+  "updateTime": "2026-09-11T11:54:36.146512Z",
+  "visibility": "PUBLIC"
+}

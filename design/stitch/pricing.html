@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#7d4ce7", "surface-bright": "#f8f9ff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "outline": "#737686", "on-tertiary-container": "#f6edff", "inverse-surface": "#213145", "secondary": "#00687a", "on-surface-variant": "#434655", "primary-container": "#2563eb", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "tertiary-fixed-dim": "#d0bcff", "on-surface": "#0b1c30", "on-secondary-fixed-variant": "#004e5c", "on-primary-container": "#eeefff", "background": "#f8f9ff", "error-container": "#ffdad6", "on-primary": "#ffffff", "secondary-fixed": "acedff", "outline-variant": "#c3c6d7", "secondary-fixed-dim": "#4cd7f6", "surface-container-highest": "#d3e4fe", "secondary-container": "#57dffe", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#003ea8", "on-background": "#0b1c30", "on-secondary-fixed": "#001f26", "on-primary-fixed": "#00174b", "tertiary-fixed": "#e9ddff", "on-error": "#ffffff", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed-variant": "#5516be", "surface-container-high": "#dce9ff", "primary-fixed": "#dbe1ff", "surface-container-low": "#eff4ff", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#23005c", "error": "#ba1a1a", "tertiary": "#632ecd", "on-error-container": "#93000a", "inverse-primary": "#b4c5ff", "surface-container": "#e5eeff", "primary": "#004ac6", "on-secondary-container": "#006172", "surface-tint": "#0053db" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xl": "2rem", "space-2xs": "0.25rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "space-3xl": "4rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "container-margin-mobile": "1rem", "space-md": "1rem", "container-margin-desktop": "2rem", "space-xs": "0.5rem" }, "fontFamily": { "title-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "display-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Geist"], "display-xl": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-mono": ["Geist"], "caption": ["Geist"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1600px] mx-auto px-container-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm focus:outline-none" data-path="beranda" href="#"><img alt="NADI BILLING Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHbesc0jx9PNrRLBHChoe1x3T8uqPl74GbIWIz-oQUtdGvAAgSc1gqRiCiJHv2ZwcnN5ePvrN_6IeCNk0GiUZLpuq38jm6ZxZ4C9V1M7R6IjE5RefFNkpIu3RWZyN5Kz-UfTe6aVGpJcFSzq4MeHq2IrM34u5EbGo9Ye5Re1FmUSPouDi1l_2yjjk2G0zbdQ9KDFtAuXID8Me69VwnqXUcgNjU_CToUVhYUYH1b-Syr0NOeCM7NWCUg"/><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">NADI<span class="text-primary ml-1 font-extrabold">BILLING</span></span></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="beranda" href="#">Beranda</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fitur" href="#">Fitur</a><div class="relative group py-space-sm"><button class="flex items-center gap-space-2xs text-on-surface-variant group-hover:text-on-surface transition-colors font-body-md text-body-md" type="button"><span>Solusi</span><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute left-0 top-full hidden group-hover:flex flex-col w-56 p-space-xs bg-surface-container-lowest rounded-xl shadow-[0_10px_24px_-3px_rgba(15,23,42,0.08)] border border-surface-container animate-in fade-in slide-in-from-top-1 duration-150"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-rt-rw-net" href="#">RT/RW Net</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-mini-isp" href="#">Mini ISP</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-isp-ftth" href="#">ISP FTTH</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-hotspot-voucher" href="#">Hotspot & Voucher</a></div></div><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="harga" href="#">Harga</a><div class="relative group py-space-sm"><button class="flex items-center gap-space-2xs text-on-surface-variant group-hover:text-on-surface transition-colors font-body-md text-body-md" type="button"><span>Sumber Daya</span><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute left-0 top-full hidden group-hover:flex flex-col w-56 p-space-xs bg-surface-container-lowest rounded-xl shadow-[0_10px_24px_-3px_rgba(15,23,42,0.08)] border border-surface-container animate-in fade-in slide-in-from-top-1 duration-150"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dokumentasi" href="#">Dokumentasi</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="integrasi" href="#">Integrasi</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="blog-insight" href="#">Blog & Insight</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="pusat-bantuan" href="#">Pusat Bantuan</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="api-developer" href="#">API Developer</a></div></div></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:bg-primary transition-all duration-150 tracking-wide" data-path="demo" href="#">DEMO</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- ==================== HERO SECTION ==================== -->
+<section class="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-24 px-container-margin-desktop max-w-[1600px] mx-auto w-full">
+<!-- Architectural Grid Background & Ambient Glow -->
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-b from-primary-fixed-dim/40 via-surface-container-high/30 to-transparent blur-3xl rounded-full"></div>
+<div class="absolute top-20 right-10 w-96 h-96 bg-secondary-container/20 blur-3xl rounded-full"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-space-md">
+<!-- Eyebrow Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-low shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-primary font-semibold">
+          Transparan • Tanpa Tier Fitur Tersembunyi
+        </span>
+</div>
+<!-- Headline -->
+<h1 class="font-display-xl text-display-xl tracking-tight text-on-surface">
+        Satu Produk. <span class="text-primary underline decoration-secondary-container decoration-4 underline-offset-8">Semua Fitur.</span>
+</h1>
+<!-- Supporting Subtext -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        Harga NADI hanya ditentukan oleh jumlah pelanggan aktif yang Anda kelola. Tidak ada pemisahan fitur Basic, Pro, atau Enterprise — semua operator mendapatkan kekuatan sistem telekomunikasi penuh sejak hari pertama.
+      </p>
+<!-- Quick Trust Badges -->
+<div class="pt-space-xs flex flex-wrap justify-center items-center gap-space-xs md:gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span> Bebas Batasan Fitur
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">event_available</span> 14 Hari Uji Coba Gratis
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock_open</span> Tanpa Kontrak Mengikat
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">support_agent</span> Setup Dibantu Tim Engineer
+        </span>
+</div>
+</div>
+</section>
+<!-- ==================== INTERACTIVE PRICING CALCULATOR ==================== -->
+<section class="relative z-20 -mt-6 pb-20 px-container-margin-desktop max-w-[1400px] mx-auto w-full" id="pricing-calculator-section">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl p-space-lg md:p-space-2xl">
+<!-- Top Header & Cycle Toggle -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md pb-space-lg bg-surface-container-lowest">
+<div class="space-y-1 text-center md:text-left">
+<div class="inline-flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Kalkulator Kapasitas Jaringan</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-caption text-caption uppercase font-semibold">Realtime Estimate</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Pilih jumlah pelanggan aktif untuk melihat estimasi investasi operasional Anda.</p>
+</div>
+<!-- Billing Period Toggle -->
+<div class="inline-flex items-center p-1 rounded-xl bg-surface-container-high shadow-inner">
+<button class="px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm" id="btn-monthly" type="button">
+            Bayar Bulanan
+          </button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant transition-all duration-200 hover:text-on-surface" id="btn-annual" type="button">
+<span>Bayar Tahunan</span>
+<span class="px-1.5 py-0.5 rounded-full bg-tertiary text-on-tertiary font-caption text-caption uppercase tracking-wider">Hemat 17%</span>
+</button>
+</div>
+</div>
+<!-- Capacity Selector Pills -->
+<div class="pt-space-md pb-space-lg">
+<label class="block font-label-mono text-label-mono uppercase tracking-wider text-on-surface-variant mb-space-sm font-semibold">
+          Pilih Skala Kuota Pelanggan:
+        </label>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-space-xs" id="capacity-pills-container">
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="0" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">100</span>
+<span class="block font-caption text-caption text-on-surface-variant">Pelanggan</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="1" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">300</span>
+<span class="block font-caption text-caption text-on-surface-variant">Pelanggan</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-primary-container text-on-primary shadow-md" data-index="2" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-primary">500</span>
+<span class="block font-caption text-caption text-on-primary-container font-semibold">Populer</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="3" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">1.000</span>
+<span class="block font-caption text-caption text-on-surface-variant">Pelanggan</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="4" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">2.500</span>
+<span class="block font-caption text-caption text-on-surface-variant">Pelanggan</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="5" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">5.000+</span>
+<span class="block font-caption text-caption text-on-surface-variant">Scale Up</span>
+</button>
+<button class="cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container" data-index="6" type="button">
+<span class="block font-headline-md text-headline-md font-bold text-on-surface">>10k</span>
+<span class="block font-caption text-caption text-secondary font-semibold">Enterprise</span>
+</button>
+</div>
+</div>
+<!-- Main Display Panel (Bento Style with Highlight Card & Metrics) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left: Dynamic Pricing Hero Card -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-xl flex flex-col justify-between relative overflow-hidden shadow-sm">
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<img alt="NADI BILLING Icon Watermark" class="w-72 h-72 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHbesc0jx9PNrRLBHChoe1x3T8uqPl74GbIWIz-oQUtdGvAAgSc1gqRiCiJHv2ZwcnN5ePvrN_6IeCNk0GiUZLpuq38jm6ZxZ4C9V1M7R6IjE5RefFNkpIu3RWZyN5Kz-UfTe6aVGpJcFSzq4MeHq2IrM34u5EbGo9Ye5Re1FmUSPouDi1l_2yjjk2G0zbdQ9KDFtAuXID8Me69VwnqXUcgNjU_CToUVhYUYH1b-Syr0NOeCM7NWCUg"/>
+</div>
+<div class="space-y-space-md relative z-10">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-wider font-semibold" id="tier-badge">
+                Paket Skala Komersial
+              </span>
+<span class="font-caption text-caption text-on-surface-variant" id="cycle-breakdown-note">
+                Ditagihkan per bulan secara fleksibel
+              </span>
+</div>
+<!-- Price Output Number -->
+<div class="space-y-1">
+<div class="flex items-baseline gap-2">
+<span class="font-display-xl text-display-xl font-bold text-on-surface tracking-tight" id="price-display">
+                  Rp 249.000
+                </span>
+<span class="font-title-md text-title-md text-on-surface-variant font-medium" id="period-display">
+                  / bulan
+                </span>
+</div>
+<p class="hidden font-body-sm text-body-sm text-secondary font-semibold" id="annual-savings-text">
+                Setara Rp 2.490.000 / tahun (Gratis 2 bulan langganan penuh!)
+              </p>
+</div>
+<!-- Subtitle and Metric Tag -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface" id="subscriber-cap-text">
+                  Hingga 500 Pelanggan Aktif (PPPoE & Hotspot)
+                </span>
+</div>
+<div class="px-space-sm py-1.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center gap-1.5 font-label-mono text-label-mono font-semibold">
+<span class="material-symbols-outlined text-[16px]">savings</span>
+<span id="per-sub-text">Hanya ~Rp 498 / pelanggan / bulan</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Kapasitas dihitung berdasarkan pelanggan aktif harian. Jika ada pelanggan voucher kadaluarsa atau dinonaktifkan, kapasitas otomatis terlepas untuk subscriber baru.
+            </p>
+</div>
+<!-- Buttons & Action Microcopy -->
+<div class="pt-space-lg relative z-10 space-y-space-xs">
+<div class="flex flex-col sm:flex-row items-center gap-space-sm">
+<a class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary font-label-md text-label-md font-semibold px-6 py-3.5 rounded-xl shadow-md hover:bg-primary transition-all duration-200" data-path="daftar" href="#">
+<span>Mulai Uji Coba Gratis 14 Hari</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold px-6 py-3.5 rounded-xl shadow-sm hover:bg-surface-container transition-all duration-200" data-path="demo" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">play_circle</span>
+<span>Jadwalkan Live Demo</span>
+</a>
+</div>
+<p class="text-center sm:text-left font-caption text-caption text-on-surface-variant">
+              ✓ Tanpa kartu kredit  •  Akses instan ke seluruh 6 modul inti  •  Ekspor & impor data kapan saja
+            </p>
+</div>
+</div>
+<!-- Right: Telemetry & Inclusions Preview -->
+<div class="lg:col-span-5 bg-surface-container rounded-xl p-space-xl flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-bold text-on-surface">Apa Saja yang Anda Dapatkan?</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Setiap operator di kuota berapapun menerima 100% tumpukan teknologi telekomunikasi terpadu tanpa pemotongan fitur:
+            </p>
+<ul class="space-y-space-sm">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold text-on-surface">Unlimited Router MikroTik:</strong> Hubungkan router core, edge, dan distribution tanpa batas device.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold text-on-surface">Cloud FreeRADIUS Berdedikasi:</strong> Otentikasi AAA ultra-cepat, latency rendah, zero downtime failover.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold text-on-surface">GenieACS TR-069 & OLT Management:</strong> Provisioning modem ONT pelanggan & pantau redaman dBm realtime.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold text-on-surface">Auto-Isolir & Auto-Rekon Bank:</strong> Tagihan otomatis, isolir detik itu juga, buka blokir seketika QRIS lunas.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold text-on-surface">Aplikasi Teknisi Lapangan (PWA):</strong> Lokasi ODP, kompas redaman, dan upload bukti pasang baru di genggaman.</span>
+</li>
+</ul>
+</div>
+<!-- Micro Telemetry Box -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">dns</span>
+<div>
+<div class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Infrastruktur NADI Cloud</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Managed High-Availability Multi-Zone</div>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-secondary font-bold">99.98% SLA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== PHILOSOPHY HIGHLIGHT BANNER ==================== -->
+<section class="py-12 px-container-margin-desktop max-w-[1600px] mx-auto w-full">
+<div class="bg-gradient-to-r from-surface-container-high via-surface-container-lowest to-surface-container-high rounded-2xl p-space-xl lg:p-space-2xl shadow-sm relative overflow-hidden">
+<div class="max-w-4xl mx-auto text-center space-y-space-md">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-container text-on-primary mx-auto shadow-md">
+<span class="material-symbols-outlined text-[28px]">balance</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+          “Tidak ada fitur Basic. Tidak ada fitur Pro. Semua fitur NADI adalah fitur NADI.”
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Sistem billing konvensional sering memotong fitur kritikal — mengenakan biaya lisensi tambahan untuk telemetry jaringan, membatasi jumlah router, atau menagih addon untuk integrasi WhatsApp dan API. Kami percaya setiap ISP lokal, baik yang mengelola 80 pelanggan di pedesaan maupun 10.000 pelanggan di perkotaan, berhak menikmati keandalan otomatisasi kelas enterprise tanpa diskriminasi arsitektur.
+        </p>
+<div class="flex items-center justify-center gap-space-md pt-space-xs">
+<div class="h-0.5 w-12 bg-primary"></div>
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-primary font-bold">Prinsip Kesetaraan Operator ISP</span>
+<div class="h-0.5 w-12 bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 100% INCLUDED FEATURES CHECKLIST (BENTO GRID) ==================== -->
+<section class="py-16 px-container-margin-desktop max-w-[1600px] mx-auto w-full">
+<div class="text-center max-w-3xl mx-auto mb-space-2xl space-y-2">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-secondary font-semibold">Tumpukan Arsitektur Lengkap</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+        Seluruh Modul Termasuk di Setiap Paket
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Tidak perlu membeli plugin tambahan atau addon mahal. Semua kapasitas memiliki akses 100% ke ekosistem berikut:
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Pillar 1: Voucher & Hotspot Storefront -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">wifi_tethering</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">Voucher & Hotspot Storefront</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Monetisasi WiFi publik dan RT/RW net Anda dengan pengalaman checkout instan tanpa antre kupon fisik.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Dynamic QRIS checkout langsung aktif</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Pengiriman kode voucher instan via WhatsApp</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Portal Reseller & Multi-tier Agen Warung</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Bulk voucher generator & template cetak kustom</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Otomasi Hotspot 24 Jam</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+<!-- Pillar 2: Automated Billing & Finance -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">Automated Billing & Finance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Siklus penagihan otomatis yang membebaskan waktu kerja administrasi dan menghilangkan piutang macet.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Zero-touch recurring invoice bulanan</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Auto-isolir PPPoE & pemulihan detik lunas</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Auto-rekonsiliasi mutasi bank 24/7 tanpa manual</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Catatan biaya operasional, tiang & bandwidth upstream</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Integritas Keuangan ISP</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+<!-- Pillar 3: Network Intelligence & Observability -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">monitoring</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">Network Intelligence & Observability</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Visibilitas transmisi optik mendalam tanpa perlu membeli software SNMP/NMS terpisah yang rumit.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Telemetri redaman optik (dBm) per pelanggan ONT</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Topologi visual OLT, ODC, dan ODP interaktif</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Root-cause fault detection kabel putus realtime</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Traffic shaping & visualisasi port bandwidth grafis</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Telemetri Terpadu</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+<!-- Pillar 4: MikroTik, RADIUS & OLT Engine -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">router</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">MikroTik, RADIUS & OLT Engine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Engine otentikasi performa tinggi yang menghubungkan router core Anda ke sistem cloud secara aman.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Cloud FreeRADIUS performa tinggi tanpa batas sesi</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Koneksi aman WireGuard VPN Tunnel auto-connect</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>GenieACS TR-069 zero-touch modem auto provisioning</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Multi-router failover synchronization</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Core Telecommunication Engine</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+<!-- Pillar 5: CRM & Field Technician -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">engineering</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">CRM & Field Technician</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Kendali teknisi lapangan, manajemen instalasi baru, serta deteksi risiko churn pelanggan sejak dini.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Pipeline Lead-to-Active untuk calon pelanggan baru</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>AI Churn risk indicator & alert komplain berulang</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>PWA Teknisi: GPS ODP, input foto redaman, SPK kerja</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Broadcast kendala massal per wilayah ODP via WA</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Manajemen Tim & Komunikasi</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+<!-- Pillar 6: Enterprise Reliability & Support -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mb-2">Enterprise Reliability & Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Keamanan data telekomunikasi standar perbankan dengan komitmen bantuan teknis sigap.
+          </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Akses Open REST API & Webhook event lengkap</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Role-Based Access Control (Kasir, Admin, Teknisi, Finance)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Automated Daily Encrypted Cloud Backup</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+<span>Support prioritas langsung via WhatsApp Engineer</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Keamanan Data Tingkat Tinggi</span>
+<span class="font-label-mono text-label-mono text-primary font-semibold">Aktif</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== TRANSPARENT THIRD-PARTY & OPERATIONAL COSTS ==================== -->
+<section class="py-16 px-container-margin-desktop max-w-[1600px] mx-auto w-full">
+<div class="bg-surface-container-low rounded-3xl p-space-xl lg:p-space-2xl shadow-sm">
+<div class="max-w-3xl mb-space-xl">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary font-label-mono text-label-mono uppercase tracking-wider font-semibold mb-2">
+          Transparansi Finansial
+        </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+          Biaya Pihak Ketiga: 0% Markup Dari NADI
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Kami memegang prinsip kejujuran radikal. Biaya transaksi dan pengiriman pesan dibayarkan langsung ke penyedia resmi tanpa selisih atau potongan perantara dari pihak NADI.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- PG Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Payment Gateway (QRIS & VA)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Langsung terhubung ke <strong class="text-on-surface">Midtrans, Xendit, Tripay, atau Duitku</strong> dengan tarif regulasi standar Bank Indonesia (QRIS 0.7%, VA flat per transaksi).
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low rounded-lg p-space-xs text-on-surface-variant font-caption text-caption">
+            💡 <strong>100% Saldo Masuk Rekening Anda:</strong> Dana pencairan otomatis masuk langsung ke rekening bank ISP Anda tanpa singgah di rekening escrow NADI.
+          </div>
+</div>
+<!-- WA Gateway Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">WhatsApp Gateway API</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Gunakan nomor resmi WhatsApp Business API Anda sendiri melalui integrasi <strong class="text-on-surface">Meta Cloud API, Fonnte, Wablas, atau gateway mandiri</strong> tanpa markup biaya per pesan dari NADI.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low rounded-lg p-space-xs text-on-surface-variant font-caption text-caption">
+            🔒 <strong>Kedaulatan Nomor:</strong> Brand ISP Anda tetap aman dan terpercaya, pesan dikirimkan langsung dari identitas nomor Anda.
+          </div>
+</div>
+<!-- Cloud Server Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">cloud_done</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Cloud Server & Database</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">100% sudah termasuk</strong> dalam biaya langganan NADI bulanan Anda. Tidak perlu menyewa VPS Linux terpisah, mengelola lisensi database, atau memikirkan update patch OS.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low rounded-lg p-space-xs text-on-surface-variant font-caption text-caption">
+            ⚡ <strong>Zero Ops Overhead:</strong> Arsitektur cloud dikelola, dioptimalkan, dan dipantau 24 jam penuh oleh tim engineer NADI.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== COMPARISON TABLE: NADI vs SISTEM BILLING LAIN ==================== -->
+<section class="py-16 px-container-margin-desktop max-w-[1600px] mx-auto w-full">
+<div class="text-center max-w-3xl mx-auto mb-space-2xl space-y-2">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-primary font-semibold">Analisis Objektif</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+        NADI BILLING vs Solusi Konvensional
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Bandingkan struktur nilai dan arsitektur sebelum menentukan sistem operasi jaringan Anda.
+      </p>
+</div>
+<div class="overflow-x-auto rounded-2xl shadow-sm bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="py-space-md px-space-lg font-label-mono text-caption uppercase text-on-surface-variant font-semibold tracking-wider w-1/3">
+              Karakteristik & Kapabilitas
+            </th>
+<th class="py-space-md px-space-lg font-label-mono text-caption uppercase text-primary font-bold tracking-wider w-1/3 bg-primary-fixed/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>NADI BILLING</span>
+</div>
+</th>
+<th class="py-space-md px-space-lg font-label-mono text-caption uppercase text-on-surface-variant font-semibold tracking-wider w-1/3">
+              Sistem Billing Lain / Open Source Modifikasi
+            </th>
+</tr>
+</thead>
+<tbody class="divide-none">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<span class="block font-title-md text-title-md font-semibold text-on-surface">Model Harga</span>
+<span class="block font-caption text-caption text-on-surface-variant">Struktur penagihan lisensi software</span>
+</td>
+<td class="py-space-md px-space-lg bg-primary-fixed/15">
+<div class="flex items-center gap-2 text-primary font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span>Berdasarkan jumlah pelanggan aktif saja</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Semua fitur terbuka sejak paket awal.</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Terkunci di tier fitur (Basic/Pro/Enterprise)</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Harus upgrade ke tier mahal untuk fitur lanjutan.</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-lg">
+<span class="block font-title-md text-title-md font-semibold text-on-surface">Network Intelligence & OLT</span>
+<span class="block font-caption text-caption text-on-surface-variant">Monitoring redaman dBm & topologi visual</span>
+</td>
+<td class="py-space-md px-space-lg bg-primary-fixed/15">
+<div class="flex items-center gap-2 text-primary font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span>Included (Bawaan Sistem)</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Telemetri optik langsung terintegrasi tanpa addon.</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Bayar lisensi addon mahal / Tidak ada</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Memerlukan aplikasi monitoring pihak ketiga terpisah.</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<span class="block font-title-md text-title-md font-semibold text-on-surface">Limit Router MikroTik</span>
+<span class="block font-caption text-caption text-on-surface-variant">Jumlah router core / POP yang dihubungkan</span>
+</td>
+<td class="py-space-md px-space-lg bg-primary-fixed/15">
+<div class="flex items-center gap-2 text-primary font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span>Unlimited Multi-Router</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Bebas koneksikan seluruh titik POP tanpa extra charge.</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Dibatasi 1-2 Router per lisensi</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Dikenakan biaya tambahan tiap menambah router baru.</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-lg">
+<span class="block font-title-md text-title-md font-semibold text-on-surface">Auto-Isolir & Pemulihan Akses</span>
+<span class="block font-caption text-caption text-on-surface-variant">Kecepatan respon isolir saat jatuh tempo / bayar</span>
+</td>
+<td class="py-space-md px-space-lg bg-primary-fixed/15">
+<div class="flex items-center gap-2 text-primary font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span>Detik & Realtime (Zero Latency)</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">RADIUS disconnect message (PoD) langsung membuka koneksi.</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Manual atau delay cronjob script</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Sering membebani CPU router dan lambat buka blokir.</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<span class="block font-title-md text-title-md font-semibold text-on-surface">Biaya Setup & Onboarding</span>
+<span class="block font-caption text-caption text-on-surface-variant">Biaya awal instalasi sistem dan konfigurasi</span>
+</td>
+<td class="py-space-md px-space-lg bg-primary-fixed/15">
+<div class="flex items-center gap-2 text-primary font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span>Rp 0 (Gratis)</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Dibantu penuh oleh engineer NADI tanpa biaya tersembunyi.</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-2 text-error font-medium">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Jutaan rupiah (Biaya instalasi & deploy)</span>
+</div>
+<span class="block font-caption text-caption text-on-surface-variant mt-1">Dikenakan biaya setup awal dan migrasi basis data.</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ==================== PRICING FAQ ACCORDION ==================== -->
+<section class="py-16 px-container-margin-desktop max-w-[1200px] mx-auto w-full">
+<div class="text-center mb-space-2xl space-y-2">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-primary font-semibold">Pertanyaan Umum</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+        Hal yang Sering Ditanyakan Operator
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Punya pertanyaan seputar cara kerja kuota dan skema penagihan NADI? Simak jawaban lengkap di bawah.
+      </p>
+</div>
+<div class="space-y-space-md" id="faq-accordion-group">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden faq-card">
+<button class="faq-toggle w-full p-space-lg flex items-center justify-between text-left transition-colors hover:bg-surface-container-low/50" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Apa yang dihitung sebagai “Pelanggan Aktif”?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-lg pb-space-lg pt-0 text-on-surface-variant font-body-md text-body-md leading-relaxed hidden">
+          Pelanggan aktif adalah pelanggan dengan status langganan aktif yang dapat melakukan koneksi internet (PPPoE ataupun Hotspot yang sedang dalam masa aktif layanan). Pelanggan yang sedang dinonaktifkan permanen, berhenti berlangganan, atau voucher yang telah habis masa berlakunya tidak dihitung sebagai kuota pelanggan aktif.
+        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden faq-card">
+<button class="faq-toggle w-full p-space-lg flex items-center justify-between text-left transition-colors hover:bg-surface-container-low/50" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Bagaimana jika jumlah pelanggan saya melebihi kuota di tengah bulan?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-lg pb-space-lg pt-0 text-on-surface-variant font-body-md text-body-md leading-relaxed hidden">
+          Sistem NADI dirancang dengan toleransi tinggi agar kelangsungan bisnis Anda tidak terganggu. Kami <strong class="text-on-surface">tidak akan pernah memutus koneksi internet pelanggan Anda</strong> secara sepihak. Anda akan menerima notifikasi otomatis di dashboard untuk menaikkan kuota kapasitas secara prorata yang fleksibel.
+        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden faq-card">
+<button class="faq-toggle w-full p-space-lg flex items-center justify-between text-left transition-colors hover:bg-surface-container-low/50" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Apakah ada biaya tersembunyi untuk penambahan router MikroTik?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-lg pb-space-lg pt-0 text-on-surface-variant font-body-md text-body-md leading-relaxed hidden">
+          Sama sekali tidak ada. Anda bebas menghubungkan multi-router MikroTik (Core Router, Edge Router, CCR, CHR, maupun RB series) tanpa tambahan biaya per-perangkat. Arsitektur kami mendukung sinkronisasi multi-router secara terpusat.
+        </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden faq-card">
+<button class="faq-toggle w-full p-space-lg flex items-center justify-between text-left transition-colors hover:bg-surface-container-low/50" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Metode pembayaran apa saja yang didukung untuk langganan NADI?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-lg pb-space-lg pt-0 text-on-surface-variant font-body-md text-body-md leading-relaxed hidden">
+          Kami mendukung pembayaran otomatis melalui QRIS (ShopeePay, GoPay, OVO, DANA, LinkAja), Virtual Account (BCA, Mandiri, BRI, BNI, Permata, BSI), Kartu Kredit/Debit Visa & MasterCard, serta transfer bank konvensional.
+        </div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden faq-card">
+<button class="faq-toggle w-full p-space-lg flex items-center justify-between text-left transition-colors hover:bg-surface-container-low/50" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Bisakah saya migrasi data pelanggan dari software billing lama?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-lg pb-space-lg pt-0 text-on-surface-variant font-body-md text-body-md leading-relaxed hidden">
+          Sangat bisa. Tim Technical Engineer NADI menyediakan <strong class="text-on-surface">layanan asistensi migrasi data secara gratis</strong>. Kami membantu memindahkan data pelanggan PPPoE, secret MikroTik, paket layanan, dan data tagihan dari spreadsheet Excel/CSV, Mikhmon, Radiusbox, maupun sistem billing lama Anda tanpa downtime layanan internet pelanggan.
+        </div>
+</div>
+</div>
+</section>
+<!-- ==================== HIGH-IMPACT FINAL CTA ==================== -->
+<section class="py-16 px-container-margin-desktop max-w-[1600px] mx-auto w-full mb-12">
+<div class="relative bg-gradient-to-br from-primary via-primary-container to-secondary rounded-3xl p-space-xl lg:p-space-3xl text-on-primary overflow-hidden shadow-xl">
+<!-- Glow & Watermark decor -->
+<div class="absolute -right-16 -top-16 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl mx-auto text-center space-y-space-md">
+<div class="inline-flex items-center gap-2 px-space-md py-1 rounded-full bg-white/10 backdrop-blur-sm text-on-primary font-label-mono text-label-mono uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+<span>Deploy Cepat Dalam Hitungan Menit</span>
+</div>
+<h2 class="font-display-xl text-display-xl font-bold tracking-tight text-white leading-tight">
+          Mulai otomasi ISP Anda hari ini. Tanpa risiko, gratis 14 hari.
+        </h2>
+<p class="font-body-lg text-body-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
+          Tinggalkan penagihan manual dan komplain kabel putus yang terlambat disadari. Rasakan ketenangan mengelola jaringan dengan sistem operasi otonom berkelas dunia.
+        </p>
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface-container-lowest text-primary font-label-md text-label-md font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-surface transition-all duration-200 hover:scale-[1.02]" data-path="daftar" href="#">
+<span>Daftar Coba Gratis 14 Hari</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/15 text-white hover:bg-white/25 font-label-md text-label-md font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-200" data-path="kontak" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span>Konsultasi dengan Engineer</span>
+</a>
+</div>
+<div class="pt-space-sm flex flex-wrap justify-center items-center gap-space-md text-white/80 font-caption text-caption">
+<span>✓ Setup 100% didampingi teknisi</span>
+<span>✓ Bebas ekspor data kapan saja</span>
+<span>✓ Tanpa potongan komisi penjualan</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Client-side Interactive Logic for Calculator & FAQ -->
+<script>
+  (function initPricingCalculator() {
+    const tiers = [
+      {
+        count: '100',
+        label: '100 Pelanggan Aktif',
+        subText: 'Hingga 100 Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'Skala Pemula RT/RW Net',
+        monthly: 99000,
+        annual: 990000,
+        perSubMonthly: '~Rp 990',
+        perSubAnnual: '~Rp 825'
+      },
+      {
+        count: '300',
+        label: '300 Pelanggan Aktif',
+        subText: 'Hingga 300 Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'Skala Tumbuh RT/RW Net',
+        monthly: 189000,
+        annual: 1890000,
+        perSubMonthly: '~Rp 630',
+        perSubAnnual: '~Rp 525'
+      },
+      {
+        count: '500',
+        label: '500 Pelanggan Aktif',
+        subText: 'Hingga 500 Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'Pilihan Populer Mini ISP',
+        monthly: 249000,
+        annual: 2490000,
+        perSubMonthly: '~Rp 498',
+        perSubAnnual: '~Rp 415'
+      },
+      {
+        count: '1.000',
+        label: '1.000 Pelanggan Aktif',
+        subText: 'Hingga 1.000 Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'Paket Skala Komersial',
+        monthly: 449000,
+        annual: 4490000,
+        perSubMonthly: '~Rp 449',
+        perSubAnnual: '~Rp 374'
+      },
+      {
+        count: '2.500',
+        label: '2.500 Pelanggan Aktif',
+        subText: 'Hingga 2.500 Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'ISP FTTH Berkembang',
+        monthly: 899000,
+        annual: 8990000,
+        perSubMonthly: '~Rp 360',
+        perSubAnnual: '~Rp 300'
+      },
+      {
+        count: '5.000+',
+        label: '5.000+ Pelanggan Aktif',
+        subText: 'Hingga 5.000+ Pelanggan Aktif (PPPoE & Hotspot)',
+        badge: 'Regional ISP Powerhouse',
+        monthly: 1499000,
+        annual: 14990000,
+        perSubMonthly: '~Rp 299',
+        perSubAnnual: '~Rp 250'
+      },
+      {
+        count: '>10k',
+        label: 'Enterprise Operator (>10.000 Pelanggan)',
+        subText: 'Kapasitas Kustom Tak Terbatas + Private Dedicated Cluster',
+        badge: 'Enterprise Dedicated Tier',
+        monthly: 'Hubungi Kami',
+        annual: 'Hubungi Kami',
+        perSubMonthly: 'Volume Diskon Khusus',
+        perSubAnnual: 'Volume Diskon Khusus'
+      }
+    ];
+
+    let isAnnual = false;
+    let selectedIndex = 2; // Default 500 Pelanggan
+
+    const btnMonthly = document.getElementById('btn-monthly');
+    const btnAnnual = document.getElementById('btn-annual');
+    const pills = document.querySelectorAll('.cap-pill');
+
+    const priceDisplay = document.getElementById('price-display');
+    const periodDisplay = document.getElementById('period-display');
+    const annualSavingsText = document.getElementById('annual-savings-text');
+    const tierBadge = document.getElementById('tier-badge');
+    const subCapText = document.getElementById('subscriber-cap-text');
+    const perSubText = document.getElementById('per-sub-text');
+    const cycleBreakdownNote = document.getElementById('cycle-breakdown-note');
+
+    function formatRupiah(num) {
+      if (typeof num === 'string') return num;
+      return 'Rp ' + num.toLocaleString('id-ID');
+    }
+
+    function renderState() {
+      const item = tiers[selectedIndex];
+
+      if (item.count === '>10k') {
+        priceDisplay.textContent = 'Hubungi Tim';
+        periodDisplay.textContent = '';
+        annualSavingsText.classList.add('hidden');
+        tierBadge.textContent = item.badge;
+        subCapText.textContent = item.subText;
+        perSubText.textContent = 'Custom SLA & Dedicated Node';
+        cycleBreakdownNote.textContent = 'Arsitektur privat high availability kustom';
+      } else {
+        if (isAnnual) {
+          priceDisplay.textContent = formatRupiah(item.annual);
+          periodDisplay.textContent = '/ tahun';
+          annualSavingsText.textContent = 'Setara ' + formatRupiah(Math.round(item.annual / 12)) + ' / bulan (Gratis 2 bulan langganan!)';
+          annualSavingsText.classList.remove('hidden');
+          perSubText.textContent = 'Hanya ' + item.perSubAnnual + ' / pelanggan / bulan';
+          cycleBreakdownNote.textContent = 'Ditagihkan tahunan dengan diskon 2 bulan';
+        } else {
+          priceDisplay.textContent = formatRupiah(item.monthly);
+          periodDisplay.textContent = '/ bulan';
+          annualSavingsText.classList.add('hidden');
+          perSubText.textContent = 'Hanya ' + item.perSubMonthly + ' / pelanggan / bulan';
+          cycleBreakdownNote.textContent = 'Ditagihkan bulanan fleksibel tanpa kontrak';
+        }
+        tierBadge.textContent = item.badge;
+        subCapText.textContent = item.subText;
+      }
+
+      // Update Pill styles
+      pills.forEach((pill, idx) => {
+        if (idx === selectedIndex) {
+          pill.className = 'cap-pill py-3 px-2 rounded-xl text-center transition-all bg-primary-container text-on-primary shadow-md';
+          const spans = pill.querySelectorAll('span');
+          if (spans[0]) spans[0].className = 'block font-headline-md text-headline-md font-bold text-on-primary';
+          if (spans[1]) spans[1].className = 'block font-caption text-caption text-on-primary-container font-semibold';
+        } else {
+          pill.className = 'cap-pill py-3 px-2 rounded-xl text-center transition-all bg-surface-container-low text-on-surface hover:bg-surface-container';
+          const spans = pill.querySelectorAll('span');
+          if (spans[0]) spans[0].className = 'block font-headline-md text-headline-md font-bold text-on-surface';
+          if (spans[1]) spans[1].className = 'block font-caption text-caption text-on-surface-variant';
+        }
+      });
+    }
+
+    if (btnMonthly && btnAnnual) {
+      btnMonthly.addEventListener('click', () => {
+        if (!isAnnual) return;
+        isAnnual = false;
+        btnMonthly.className = 'px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm';
+        btnAnnual.className = 'flex items-center gap-1.5 px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant transition-all duration-200 hover:text-on-surface';
+        renderState();
+      });
+
+      btnAnnual.addEventListener('click', () => {
+        if (isAnnual) return;
+        isAnnual = true;
+        btnAnnual.className = 'flex items-center gap-1.5 px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm';
+        btnMonthly.className = 'px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant transition-all duration-200 hover:text-on-surface';
+        renderState();
+      });
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const idx = parseInt(pill.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) {
+          selectedIndex = idx;
+          renderState();
+        }
+      });
+    });
+
+    // Accordion Logic
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const card = toggle.closest('.faq-card');
+        const content = card.querySelector('.faq-content');
+        const icon = toggle.querySelector('.material-symbols-outlined');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => i.classList.remove('rotate-180'));
+
+        // Toggle current
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    renderState();
+  })();
+</script></main><footer class="w-full bg-surface-container-low border-t border-surface-container text-on-surface-variant"><div class="max-w-[1600px] mx-auto px-container-margin-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-xl"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="NADI BILLING Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHbesc0jx9PNrRLBHChoe1x3T8uqPl74GbIWIz-oQUtdGvAAgSc1gqRiCiJHv2ZwcnN5ePvrN_6IeCNk0GiUZLpuq38jm6ZxZ4C9V1M7R6IjE5RefFNkpIu3RWZyN5Kz-UfTe6aVGpJcFSzq4MeHq2IrM34u5EbGo9Ye5Re1FmUSPouDi1l_2yjjk2G0zbdQ9KDFtAuXID8Me69VwnqXUcgNjU_CToUVhYUYH1b-Syr0NOeCM7NWCUg"/><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">NADI<span class="text-primary ml-1 font-extrabold">BILLING</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm leading-relaxed">ISP Operating Platform - Jual. Tagih. Pantau. Pertahankan.</p><div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container text-secondary font-label-mono text-label-mono"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Autonomous Operations v2.4</span></div></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Produk</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="fitur" href="#">Fitur</a></li><li><a class="hover:text-primary transition-colors" data-path="harga" href="#">Harga</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Solusi</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="solusi-rt-rw-net" href="#">RT/RW Net</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-mini-isp" href="#">Mini ISP</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-isp-ftth" href="#">ISP FTTH</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-hotspot-voucher" href="#">Hotspot & Voucher</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Sumber Daya</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="dokumentasi" href="#">Dokumentasi</a></li><li><a class="hover:text-primary transition-colors" data-path="integrasi" href="#">Integrasi</a></li><li><a class="hover:text-primary transition-colors" data-path="blog-insight" href="#">Blog & Insight</a></li><li><a class="hover:text-primary transition-colors" data-path="pusat-bantuan" href="#">Pusat Bantuan</a></li><li><a class="hover:text-primary transition-colors" data-path="api-developer" href="#">API Developer</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Perusahaan & Legal</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="tentang" href="#">Tentang</a></li><li><a class="hover:text-primary transition-colors" data-path="kontak" href="#">Kontak</a></li><li><a class="hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li></ul></div></div><div class="mt-space-2xl pt-space-lg border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-caption text-caption"><p>© NADI BILLING. All rights reserved.</p><p class="font-label-mono text-label-mono text-on-surface-variant">High Availability Telecom SaaS Engine</p></div></div></footer></body></html>

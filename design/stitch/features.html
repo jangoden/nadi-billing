@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#7d4ce7", "surface-bright": "#f8f9ff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "outline": "#737686", "on-tertiary-container": "#f6edff", "inverse-surface": "#213145", "secondary": "#00687a", "on-surface-variant": "#434655", "primary-container": "#2563eb", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "tertiary-fixed-dim": "#d0bcff", "on-surface": "#0b1c30", "on-secondary-fixed-variant": "#004e5c", "on-primary-container": "#eeefff", "background": "#f8f9ff", "error-container": "#ffdad6", "on-primary": "#ffffff", "secondary-fixed": "acedff", "outline-variant": "#c3c6d7", "secondary-fixed-dim": "#4cd7f6", "surface-container-highest": "#d3e4fe", "secondary-container": "#57dffe", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#003ea8", "on-background": "#0b1c30", "on-secondary-fixed": "#001f26", "on-primary-fixed": "#00174b", "tertiary-fixed": "#e9ddff", "on-error": "#ffffff", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed-variant": "#5516be", "surface-container-high": "#dce9ff", "primary-fixed": "#dbe1ff", "surface-container-low": "#eff4ff", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#b4c5ff", "on-tertiary-fixed": "#23005c", "error": "#ba1a1a", "tertiary": "#632ecd", "on-error-container": "#93000a", "inverse-primary": "#b4c5ff", "surface-container": "#e5eeff", "primary": "#004ac6", "on-secondary-container": "#006172", "surface-tint": "#0053db" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xl": "2rem", "space-2xs": "0.25rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "space-3xl": "4rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "container-margin-mobile": "1rem", "space-md": "1rem", "container-margin-desktop": "2rem", "space-xs": "0.5rem" }, "fontFamily": { "title-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "display-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Geist"], "display-xl": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-mono": ["Geist"], "caption": ["Geist"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-container shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1600px] mx-auto px-container-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm focus:outline-none" data-path="beranda" href="#"><img alt="NADI BILLING Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHbesc0jx9PNrRLBHChoe1x3T8uqPl74GbIWIz-oQUtdGvAAgSc1gqRiCiJHv2ZwcnN5ePvrN_6IeCNk0GiUZLpuq38jm6ZxZ4C9V1M7R6IjE5RefFNkpIu3RWZyN5Kz-UfTe6aVGpJcFSzq4MeHq2IrM34u5EbGo9Ye5Re1FmUSPouDi1l_2yjjk2G0zbdQ9KDFtAuXID8Me69VwnqXUcgNjU_CToUVhYUYH1b-Syr0NOeCM7NWCUg"/><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">NADI<span class="text-primary ml-1 font-extrabold">BILLING</span></span></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="beranda" href="#">Beranda</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fitur" href="#">Fitur</a><div class="relative group py-space-sm"><button class="flex items-center gap-space-2xs text-on-surface-variant group-hover:text-on-surface transition-colors font-body-md text-body-md" type="button"><span>Solusi</span><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute left-0 top-full hidden group-hover:flex flex-col w-56 p-space-xs bg-surface-container-lowest rounded-xl shadow-[0_10px_24px_-3px_rgba(15,23,42,0.08)] border border-surface-container animate-in fade-in slide-in-from-top-1 duration-150"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-rt-rw-net" href="#">RT/RW Net</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-mini-isp" href="#">Mini ISP</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-isp-ftth" href="#">ISP FTTH</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="solusi-hotspot-voucher" href="#">Hotspot & Voucher</a></div></div><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="harga" href="#">Harga</a><div class="relative group py-space-sm"><button class="flex items-center gap-space-2xs text-on-surface-variant group-hover:text-on-surface transition-colors font-body-md text-body-md" type="button"><span>Sumber Daya</span><span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute left-0 top-full hidden group-hover:flex flex-col w-56 p-space-xs bg-surface-container-lowest rounded-xl shadow-[0_10px_24px_-3px_rgba(15,23,42,0.08)] border border-surface-container animate-in fade-in slide-in-from-top-1 duration-150"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dokumentasi" href="#">Dokumentasi</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="integrasi" href="#">Integrasi</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="blog-insight" href="#">Blog & Insight</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="pusat-bantuan" href="#">Pusat Bantuan</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="api-developer" href="#">API Developer</a></div></div></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:bg-primary transition-all duration-150 tracking-wide" data-path="demo" href="#">DEMO</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden bg-surface pt-12 pb-20 lg:pt-16 lg:pb-28">
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<div class="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[850px] h-[480px] bg-gradient-to-tr from-primary-fixed/60 via-secondary-fixed/40 to-transparent blur-3xl rounded-full"></div>
+</div>
+<div class="relative max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="max-w-4xl mx-auto text-center space-y-space-md">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-semibold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>FITUR LENGKAP & TRANSPARAN • ISP OPERATING PLATFORM</span>
+</div>
+<!-- Headline -->
+<h1 class="font-display-xl text-display-xl tracking-tight text-on-surface">
+          Semua yang Anda butuhkan untuk <span class="bg-gradient-to-r from-primary via-primary-container to-secondary bg-clip-text text-transparent">menjalankan ISP</span>.
+        </h1>
+<!-- Subheading -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+          Satu platform. Semua fitur. Tidak ada modul penting yang dikunci berdasarkan paket langganan Anda. Dari voucher lapangan hingga telemetri optik OLT tanpa kompromi.
+        </p>
+<!-- Feature Pillar Badges -->
+<div class="pt-space-xs flex flex-wrap items-center justify-center gap-space-xs md:gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-medium text-on-surface">100% Fitur Terbuka di Semua Kapasitas</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock_open_right</span>
+<span class="font-medium text-on-surface">Tanpa Biaya Lisensi Tersembunyi</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm border border-surface-container">
+<span class="material-symbols-outlined text-primary text-[18px]">router</span>
+<span class="font-medium text-on-surface">Integrasi MikroTik & OLT Native</span>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-md transition-all duration-200 flex items-center justify-center gap-2" data-path="demo" href="#">
+<span>Coba Demo Gratis</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold border border-outline-variant/60 shadow-sm transition-all duration-200 flex items-center justify-center gap-2" data-path="harga" href="#">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<span>Bandingkan Kapasitas & Harga</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- STICKY / SUBTLE HORIZONTAL CATEGORY BAR -->
+<div class="sticky top-20 z-40 w-full bg-surface-container-lowest/95 backdrop-blur-md border-y border-surface-container shadow-sm">
+<div class="max-w-[1600px] mx-auto px-container-margin-desktop overflow-x-auto no-scrollbar py-3">
+<nav class="flex items-center gap-space-xs md:gap-space-sm whitespace-nowrap text-on-surface-variant font-label-md text-label-md">
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#voucher-payment">Voucher & Payment</a>
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#billing-finance">Billing & Keuangan</a>
+<a class="px-3.5 py-1.5 rounded-md bg-secondary/10 text-secondary font-semibold flex items-center gap-1.5 hover:bg-secondary/20 transition-colors" href="#network-intelligence">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Network Intelligence</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-secondary text-on-secondary uppercase font-label-mono">Featured</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#network-radius">Network & Radius</a>
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#crm-retention">CRM & Pelanggan</a>
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#field-ops">Ticketing & Teknisi</a>
+<a class="px-3.5 py-1.5 rounded-md hover:bg-surface-container hover:text-on-surface transition-colors" href="#platform-api">Keamanan & API</a>
+</nav>
+</div>
+</div>
+<!-- PILLAR 01: VOUCHER & PAYMENT ONLINE -->
+<section class="py-space-3xl scroll-mt-32" id="voucher-payment">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 01</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Storefront Otomatis 24 Jam</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Otomatisasi Penjualan Voucher Hotspot & Reseller
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Tinggalkan cetak fisik yang memakan biaya dan voucher manual. Sediakan portal pembelian digital mandiri bagi pelanggan kapanpun dan di manapun dengan QRIS instan.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">qr_code_scanner</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Self-Service Store</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                Pelanggan scan QRIS atau pilih VA, sistem langsung mengaktifkan sesi MikroTik otomatis.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Auto WhatsApp Gateway</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                Kredensial username dan password terkirim langsung ke nomor WhatsApp pembeli tanpa jeda detik.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Sistem Agen & Reseller</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                Manajemen multi-tier, saldo deposit pedagang warung, pembagian komisi instan, dan batch printing jika diperlukan.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Settlement Real-time</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                Terintegrasi langsung dengan gateway nasional (Midtrans, Xendit, Tripay) dengan rekonsiliasi instan.
+              </p>
+</div>
+</div>
+</div>
+<!-- Visual Mockup Column -->
+<div class="lg:col-span-6 flex justify-center">
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-xl border border-surface-container p-6 space-y-5">
+<!-- Header bar of mock phone/widget -->
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Hotspot Digital Mandiri</p>
+<p class="font-caption text-caption text-on-surface-variant">Node ID: AP-BALAI-DESA-04</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-label-mono bg-surface-container text-secondary font-medium">Online 24/7</span>
+</div>
+<!-- Active Package selector -->
+<div class="space-y-3">
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">Pilih Durasi Akses</p>
+<div class="p-3.5 rounded-xl border-2 border-primary bg-primary-fixed/20 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Unlimited 24 Jam (Up to 10 Mbps)</p>
+<p class="font-caption text-caption text-on-surface-variant">Tanpa FUP • Akses Instan</p>
+</div>
+<span class="font-title-md text-title-md font-bold text-primary">Rp 7.000</span>
+</div>
+<div class="p-3.5 rounded-xl border border-surface-container bg-surface-container-lowest flex items-center justify-between opacity-70">
+<div>
+<p class="font-label-md text-label-md font-medium text-on-surface">Paket Hemat 7 Hari</p>
+<p class="font-caption text-caption text-on-surface-variant">Ideal untuk Pelajar / Kost</p>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Rp 30.000</span>
+</div>
+</div>
+<!-- Interactive QRIS Mock Box -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-center space-y-3">
+<div class="flex items-center gap-1.5 font-label-mono text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span>QRIS Dinamis Nasional • Otomatis Verifikasi</span>
+</div>
+<!-- Simulated QR box -->
+<div class="w-32 h-32 bg-surface-container-lowest rounded-lg p-2 shadow-inner border border-surface-container flex items-center justify-center">
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<path d="M10 10h30v30h-30zM15 15v20h20v-20zM60 10h30v30h-30zM65 15v20h20v-20zM10 60h30v30h-30zM15 65v20h20v-20zM45 10h10v10h-10zM45 30h10v10h-10zM10 45h10v10h-10zM30 45h10v10h-10zM45 45h10v10h-10zM60 45h20v10h-20zM75 60h15v15h-15zM55 75h15v15h-15zM45 60h10v25h-10z"></path>
+</svg>
+</div>
+<div class="flex items-center gap-2 text-primary font-label-mono text-label-mono">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Menunggu Pembayaran: 04:59</span>
+</div>
+</div>
+<!-- Instant WhatsApp Notification Pill -->
+<div class="p-3 bg-surface-container rounded-xl flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-secondary flex items-center justify-center text-on-secondary shrink-0">
+<span class="material-symbols-outlined text-[15px]">send</span>
+</div>
+<div class="text-left text-xs min-w-0">
+<p class="font-semibold text-on-surface truncate">Notifikasi WhatsApp Otomatis</p>
+<p class="text-on-surface-variant font-label-mono truncate">"Username: NADI-8821 | Sandi: ******* terkirim!"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PILLAR 02: BILLING & FINANCE AUTOMATION -->
+<section class="py-space-3xl bg-surface-container-low/50 scroll-mt-32" id="billing-finance">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Visual Workflow Column -->
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="bg-surface-container-lowest p-6 md:p-8 rounded-2xl border border-surface-container shadow-sm space-y-6">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div>
+<span class="font-label-mono text-caption text-primary font-semibold uppercase tracking-wider">Siklus Penagihan Otomatis</span>
+<p class="font-title-md text-title-md text-on-surface font-bold">Zero-Touch Billing Cycle</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-primary-fixed/50 text-on-primary-fixed font-label-mono text-caption font-semibold">MikroTik Sync: 2.1s</span>
+</div>
+<!-- Workflow Steps -->
+<div class="relative space-y-4">
+<!-- Step 1 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-label-mono text-body-sm font-bold shrink-0">1</div>
+<div class="bg-surface p-3.5 rounded-xl border border-surface-container flex-1 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Tagihan Terbit & WhatsApp Reminder</p>
+<p class="font-caption text-caption text-on-surface-variant">Kirim otomatis jadwal H-7, H-3, dan H-0 dengan invoice PDF & link bayar.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">notifications_active</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-label-mono text-body-sm font-bold shrink-0">2</div>
+<div class="bg-surface p-3.5 rounded-xl border border-surface-container flex-1 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-semibold text-error">Jatuh Tempo: Auto-Isolir MikroTik</p>
+<p class="font-caption text-caption text-on-surface-variant">Pelanggan dipindahkan ke Address List isolir & dialihkan ke landing page peringatan.</p>
+</div>
+<span class="material-symbols-outlined text-error text-[20px]">block</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary font-label-mono text-body-sm font-bold shrink-0">3</div>
+<div class="bg-surface p-3.5 rounded-xl border border-surface-container flex-1 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Cek Mutasi Otomatis 24/7</p>
+<p class="font-caption text-caption text-on-surface-variant">BCA, Mandiri, BRI, BNI mendeteksi pembayaran secara real-time tanpa input manual.</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">sync</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-mono text-body-sm font-bold shrink-0">4</div>
+<div class="bg-primary-fixed/20 p-3.5 rounded-xl border border-primary/30 flex-1 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Un-Isolir Kilat PPPoE (Detik itu juga)</p>
+<p class="font-caption text-caption text-on-surface-variant">RouterOS mengembalikan profile aktif dalam rentang 1-3 detik pasca lunas.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">task_alt</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Column -->
+<div class="lg:col-span-6 space-y-space-md order-1 lg:order-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 02</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Otomatisasi Keuangan Total</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Billing Berulang, Isolir Otomatis, dan Pembukuan Real-time
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Hentikan pusing mencocokkan mutasi bank manual dan isolir satu per satu di Winbox. NADI mengelola tagihan, prorata, dan rekonsiliasi pembukuan operasional secara otonom.
+          </p>
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1 shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Prorata Billing Cerdas: </span>
+<span class="font-body-md text-body-md text-on-surface-variant">Perhitungan akurat saat pelanggan pasang baru di pertengahan bulan berjalan.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1 shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Manajemen Pengeluaran ISP: </span>
+<span class="font-body-md text-body-md text-on-surface-variant">Pencatatan biaya sewa tiang, link upstream IX/IIX, bensin teknisi, dan laporan laba-rugi periodik.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-1 shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Portal Invoice Pelanggan Mandiri: </span>
+<span class="font-body-md text-body-md text-on-surface-variant">Tautan invoice interaktif di mana pelanggan dapat mengunduh bukti lunas resmi bertanda tangan digital.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PILLAR 03: FEATURED NETWORK INTELLIGENCE & TELEMETRI (DARK HIGH-CONTRAST OBSERVABILITY UI) -->
+<section class="py-space-3xl bg-[#0b1329] text-surface-bright relative overflow-hidden scroll-mt-32" id="network-intelligence">
+<!-- Ambient glow behind featured card -->
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="text-center max-w-3xl mx-auto space-y-space-sm mb-space-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary-fixed-dim font-label-mono text-label-mono uppercase tracking-wider border border-secondary/30">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span>NADI DEEP NETWORK INTELLIGENCE</span>
+</div>
+<h2 class="font-display-xl text-display-xl tracking-tight text-white font-bold">
+          Observabilitas Optik & Deteksi Dini Anomali Jaringan
+        </h2>
+<p class="font-body-lg text-body-lg text-surface-variant leading-relaxed">
+          Bukan sekadar penanda status "Up" atau "Down". NADI mendeteksi degradasi sinyal redaman dBm secara proaktif sebelum serat putus total dan pelanggan mulai komplain.
+        </p>
+</div>
+<!-- High-Tech Telemetry Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Interactive Telemetry Visual Window -->
+<div class="lg:col-span-7 bg-[#111c3a]/80 border border-slate-700/60 rounded-2xl p-6 shadow-2xl backdrop-blur-md flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-slate-700/60 pb-4 mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[24px]">troubleshoot</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-white tracking-wide">PON PORT TELEMETRY & OPTICAL LOSS</p>
+<p class="font-caption text-caption text-slate-400 font-label-mono">OLT-ZTE-C320-WILAYAH-BARAT // Slot 1/2/4</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 font-label-mono text-caption flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>128 ONU Online</span>
+</span>
+</div>
+<!-- OLT Topology Tree Visualization -->
+<div class="space-y-4 font-label-mono text-xs">
+<div class="p-3 bg-slate-900/80 rounded-lg border border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[16px]">device_hub</span>
+<span>OLT Pon Port 04 (TX +4.2 dBm)</span>
+</div>
+<span class="text-secondary-fixed-dim font-semibold">Nominal TX 100%</span>
+</div>
+<div class="pl-6 border-l-2 border-slate-700 space-y-3">
+<!-- ODC Splice -->
+<div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-primary-fixed text-[16px]">call_split</span>
+<span>ODC-02 Feeder (Splice Loss: 0.18 dB)</span>
+</div>
+<span class="text-emerald-400">Optimal (-0.18 dB)</span>
+</div>
+<!-- Degrading ODP Warning -->
+<div class="p-3 bg-amber-500/10 rounded-lg border border-amber-500/40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-amber-200">
+<span class="material-symbols-outlined text-amber-400 text-[18px]">warning</span>
+<div>
+<p class="font-semibold">ODP-MERPATI-08 (Drop Core Degradation Detected)</p>
+<p class="text-[10px] text-amber-300/80 font-caption">Fluktuasi redaman naik +2.4 dB dalam 48 jam terakhir</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">RX -26.8 dBm</span>
+</div>
+</div>
+</div>
+<!-- Live Signal Graph Simulation (Inline SVG) -->
+<div class="mt-6 pt-4 border-t border-slate-700/60">
+<div class="flex items-center justify-between mb-2 text-xs font-label-mono text-slate-400">
+<span>7-Day Signal Stability Trend</span>
+<span class="text-secondary-fixed-dim">Sample Rate: 5 Min</span>
+</div>
+<div class="h-24 w-full relative">
+<svg class="w-full h-full text-secondary-fixed-dim overflow-visible" preserveaspectratio="none" viewbox="0 0 400 80">
+<!-- Nominal threshold line -->
+<line stroke="#334155" stroke-dasharray="4" stroke-width="1" x1="0" x2="400" y1="40" y2="40"></line>
+<!-- Warning threshold line -->
+<line opacity="0.5" stroke="#ef4444" stroke-dasharray="2" stroke-width="1" x1="0" x2="400" y1="65" y2="65"></line>
+<!-- Signal Curve -->
+<path class="drop-shadow-[0_0_8px_rgba(76,215,246,0.5)]" d="M0,35 Q40,32 80,36 T160,34 T240,48 T300,55 T360,62 L400,60" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Right Side Capability Matrix -->
+<div class="lg:col-span-5 grid grid-cols-1 gap-space-md">
+<div class="p-space-md rounded-2xl bg-[#111c3a]/60 border border-slate-700/50 space-y-2">
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-title-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+<h3>Optical Power Telemetry</h3>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 leading-normal">
+              Monitoring historis fluktuasi daya RX dan TX pada level ONT modem pelanggan, ODP split, hingga OLT pusat.
+            </p>
+</div>
+<div class="p-space-md rounded-2xl bg-[#111c3a]/60 border border-slate-700/50 space-y-2">
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-title-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+<h3>Smart Degradation Alerting</h3>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 leading-normal">
+              Notifikasi dini dikirim ke Telegram/WhatsApp NOC saat redaman menanjak lebih dari ambang batas aman sebelum internet putus total.
+            </p>
+</div>
+<div class="p-space-md rounded-2xl bg-[#111c3a]/60 border border-slate-700/50 space-y-2">
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-title-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+<h3>Topology & Root Cause Analysis</h3>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 leading-normal">
+              Peta pohon FTTH akurat membedakan seketika apakah kendala terjadi akibat kabel drop core pelanggan putus atau kabel feeder OLT pusat terpotong.
+            </p>
+</div>
+<div class="p-space-md rounded-2xl bg-[#111c3a]/60 border border-slate-700/50 space-y-2">
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-title-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<h3>Auto Incident Grouping</h3>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 leading-normal">
+              Ketika 1 ODP berisi 16 pelanggan tumbang bersamaan, sistem membundelnya dalam 1 tiket insiden tunggal tanpa spam 16 komplain terpisah.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PILLAR 04: NETWORK MANAGEMENT & EMBEDDED RADIUS -->
+<section class="py-space-3xl scroll-mt-32" id="network-radius">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="max-w-3xl space-y-space-xs mb-space-2xl">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 04</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Core Network & Hardware</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Integrasi RouterOS MikroTik, FreeRADIUS & GenieACS (TR-069)
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Hubungkan infrastruktur perangkat keras jaringan ISP Anda tanpa konfigurasi server Linux mandiri yang berbelit-belit.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">dns</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Cloud RADIUS & PPPoE Server</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Arsitektur terdistribusi dengan high availability. Sinkronisasi multi-router MikroTik otomatis tanpa latensi otentikasi.
+            </p>
+</div>
+<div class="pt-2 text-primary font-label-md text-label-md font-semibold flex items-center gap-1">
+<span>High Concurrency</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">vpn_lock</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">MikroTik API & WireGuard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Koneksi aman langsung ke router cabang lapangan tanpa membutuhkan IP Publik statis di setiap titik site BTS.
+            </p>
+</div>
+<div class="pt-2 text-secondary font-label-md text-label-md font-semibold flex items-center gap-1">
+<span>Zero Public IP Dependency</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[28px]">settings_remote</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">GenieACS TR-069 Provisioning</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Konfigurasi modem ONT baru secara remote tanpa ke lokasi pelanggan. Ganti SSID & kata sandi WiFi hanya dengan 1 klik.
+            </p>
+</div>
+<div class="pt-2 text-tertiary font-label-md text-label-md font-semibold flex items-center gap-1">
+<span>Zero Touch Setup</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">speed</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Bandwidth & Fair Usage Rules</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Otomatisasi Queue Tree, burst dinamis di jam sibuk, serta sistem FUP adaptif demi kestabilan agregasi bandwidth pelanggan.
+            </p>
+</div>
+<div class="pt-2 text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1">
+<span>Dynamic Shaper</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PILLAR 05: CRM & RETENTION -->
+<section class="py-space-3xl bg-surface-container-low/40 scroll-mt-32" id="crm-retention">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 05</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Customer Lifecycle Retention</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Ubah Data Teknis Menjadi Tingkat Loyalitas Pelanggan Maksimal
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Satu kartu profil terpadu menggabungkan status teknis PPPoE, riwayat pembayaran perbankan, riwayat komplain tiket, hingga prediksi risiko churn.
+          </p>
+<div class="space-y-4 pt-space-xs">
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-container flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">contact_page</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Customer 360° Profile</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lacak status IP, MAC ONT, status redaman dBm terakhir, data riwayat invoice, serta rekaman percakapan CS WhatsApp.</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-container flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined text-[22px]">heart_broken</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Algoritma Churn Risk Detection</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deteksi pelanggan yang berpotensi putus langganan akibat sering komplain teknis atau riwayat keterlambatan pembayaran berulang.</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-container flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">broadcast_on_personal</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Broadcast & Segmentasi Pengumuman</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kirim pengumuman pemeliharaan terarah hanya kepada pelanggan pada ODP atau port OLT tertentu tanpa mengganggu pelanggan lain.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Geospatial & 360 Mockup -->
+<div class="lg:col-span-6">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container p-6 shadow-md space-y-5">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold">
+                  RH
+                </div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Rahmat Hidayat (ID: CUST-0492)</h4>
+<p class="font-caption text-caption text-on-surface-variant">Paket: FTTH Home 30 Mbps • Klaster Anggrek</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 font-label-mono text-caption font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Active PPPoE</span>
+</span>
+</div>
+<!-- Mini Telemetry Strip -->
+<div class="grid grid-cols-3 gap-3 text-center">
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<p class="font-caption text-caption text-on-surface-variant">Redaman ONT</p>
+<p class="font-label-md text-label-md font-bold text-on-surface">-19.4 dBm</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<p class="font-caption text-caption text-on-surface-variant">Uptime Bulan Ini</p>
+<p class="font-label-md text-label-md font-bold text-emerald-600">99.88%</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low">
+<p class="font-caption text-caption text-on-surface-variant">Skor Retensi</p>
+<p class="font-label-md text-label-md font-bold text-primary">Sangat Baik</p>
+</div>
+</div>
+<!-- Customer Map Location Pin -->
+<div class="relative rounded-xl overflow-hidden border border-surface-container h-48 bg-cover bg-center" data-alt="A clean modern cartographic interface map depicting fiber optic routing lines and subscriber geolocation nodes in a suburban residential neighborhood in Indonesia with blue marker pins and fiber cable pathways" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcEi_FIopKg9RhLO1vxN5Re5TVNGzR7pq9_RgCOwRJNWGiv3pT7uQWNddWrdGZH6z0FWe8pVcLpebpElT4oBtLYk4ijqKjPcDnvDpNlhUOQJf_mKsnse14fZMa2hQtWpj_44tU0qQ1lRJAqoxnyszcHX0zTzYB5mdYRubqDoXDH9qm7rWRkycWj5Fje7EB4IRecjWnwRDlRdAP2foqNFUODuFvtvKwwzRMq4h5on7m29xycqm3TuKk')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between text-xs font-label-mono">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">pin_drop</span>
+<span>ODP-ANGGREK-02 // Port 06</span>
+</div>
+<span class="bg-surface-container-lowest/20 backdrop-blur px-2 py-0.5 rounded">Drop Core 65m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PILLAR 06 & 07: SPLIT SECTION (OPERASIONAL & SECURITY/API) -->
+<section class="py-space-3xl scroll-mt-32">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl">
+<!-- Pillar 06: Ticketing & Field Ops -->
+<div class="p-space-xl rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-md flex flex-col justify-between scroll-mt-32" id="field-ops">
+<div class="space-y-space-sm">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 06</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Field Operations</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+              Alur Kerja Lapangan yang Rapi dan Terukur
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Permudah tugas teknisi lapangan mulai dari order pemasangan baru hingga pelaporan perbaikan kabel putus langsung dari smartphone mereka.
+            </p>
+<div class="space-y-3 pt-space-xs">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">assignment_turned_in</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Dispatch & Penugasan Cepat</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Penetapan teknisi terdekat dengan foto dokumentasi instalasi & geotagging lokasi.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">smartphone</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">PWA Mobile Friendly Teknisi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Teknisi bisa mengecek redaman ONT secara instan tanpa perlu menghubungi NOC pusat.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">av_timer</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">SLA & MTTR Tracking</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Metrik performa tim lapangan untuk memastikan durasi perbaikan gangguan tidak melebihi SLA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container flex items-center justify-between text-xs font-label-mono">
+<span class="text-on-surface-variant">Rata-rata MTTR Tim Lapangan:</span>
+<span class="text-emerald-700 font-bold">1 Jam 18 Menit (-24% YoY)</span>
+</div>
+</div>
+<!-- Pillar 07: Platform, Security & Open API -->
+<div class="p-space-xl rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm space-y-space-md flex flex-col justify-between scroll-mt-32" id="platform-api">
+<div class="space-y-space-sm">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-mono text-label-mono">
+<span>MODUL 07</span>
+<span>•</span>
+<span class="tracking-wide uppercase">Security & Developer</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+              Keandalan Infrastruktur Kelas Enterprise & Open API
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Integrasikan sistem billing NADI dengan software internal Anda melalui REST API webhook berkecepatan tinggi dengan tingkat isolasi data terbaik.
+            </p>
+<div class="space-y-3 pt-space-xs">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">api</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">REST API & Webhook Real-time</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Integrasi ke bot Telegram kustom, sistem ERP pergudangan, atau analitik internal Anda.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">admin_panel_settings</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Role-Based Access Control (RBAC)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hak akses granular ketat untuk Kasir, Tim Billing, NOC, Teknisi, dan Super Admin.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">cloud_sync</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Cloud Backup Otomatis & Enkripsi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Data pelanggan dan backup konfigurasi MikroTik tersimpan terenkripsi di multi-region cloud.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-surface-container flex items-center justify-between text-xs font-label-mono">
+<span class="text-on-surface-variant">Platform Uptime Engine:</span>
+<span class="text-primary font-bold">99.99% SLA Uptime</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPARISON / "ALL FEATURES INCLUDED" BANNER -->
+<section class="py-space-3xl bg-surface-container">
+<div class="max-w-[1600px] mx-auto px-container-margin-mobile md:px-container-margin-desktop">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-container via-primary to-inverse-surface p-8 md:p-14 text-on-primary shadow-xl">
+<div class="relative z-10 max-w-3xl space-y-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white font-label-mono text-label-mono border border-white/20">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+<span>TRANSPARANSI PENUH TANPA FITUR TERKUNCI</span>
+</div>
+<h2 class="font-display-xl text-display-xl font-bold tracking-tight text-white leading-tight">
+            Semua fitur. Semua paket. Tanpa pengecualian.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-primary-container/90 leading-relaxed">
+            Kami tidak pernah mengunci Network Intelligence, integrasi OLT, atau WhatsApp Gateway di paket mahal khusus "Enterprise". Apapun skala ISP Anda hari ini, Anda mendapatkan kekuatan operasional sistem penuh.
+          </p>
+<div class="pt-space-sm flex flex-col sm:flex-row items-center gap-space-md">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-low shadow-md transition-colors flex items-center justify-center gap-2" data-path="demo" href="#">
+<span>Coba Demo NADI Sekarang</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-label-md text-label-md font-semibold border border-white/20 backdrop-blur-sm transition-colors flex items-center justify-center gap-2" data-path="harga" href="#">
+<span>Lihat Kalkulator Harga</span>
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+</a>
+</div>
+</div>
+<!-- Decorative background geometry -->
+<div class="absolute -right-12 -bottom-12 w-80 h-80 rounded-full bg-white/5 pointer-events-none blur-2xl"></div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low border-t border-surface-container text-on-surface-variant"><div class="max-w-[1600px] mx-auto px-container-margin-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-xl"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="NADI BILLING Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VuHbesc0jx9PNrRLBHChoe1x3T8uqPl74GbIWIz-oQUtdGvAAgSc1gqRiCiJHv2ZwcnN5ePvrN_6IeCNk0GiUZLpuq38jm6ZxZ4C9V1M7R6IjE5RefFNkpIu3RWZyN5Kz-UfTe6aVGpJcFSzq4MeHq2IrM34u5EbGo9Ye5Re1FmUSPouDi1l_2yjjk2G0zbdQ9KDFtAuXID8Me69VwnqXUcgNjU_CToUVhYUYH1b-Syr0NOeCM7NWCUg"/><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">NADI<span class="text-primary ml-1 font-extrabold">BILLING</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm leading-relaxed">ISP Operating Platform - Jual. Tagih. Pantau. Pertahankan.</p><div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container text-secondary font-label-mono text-label-mono"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Autonomous Operations v2.4</span></div></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Produk</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="fitur" href="#">Fitur</a></li><li><a class="hover:text-primary transition-colors" data-path="harga" href="#">Harga</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Solusi</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="solusi-rt-rw-net" href="#">RT/RW Net</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-mini-isp" href="#">Mini ISP</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-isp-ftth" href="#">ISP FTTH</a></li><li><a class="hover:text-primary transition-colors" data-path="solusi-hotspot-voucher" href="#">Hotspot & Voucher</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Sumber Daya</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="dokumentasi" href="#">Dokumentasi</a></li><li><a class="hover:text-primary transition-colors" data-path="integrasi" href="#">Integrasi</a></li><li><a class="hover:text-primary transition-colors" data-path="blog-insight" href="#">Blog & Insight</a></li><li><a class="hover:text-primary transition-colors" data-path="pusat-bantuan" href="#">Pusat Bantuan</a></li><li><a class="hover:text-primary transition-colors" data-path="api-developer" href="#">API Developer</a></li></ul></div><div><p class="font-title-md text-title-md text-on-surface font-semibold mb-space-md">Perusahaan & Legal</p><ul class="space-y-space-sm font-body-sm text-body-sm"><li><a class="hover:text-primary transition-colors" data-path="tentang" href="#">Tentang</a></li><li><a class="hover:text-primary transition-colors" data-path="kontak" href="#">Kontak</a></li><li><a class="hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li></ul></div></div><div class="mt-space-2xl pt-space-lg border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-caption text-caption"><p>© NADI BILLING. All rights reserved.</p><p class="font-label-mono text-label-mono text-on-surface-variant">High Availability Telecom SaaS Engine</p></div></div></footer></body></html>
