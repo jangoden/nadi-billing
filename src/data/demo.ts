@@ -12,7 +12,7 @@ export const demoFlows: {
 }[] = [
   {
     id: "voucher",
-    name: "Voucher & Payment",
+    name: "Voucher & Reseller",
     icon: "store",
     steps: voucherFlow,
     descriptions: [
@@ -20,8 +20,8 @@ export const demoFlows: {
       "Sistem menerbitkan hingga 500 kode unik instan dengan mode username=password dan QR code.",
       "Voucher dicetak rapi langsung dari browser dalam layout printer thermal 58/80mm atau A4 kisi.",
       "Voucher didistribusikan ke outlet langsung atau dijual oleh mitra reseller via portal agen.",
-      "Pelanggan memasukkan kredensial voucher pada captive portal hotspot untuk login.",
-      "Sesi pelanggan terhubung secara real-time dan tercatat di server RADIUS serta router.",
+      "Pelanggan memasukkan kredensial voucher pada captive portal hotspot untuk login via autentikasi FreeRADIUS.",
+      "Sesi pelanggan terverifikasi di server RADIUS dan aktif pada MikroTik dengan kuota/durasi terpantau.",
     ],
   },
   {

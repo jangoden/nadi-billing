@@ -165,7 +165,7 @@ set [ find default=yes ] use-radius=yes radius-accounting=yes`,
         badge: "Preventive Alert",
         summary: "Peringatan prediktif saat tren redaman turun >3dB dalam 7 hari sebelum sinyal jatuh ke level kritis.",
         description: [
-          "NADI mengelompokkan redaman optik ONU ke dalam 4 ambang batas: Normal (&gt; -22 dBm), Perhatian (-22 s/d -25 dBm), Waspada (-25 s/d -27 dBm), dan Kritis (&lt; -27 dBm / LOS).",
+          "NADI mengelompokkan redaman optik ONU ke dalam 4 ambang batas: Normal (> -22 dBm), Perhatian (-22 s/d -25 dBm), Waspada (-25 s/d -27 dBm), dan Kritis (< -27 dBm / LOS).",
           "Service `PredictiveDegradationService` membandingkan tren rata-rata bergerak 7 hari. Jika redaman memburuk lebih dari 3 dB, sistem menghitung proyeksi hari menuju batas kritis dan menampilkan peringatan preventif di dashboard."
         ],
         snippets: [

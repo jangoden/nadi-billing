@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@/components/ui/icon";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -10,6 +10,58 @@ export function BlogExplorer() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Semua Artikel");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [readingPost, setReadingPost] = useState<BlogPost | null>(null);
+
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+
+  const openPost = (post: BlogPost, e: React.MouseEvent<HTMLButtonElement>) => {
+    triggerRef.current = e.currentTarget;
+    setReadingPost(post);
+  };
+
+  const closePost = () => {
+    setReadingPost(null);
+    triggerRef.current?.focus();
+  };
+
+  useEffect(() => {
+    if (!readingPost) return;
+
+    // Focus close button on mount
+    const timer = setTimeout(() => {
+      closeButtonRef.current?.focus();
+    }, 50);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closePost();
+      } else if (e.key === "Tab") {
+        if (!dialogRef.current) return;
+        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [readingPost]);
 
   const filteredPosts = useMemo(() => {
     return blogPosts.filter((post) => {
@@ -113,7 +165,7 @@ export function BlogExplorer() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   type="button"
-                  onClick={() => setReadingPost(featuredPost)}
+                  onClick={(e) => openPost(featuredPost, e)}
                   className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white shadow-md shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/20"
                 >
                   <span>BACA ARTIKEL LENGKAP</span>
@@ -159,16 +211,15 @@ export function BlogExplorer() {
           )}
         </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label="Kategori Artikel">
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter Kategori Artikel">
           {blogCategories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 type="button"
-                role="tab"
-                aria-selected={isActive}
+                aria-pressed={isActive}
                 onClick={() => setSelectedCategory(cat)}
                 className={`rounded-xl px-4 py-2 text-xs font-bold transition-all sm:text-sm ${
                   isActive
@@ -251,7 +302,7 @@ export function BlogExplorer() {
 
                   <button
                     type="button"
-                    onClick={() => setReadingPost(post)}
+                    onClick={(e) => openPost(post, e)}
                     className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary/80 focus:outline-none"
                     aria-label={`Baca artikel: ${post.title}`}
                   >
@@ -289,6 +340,7 @@ export function BlogExplorer() {
       {/* Article Reader Modal / Overlay */}
       {readingPost && (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-article-title"
@@ -304,17 +356,22 @@ export function BlogExplorer() {
                 <span className="text-xs text-slate-600">• {readingPost.readTime}</span>
               </div>
               <button
+                ref={closeButtonRef}
                 type="button"
-                onClick={() => setReadingPost(null)}
+                onClick={closePost}
                 aria-label="Tutup artikel"
-                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-200/60 hover:text-slate-700"
+                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-200/60 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <Icon name="close" size={20} />
               </button>
             </div>
 
             {/* Modal Content */}
-            <div className="max-h-[75vh] overflow-y-auto px-6 py-6 sm:px-8 sm:py-8">
+            <div
+              tabIndex={0}
+              aria-label="Isi artikel lengkap"
+              className="max-h-[75vh] overflow-y-auto px-6 py-6 sm:px-8 sm:py-8 focus:outline-none focus:ring-1 focus:ring-slate-300"
+            >
               {/* Large Cover Image in Reader */}
               <div className="relative mb-6 overflow-hidden rounded-2xl aspect-16/9 bg-slate-100 border border-slate-200/80 shadow-xs">
                 <Image
@@ -353,10 +410,10 @@ export function BlogExplorer() {
 
               {/* Takeaways Card */}
               <div className="mt-8 rounded-2xl border border-blue-200/80 bg-blue-50/70 p-6">
-                <h4 className="flex items-center gap-2 text-sm font-bold text-primary">
+                <h3 className="flex items-center gap-2 text-sm font-bold text-primary">
                   <Icon name="checkCircle" size={18} />
                   <span>Kesimpulan Operasional</span>
-                </h4>
+                </h3>
                 <ul className="mt-3 space-y-2.5">
                   {readingPost.keyTakeaways.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
@@ -375,7 +432,7 @@ export function BlogExplorer() {
               </ButtonLink>
               <button
                 type="button"
-                onClick={() => setReadingPost(null)}
+                onClick={closePost}
                 className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-2xs hover:bg-slate-100 sm:text-sm"
               >
                 Tutup Baca

@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Pusat Bantuan & Dukungan",
-  "Pusat bantuan dan dukungan teknis NADI Billing: troubleshooting router MikroTik, status layanan, WhatsApp support, dan tiket kendala jaringan.",
+  "Pusat bantuan dan panduan operasional NADI Billing: panduan router MikroTik, konfigurasi RADIUS, arsitektur layanan, dan saluran konsultasi teknis.",
   "/help",
   true
 );
@@ -15,7 +15,7 @@ export default function HelpPage() {
       <PageIntro
         eyebrow="DUKUNGAN & BANTUAN TEKNIS"
         title="Pusat Bantuan NADI Billing"
-        description="Temukan solusi cepat kendala operasional, status layanan real-time, panduan pemecahan masalah, dan saluran bantuan langsung dari tim teknisi NADI."
+        description="Temukan solusi cepat kendala operasional, panduan konfigurasi jaringan MikroTik/RADIUS, dan saluran konsultasi langsung dengan tim NADI."
         showDemo={false}
       />
       <HelpCenter />

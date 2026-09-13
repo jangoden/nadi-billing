@@ -135,66 +135,66 @@ Dokumen ini berisi daftar tugas (TODO checklist) penyesuaian website pemasaran N
 ## FASE 5: Remediasi Temuan Prioritas P1 (Integritas Informasi & Klaim Layanan)
 *Berdasarkan temuan F01, F02, F03, dan F04 dari `analisisproyek.md`.*
 
-- [ ] **5.1. Formulir Bantuan & Tiket (F01)**:
-  - [ ] Ubah formulir di `src/components/help/help-center.tsx` menjadi mode "Simulasi Pratinjau Alur Tiket" dengan label transparan.
-  - [ ] Tambahkan pesan jelas bahwa data tiket tidak dikirimkan ke server/WhatsApp dan sertakan tautan ke saluran kontak resmi.
-- [ ] **5.2. Telemetri & Status Layanan (F02)**:
-  - [ ] Beri label eksplisit "Arsitektur Layanan & Telemetri (Simulasi Pratinjau)" pada `src/components/help/help-center.tsx` dan `src/data/help-data.ts`.
-  - [ ] Hapus klaim status "live operasional 24 jam" dan uptime 99.98% tanpa sumber monitoring langsung.
-- [ ] **5.3. Pembersihan Sisa Klaim Produk yang Bertentangan (F03)**:
-  - [ ] Bersihkan `src/components/sections/why-nadi-section.tsx` (hapus sisa teks "Payment Gateway" & "otomasi isolir/reconnect").
-  - [ ] Bersihkan `src/components/help/help-center.tsx` (hapus "Webhook Pembayaran" dan "WhatsApp Gateway").
-  - [ ] Bersihkan `src/app/documentation/page.tsx` & `src/components/documentation/doc-viewer.tsx` (hapus materi setup payment gateway & isolir otomatis).
-  - [ ] Perjelas prasyarat login voucher pada `src/data/marketing.ts` & `src/data/demo.ts` (RADIUS AAA hotspot credentials vs push router).
-- [ ] **5.4. Kalibrasi Kontak, Janji SLA & Klaim Hasil (F04)**:
-  - [ ] Kalibrasi kontak di `src/data/help-data.ts` sebagai saluran konsultasi resmi/sales.
-  - [ ] Hapus janji respons mutlak ("< 5 menit", "SLA 1-2 jam") menjadi target respons tim operasional.
-  - [ ] Perbaiki tautan aksi "Jadwalkan Sesi Remote" agar mengarah ke saluran kontak konsultasi nyata (WhatsApp/Email) alih-alih melempar ke simulator demo.
-  - [ ] Netralkan klaim persentase tanpa acuan empiris ("hingga 60% MTTD/MTTR") ke konteks studi kasus implementasi.
+- [x] **5.1. Formulir Bantuan & Tiket (F01)**:
+  - [x] Ubah formulir di `src/components/help/help-center.tsx` menjadi mode "Simulasi Pratinjau Alur Tiket" dengan label transparan.
+  - [x] Tambahkan pesan jelas bahwa data tiket tidak dikirimkan ke server/WhatsApp dan sertakan tautan ke saluran kontak resmi.
+- [x] **5.2. Telemetri & Status Layanan (F02)**:
+  - [x] Beri label eksplisit "Arsitektur Layanan & Telemetri (Simulasi Pratinjau)" pada `src/components/help/help-center.tsx` dan `src/data/help-data.ts`.
+  - [x] Hapus klaim status "live operasional 24 jam" dan uptime 99.98% tanpa sumber monitoring langsung.
+- [x] **5.3. Pembersihan Sisa Klaim Produk yang Bertentangan (F03)**:
+  - [x] Bersihkan `src/components/sections/why-nadi-section.tsx` (hapus sisa teks "Payment Gateway" & "otomasi isolir/reconnect").
+  - [x] Bersihkan `src/components/help/help-center.tsx` (hapus "Webhook Pembayaran" dan "WhatsApp Gateway").
+  - [x] Bersihkan `src/app/documentation/page.tsx` & `src/components/documentation/doc-viewer.tsx` (hapus materi setup payment gateway & isolir otomatis).
+  - [x] Perjelas prasyarat login voucher pada `src/data/marketing.ts` & `src/data/demo.ts` (RADIUS AAA hotspot credentials vs push router).
+- [x] **5.4. Kalibrasi Kontak, Janji SLA & Klaim Hasil (F04)**:
+  - [x] Kalibrasi kontak di `src/data/help-data.ts` sebagai saluran konsultasi resmi/sales.
+  - [x] Hapus janji respons mutlak ("< 5 menit", "SLA 1-2 jam") menjadi target respons tim operasional.
+  - [x] Perbaiki tautan aksi "Jadwalkan Sesi Remote" agar mengarah ke saluran kontak konsultasi nyata (WhatsApp/Email) alih-alih melempar ke simulator demo.
+  - [x] Netralkan klaim persentase tanpa acuan empiris ("hingga 60% MTTD/MTTR") ke konteks studi kasus implementasi.
 
 ---
 
 ## FASE 6: Remediasi Temuan Prioritas P2 (Aksesibilitas, Semantik ARIA & QA Suite)
 *Berdasarkan temuan F05, F06, F07, F08, F09, dan F10 dari `analisisproyek.md`.*
 
-- [ ] **6.1. Modal Artikel Blog & Pengelolaan Fokus Keyboard (F05)**:
-  - [ ] Tambahkan event listener keyboard `Escape` untuk menutup modal di `src/components/blog/blog-explorer.tsx`.
-  - [ ] Kelola fokus keyboard: pindahkan fokus ke modal saat dibuka dan kembalikan ke tombol pemicu saat ditutup.
-  - [ ] Terapkan focus trap sederhana agar `Tab` tidak bocor ke latar belakang modal.
-  - [ ] Tambahkan `tabIndex={0}` dan `aria-label` pada kontainer scrollable dialog artikel (`scrollable-region-focusable`).
-  - [ ] Rapikan urutan heading (h1, h2, h3) di dalam modal.
-- [ ] **6.2. Dropdown Navigasi Pola Disclosure W3C (F06)**:
-  - [ ] Hapus `role="menu"` dan `role="none"` pada `src/components/layout/navbar.tsx`.
-  - [ ] Terapkan pola Disclosure Navigation standar (`aria-expanded`, list tautan `<ul><li><a>`) untuk menghilangkan pelanggaran axe `aria-required-children`.
-- [ ] **6.3. Filter Kategori Tombol Semantik (F07)**:
-  - [ ] Ubah `role="tablist"` dan `role="tab"` di `src/components/blog/blog-explorer.tsx` dan `src/components/help/help-center.tsx` menjadi grup filter tombol dengan `aria-pressed` atau tombol filter semantik.
-- [ ] **6.4. Koreksi Landmark Ganda `<main>` pada Dokumentasi (F08)**:
-  - [ ] Ubah `<main>` sekunder di `src/components/documentation/doc-viewer.tsx` (baris 183) menjadi `<section>` atau `<div>` berlabel.
-- [ ] **6.5. Perluasan Suite QA & Pengujian Regresi Lanjutan (F09)**:
-  - [ ] Tambahkan pengujian Axe saat dropdown navigasi desktop terbuka di `tests/marketing.spec.ts`.
-  - [ ] Tambahkan pengujian interaksi modal blog (buka via keyboard, trap fokus, scroll keyboard, tutup via Escape).
-  - [ ] Tambahkan pengujian Axe pada `/documentation` dan `/help` untuk memvalidasi ketiadaan duplikasi `<main>` dan struktur filter.
-- [ ] **6.6. Refactoring dan Penataan Batas Komponen (F10)**:
-  - [ ] Pisahkan tanggung jawab modal dan form pada komponen client agar lebih modular dan tahan regresi.
+- [x] **6.1. Modal Artikel Blog & Pengelolaan Fokus Keyboard (F05)**:
+  - [x] Tambahkan event listener keyboard `Escape` untuk menutup modal di `src/components/blog/blog-explorer.tsx`.
+  - [x] Kelola fokus keyboard: pindahkan fokus ke modal saat dibuka dan kembalikan ke tombol pemicu saat ditutup.
+  - [x] Terapkan focus trap sederhana agar `Tab` tidak bocor ke latar belakang modal.
+  - [x] Tambahkan `tabIndex={0}` dan `aria-label` pada kontainer scrollable dialog artikel (`scrollable-region-focusable`).
+  - [x] Rapikan urutan heading (h1, h2, h3) di dalam modal.
+- [x] **6.2. Dropdown Navigasi Pola Disclosure W3C (F06)**:
+  - [x] Hapus `role="menu"` dan `role="none"` pada `src/components/layout/navbar.tsx`.
+  - [x] Terapkan pola Disclosure Navigation standar (`aria-expanded`, list tautan `<ul><li><a>`) untuk menghilangkan pelanggaran axe `aria-required-children`.
+- [x] **6.3. Filter Kategori Tombol Semantik (F07)**:
+  - [x] Ubah `role="tablist"` dan `role="tab"` di `src/components/blog/blog-explorer.tsx` dan `src/components/help/help-center.tsx` menjadi grup filter tombol dengan `aria-pressed` atau tombol filter semantik.
+- [x] **6.4. Koreksi Landmark Ganda `<main>` pada Dokumentasi (F08)**:
+  - [x] Ubah `<main>` sekunder di `src/components/documentation/doc-viewer.tsx` (baris 183) menjadi `<section>` atau `<div>` berlabel.
+- [x] **6.5. Perluasan Suite QA & Pengujian Regresi Lanjutan (F09)**:
+  - [x] Tambahkan pengujian Axe saat dropdown navigasi desktop terbuka di `tests/marketing.spec.ts`.
+  - [x] Tambahkan pengujian interaksi modal blog (buka via keyboard, trap fokus, scroll keyboard, tutup via Escape).
+  - [x] Tambahkan pengujian Axe pada `/documentation` dan `/help` untuk memvalidasi ketiadaan duplikasi `<main>` dan struktur filter.
+- [x] **6.6. Refactoring dan Penataan Batas Komponen (F10)**:
+  - [x] Pisahkan tanggung jawab modal dan form pada komponen client agar lebih modular dan tahan regresi.
 
 ---
 
 ## FASE 7: Remediasi Temuan Prioritas P3 (Ketahanan Kode, Clipboard, Entity & Polish UI)
 *Berdasarkan temuan F11, F12, F13, dan F14 dari `analisisproyek.md`.*
 
-- [ ] **7.1. Validasi Robust URL Demo Opsional (F11)**:
-  - [ ] Perbaiki parser URL di `src/app/demo/page.tsx` dengan blok pengaman `try/catch` agar tidak crash saat menerima URL malformed.
-- [ ] **7.2. Penanganan Rejection Clipboard & Feedback State (F12)**:
-  - [ ] Tambahkan handler `.catch()` pada `navigator.clipboard.writeText` di `src/components/documentation/doc-viewer.tsx` untuk menangani izin ditolak secara anggun.
-- [ ] **7.3. Koreksi Entity HTML Literal pada Teks (F13)**:
-  - [ ] Ganti `&gt;` dan `&lt;` di `src/data/documentation-data.ts` (baris 168) dengan karakter langsung `>` dan `<`.
-- [ ] **7.4. Tombol Ilustrasi Produk Non-Interaktif (F14)**:
-  - [ ] Ubah elemen `<button>` visual di `src/components/marketing/product-preview.tsx` menjadi tab badge non-interaktif atau berikan state aktif agar tidak membingungkan pengguna keyboard.
+- [x] **7.1. Validasi Robust URL Demo Opsional (F11)**:
+  - [x] Perbaiki parser URL di `src/app/demo/page.tsx` dengan blok pengaman `try/catch` agar tidak crash saat menerima URL malformed.
+- [x] **7.2. Penanganan Rejection Clipboard & Feedback State (F12)**:
+  - [x] Tambahkan handler `.catch()` pada `navigator.clipboard.writeText` di `src/components/documentation/doc-viewer.tsx` untuk menangani izin ditolak secara anggun.
+- [x] **7.3. Koreksi Entity HTML Literal pada Teks (F13)**:
+  - [x] Ganti `&gt;` dan `&lt;` di `src/data/documentation-data.ts` (baris 168) dengan karakter langsung `>` dan `<`.
+- [x] **7.4. Tombol Ilustrasi Produk Non-Interaktif (F14)**:
+  - [x] Ubah elemen `<button>` visual di `src/components/marketing/product-preview.tsx` menjadi tab badge non-interaktif atau berikan state aktif agar tidak membingungkan pengguna keyboard.
 
 ---
 
 ## FASE 8: Verifikasi Menyeluruh & Uji Kualitas Akhir
-- [ ] **8.1. Typecheck TypeScript**: `npm run typecheck` (harus 0 error).
-- [ ] **8.2. Linting**: `npm run lint` (harus 0 warning/error).
-- [ ] **8.3. Kompilasi Build**: `npm run build` (18/18 static pages).
-- [ ] **8.4. Pengujian E2E Lengkap**: `npm run test:e2e` (semua skenario lama + skenario baru modal, open dropdown, help form, dan axe audit lolos 100%).
+- [x] **8.1. Typecheck TypeScript**: `npm run typecheck` (lolos 0 error).
+- [x] **8.2. Linting**: `npm run lint` (lolos 0 warning/error).
+- [x] **8.3. Kompilasi Build**: `npm run build` (lolos 18/18 static pages).
+- [x] **8.4. Pengujian E2E Lengkap**: `npm run test:e2e` (lolos 9/9 skenario uji Playwright & kepatuhan WCAG 2.1 AA).

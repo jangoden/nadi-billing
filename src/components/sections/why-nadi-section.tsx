@@ -2,7 +2,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Icon } from "@/components/ui/icon";
 
 const connected = [
-  "Billing Otomatis, Voucher Mandiri & Payment Gateway",
+  "Billing Idempotent, Kasir Terverifikasi & Cetak Voucher",
   "CRM Komprehensif & Visualisasi Customer Journey",
   "Network Intelligence, Status ONU & Telemetri Redaman",
   "Otomasi Multi-Vendor (MikroTik, OLT ZTE/Huawei, GenieACS)",
@@ -15,7 +15,7 @@ export function WhyNadiSection() {
         <SectionHeading
           eyebrow="Operasional yang Saling Terhubung"
           title="Lebih dari sekadar billing."
-          description="Billing, voucher, dan payment adalah fondasi. NADI melengkapinya dengan telemetri jaringan, otomasi isolir/reconnect, dan pengelolaan seluruh perjalanan pelanggan."
+          description="Billing dan voucher adalah fondasi. NADI melengkapinya dengan telemetri jaringan, FreeRADIUS CoA isolir, dan pengelolaan seluruh perjalanan pelanggan."
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
@@ -32,7 +32,7 @@ export function WhyNadiSection() {
             </p>
 
             <ul className="space-y-4 text-sm text-slate-600">
-              {["Tagihan & Pencatatan Kas Manual", "Voucher Hotspot Sederhana", "Payment Terpisah Tanpa Auto-Verifikasi", "Tidak Tahu Jika Ada Gangguan Sinyal OLT"].map((item) => (
+              {["Tagihan Manual Rawan Dobel", "Voucher Hotspot Sederhana", "Pencatatan Kasir Tanpa Audit Log", "Tidak Tahu Jika Ada Gangguan Sinyal OLT"].map((item) => (
                 <li className="flex items-center gap-3" key={item}>
                   <span className="size-2 shrink-0 rounded-full bg-slate-300" />
                   <span>{item}</span>

@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
       "1. Level 1 (Dropcore): Jika hanya 1 pelanggan di suatu ODP yang padam, sistem menyimpulkan kabel drop rumah putus dan teknisi diarahkan langsung ke lokasi pelanggan.",
       "2. Level 2 (Distribusi ODP): Jika seluruh pelanggan di ODP yang sama padam serentak, sistem menyimpulkan kabel distribusi dari ODC putus.",
       "3. Level 3 (Cascading Hulu): Jika beberapa ODP berurutan padam, sistem mengarahkan pemeriksaan ke kabel feeder utama atau port PON OLT.",
-      "Dengan lokalisasi otomatis, Mean Time to Detect (MTTD) dan Mean Time to Repair (MTTR) terpangkas hingga 60%, menjaga loyalitas pelanggan tetap tinggi."
+      "Berdasarkan uji implementasi topologi FTTH di lapangan, lokalisasi gangguan otomatis dapat memangkas Mean Time to Detect (MTTD) dan Mean Time to Repair (MTTR) secara signifikan, menjaga loyalitas pelanggan tetap tinggi."
     ],
     keyTakeaways: [
       "Akar masalah jaringan terisolasi secara otomatis tanpa penelusuran manual di lapangan.",
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
       "Dalam operasional ISP konvensional, manajemen sering kali harus membayar biaya langganan ke banyak software terpisah: tools billing mandiri, server RADIUS terpisah, aplikasi teknisi lapangan pihak ketiga, dan spreadsheet pencatatan kasir manual.",
       "Selain biaya bulanan yang membengkak, masalah terbesar adalah ketidaksinkronan data: data pelanggan di spreadsheet berbeda dengan username di MikroTik, dan status pembayaran di buku kas tidak cocok dengan sesi aktif RADIUS.",
       "NADI Billing didesain dengan konsep satu ekosistem: Billing Otomatis, FreeRADIUS AAA, Manajemen MikroTik, GenieACS TR-069, Fault Engine, dan 4 Portal terintegrasi dalam satu database terpadu.",
-      "Hasil analisis menunjukkan ISP dapat menghemat biaya langganan software hingga 55% dan mengeliminasi redudansi entri data lintas divisi operasional."
+      "Pendekatan all-in-one ini menghemat biaya pengadaan aplikasi terpisah dan mengeliminasi redundansi entri data manual lintas divisi operasional."
     ],
     keyTakeaways: [
       "Eliminasi masalah integrasi dan ketidaksinkronan data antar software yang berbeda.",
@@ -179,7 +179,7 @@ export const blogPosts: BlogPost[] = [
       "Laporan rekonsiliasi bulanan NADI siap diekspor untuk memudahkan pelaporan SPT Masa PPN ke Direktorat Jenderal Pajak tanpa perlu perhitungan manual di spreadsheet."
     ],
     keyTakeaways: [
-      "Invoice memenuhi standar dokumentasi komersial dan perpajakan nasional.",
+      "Invoice memenuhi standar dokumentasi komersial dan pemisahan DPP/PPN yang rapi.",
       "Dukungan multi-tarif pajak memudahkan adaptasi jika terjadi penyesuaian regulasi tarif PPN.",
       "Rekapitulasi omzet dan PPN terutang tersedia otomatis di menu laporan finansial."
     ]

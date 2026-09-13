@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { ButtonLink } from "@/components/ui/button-link";
 import { documentationCategories } from "@/data/documentation-data";
@@ -9,12 +9,28 @@ export function DocViewer() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategoryId, setActiveCategoryId] = useState<string>(documentationCategories[0].id);
   const [copiedSnippet, setCopiedSnippet] = useState<string | null>(null);
+  const copyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+    };
+  }, []);
 
   const handleCopy = (code: string, id: string) => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopiedSnippet(id);
-      setTimeout(() => setCopiedSnippet(null), 2500);
-    });
+    if (typeof navigator === "undefined" || !navigator.clipboard) return;
+
+    navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+        setCopiedSnippet(id);
+        copyTimeoutRef.current = setTimeout(() => setCopiedSnippet(null), 2500);
+      })
+      .catch(() => {
+        // Gracefully handle clipboard permission denial or insecure context without unhandled error
+        setCopiedSnippet(null);
+      });
   };
 
   // Filter categories and articles based on search query
@@ -63,7 +79,7 @@ export function DocViewer() {
                 </span>
               </div>
               <p className="mt-1 text-sm text-slate-700 sm:text-base">
-                Materi panduan teknis sementara ini disiapkan untuk memandu konfigurasi MikroTik RouterOS, AAA RADIUS, CoA isolir otomatis, dan integrasi payment gateway NADI Billing.
+                Materi panduan teknis sementara ini disiapkan untuk memandu konfigurasi MikroTik RouterOS, AAA FreeRADIUS, CoA session disconnect, dan manajemen billing ISP NADI.
               </p>
             </div>
           </div>
@@ -180,7 +196,7 @@ export function DocViewer() {
         </aside>
 
         {/* Right Content Area / Articles Display */}
-        <main className="lg:col-span-8" aria-label="Materi Dokumentasi">
+        <section className="lg:col-span-8" aria-label="Materi Dokumentasi">
           {activeCategory ? (
             <div className="space-y-10">
               {/* Category Header */}
@@ -362,7 +378,7 @@ export function DocViewer() {
           <div className="mt-12 rounded-2xl border border-slate-200/80 bg-slate-900 p-8 text-center text-white shadow-md sm:p-10">
             <h3 className="text-xl font-extrabold sm:text-2xl">Butuh Panduan Khusus untuk Topologi Anda?</h3>
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-300 sm:text-base">
-              Tim arsitek jaringan NADI siap membantu integrasi MikroTik, konfigurasi OLT, dan setup payment gateway langsung pada infrastruktur ISP Anda.
+              Tim arsitek jaringan NADI siap membantu integrasi MikroTik, konfigurasi OLT, dan setup FreeRADIUS langsung pada infrastruktur ISP Anda.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <ButtonLink href="/demo" className="shadow-lg shadow-primary/30">
@@ -373,7 +389,7 @@ export function DocViewer() {
               </ButtonLink>
             </div>
           </div>
-        </main>
+        </section>
       </div>
     </div>
   );

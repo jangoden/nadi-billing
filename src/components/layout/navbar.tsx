@@ -88,9 +88,9 @@ function Dropdown({ label, links, pathname }: { label: string; links: Navigation
         />
       </button>
       {open && (
-        <ul id={id} className="nav-dropdown" role="menu" aria-label={label}>
+        <ul id={id} className="nav-dropdown" aria-label={label}>
           {links.map((link) => (
-            <li key={link.href} role="none">
+            <li key={link.href}>
               <Link
                 href={link.href}
                 aria-label={link.label}

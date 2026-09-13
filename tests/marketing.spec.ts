@@ -30,6 +30,11 @@ test("desktop dropdown opens with keyboard, escapes, and closes outside", async 
   await solutions.focus();
   await page.keyboard.press("Enter");
   await expect(solutions).toHaveAttribute("aria-expanded", "true");
+
+  // Verify accessibility audit while dropdown is open (F06)
+  const openAudit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(openAudit.violations).toEqual([]);
+
   await page.keyboard.press("Tab");
   await expect(navigation.getByRole("link", { name: "RT/RW Net", exact: true })).toBeFocused();
   await page.keyboard.press("Escape");
@@ -112,4 +117,53 @@ test("all navigation routes work, fragments exist, and unknown pages return 404"
   expect(response.status()).toBe(404);
   const placeholder = await request.get("/documentation");
   expect(await placeholder.text()).toContain('name="robots" content="noindex, follow"');
+});
+
+test("blog reader modal manages focus, escape key, and passes accessibility audit", async ({ page }) => {
+  await page.goto("/blog");
+
+  // Verify semantic category buttons
+  const catBtn = page.getByRole("button", { name: "Jaringan & MikroTik", exact: true });
+  await catBtn.click();
+  await expect(catBtn).toHaveAttribute("aria-pressed", "true");
+
+  // Open modal
+  const readBtn = page.getByRole("button", { name: /baca/i }).first();
+  await readBtn.click();
+
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+
+  // Axe audit on open modal (F05)
+  const modalAudit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(modalAudit.violations).toEqual([]);
+
+  // Close via Escape
+  await page.keyboard.press("Escape");
+  await expect(dialog).toHaveCount(0);
+});
+
+test("documentation and help center have single main landmark and accessible ticket preview", async ({ page }) => {
+  // Documentation page verification (F08)
+  await page.goto("/documentation");
+  expect(await page.locator("main").count()).toBe(1);
+  const docsAudit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(docsAudit.violations).toEqual([]);
+
+  // Help Center page verification (F01, F02, F07)
+  await page.goto("/help");
+  expect(await page.locator("main").count()).toBe(1);
+  const helpAudit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(helpAudit.violations).toEqual([]);
+
+  // Fill ticket simulation form
+  await page.fill("#ticket-name", "Test ISP Nusantara");
+  await page.fill("#ticket-contact", "081299998888");
+  await page.fill("#ticket-msg", "Simulasi pertanyaan teknis pengujian QA.");
+  await page.click('button[type="submit"]');
+
+  await expect(page.getByText("Simulasi Tiket Diterbitkan!")).toBeVisible();
+  await expect(page.getByText("Catatan Pratinjau:")).toBeVisible();
+  await page.getByRole("button", { name: "SIMULASIKAN TIKET LAIN" }).click();
+  await expect(page.locator("#ticket-name")).toBeVisible();
 });

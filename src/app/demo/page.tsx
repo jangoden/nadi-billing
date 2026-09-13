@@ -10,7 +10,17 @@ export default async function DemoPage({ searchParams }: { searchParams: Promise
   const flow = demoFlows.find((item) => item.id === params.alur)?.id ?? "voucher";
   const capacity = capacityOptions.find((item) => item === params.kapasitas);
   const demoUrl = process.env.NADI_DEMO_URL;
-  const validDemoUrl = demoUrl && /^https?:\/\//i.test(demoUrl) ? new URL(demoUrl).href : undefined;
+  let validDemoUrl: string | undefined = undefined;
+  if (demoUrl && /^https?:\/\//i.test(demoUrl)) {
+    try {
+      const parsed = new URL(demoUrl);
+      if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+        validDemoUrl = parsed.href;
+      }
+    } catch {
+      validDemoUrl = undefined;
+    }
+  }
 
   return <>
     <PageIntro eyebrow="Jelajahi NADI" title="Lihat bagaimana semuanya terhubung." description="Coba simulasi alur voucher, billing, jaringan, dan pelanggan. Pilih alur, lalu ikuti setiap langkahnya." showDemo={false} />

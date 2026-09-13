@@ -40,23 +40,23 @@ export function ProductPreview() {
           </div>
         </figcaption>
 
-        {/* Tab Bar */}
-        <div className="flex items-center gap-1 overflow-x-auto border-b border-slate-100 bg-white px-4 pt-2 text-xs font-semibold sm:px-6">
-          <button type="button" className="border-b-2 border-primary pb-2.5 px-3 text-primary font-bold flex items-center gap-1.5">
+        {/* Module Indicators Bar (Visual Mockup) */}
+        <div className="flex items-center gap-1 overflow-x-auto border-b border-slate-100 bg-white px-4 pt-2 text-xs font-semibold sm:px-6" role="presentation" aria-hidden="true">
+          <span className="border-b-2 border-primary pb-2.5 px-3 text-primary font-bold flex items-center gap-1.5 cursor-default">
             <Icon name="chart" size={14} /> Telemetri Terpadu
-          </button>
-          <button type="button" className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+          </span>
+          <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
             <Icon name="router" size={14} /> MikroTik &amp; RADIUS
-          </button>
-          <button type="button" className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+          </span>
+          <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
             <Icon name="receipt" size={14} /> Billing &amp; Kasir
-          </button>
-          <button type="button" className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+          </span>
+          <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
             <Icon name="network" size={14} /> FTTH &amp; GenieACS
-          </button>
-          <button type="button" className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+          </span>
+          <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
             <Icon name="user" size={14} /> CRM &amp; 4 Portal
-          </button>
+          </span>
         </div>
 
         {/* Application Dashboard Body */}

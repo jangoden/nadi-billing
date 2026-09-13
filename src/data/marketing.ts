@@ -115,7 +115,7 @@ export const voucherFlow = [
   "Cetak A4 / Thermal",
   "Distribusi via Agen & Kios",
   "Aktivasi Pelanggan",
-  "Sesi Terhubung di Router",
+  "Login Hotspot via RADIUS",
 ];
 
 export const billingFlow = [

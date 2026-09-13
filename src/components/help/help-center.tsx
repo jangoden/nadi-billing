@@ -46,25 +46,25 @@ export function HelpCenter() {
 
   return (
     <div className="site-container pb-28">
-      {/* 1. Live System Status Bar */}
+      {/* 1. System Architecture & Telemetry Indicator */}
       <div className="mb-10 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xs">
         <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
           <div className="flex items-center gap-3">
             <span className="relative flex size-3">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex size-3 rounded-full bg-emerald-500" />
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-400 opacity-75" />
+              <span className="relative inline-flex size-3 rounded-full bg-blue-500" />
             </span>
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-sm font-bold text-slate-900">
-                  Status Sistem: Semua Layanan Beroperasi Normal
+                  Arsitektur Layanan &amp; Telemetri (Simulasi Pratinjau)
                 </span>
-                <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-700">
-                  99.98% Uptime
+                <span className="rounded-md bg-blue-50 px-2 py-0.5 text-xs font-bold text-blue-700 border border-blue-200">
+                  Arsitektur Inti
                 </span>
               </div>
               <div className="text-xs text-slate-600">
-                Cloud RADIUS, Webhook Pembayaran, dan WhatsApp Gateway siap melayani 24 jam.
+                Indikator kesiapan komponen backend: MikroTik RouterOS API, FreeRADIUS AAA, dan GenieACS TR-069 Bridge.
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export function HelpCenter() {
             className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
             aria-expanded={showStatusDetail}
           >
-            <span>{showStatusDetail ? "Sembunyikan Metrik" : "Lihat Metrik Layanan"}</span>
+            <span>{showStatusDetail ? "Sembunyikan Indikator" : "Lihat Komponen Arsitektur"}</span>
             <Icon name="chevron" size={14} className={`transition-transform ${showStatusDetail ? "rotate-180" : ""}`} />
           </button>
         </div>
@@ -88,11 +88,11 @@ export function HelpCenter() {
                 <div key={idx} className="rounded-xl border border-slate-200/80 bg-white p-3 shadow-2xs">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-slate-800 line-clamp-1">{svc.name}</span>
-                    <span className="size-2 rounded-full bg-emerald-500" />
+                    <span className="size-2 rounded-full bg-blue-500" />
                   </div>
                   <div className="mt-2 flex items-baseline justify-between text-[11px] text-slate-600">
-                    <span>Uptime: <strong className="text-slate-800">{svc.uptime}</strong></span>
-                    <span>{svc.latency}</span>
+                    <span>Status: <strong className="text-slate-800">{svc.status}</strong></span>
+                    <span className="text-slate-500">{svc.latency}</span>
                   </div>
                 </div>
               ))}
@@ -219,16 +219,15 @@ export function HelpCenter() {
           )}
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="mb-8 flex flex-wrap items-center gap-2" role="tablist" aria-label="Kategori Bantuan">
+        {/* Category Filter Buttons */}
+        <div className="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filter Kategori Bantuan">
           {helpCategories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 type="button"
-                role="tab"
-                aria-selected={isActive}
+                aria-pressed={isActive}
                 onClick={() => setSelectedCategory(cat)}
                 className={`rounded-xl px-4 py-2 text-xs font-bold transition-all sm:text-sm ${
                   isActive
@@ -329,17 +328,17 @@ export function HelpCenter() {
         )}
       </div>
 
-      {/* 4. Quick Helpdesk Form & SLA Guarantee */}
+      {/* 4. Quick Helpdesk Simulation Form */}
       <div className="grid grid-cols-1 gap-8 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm sm:p-10 lg:grid-cols-12">
         <div className="space-y-4 lg:col-span-5">
           <span className="badge-pill border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-bold text-primary">
-            Tiket Bantuan Instan
+            Simulasi Pratinjau Alur Tiket
           </span>
           <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
             Kirimkan Pertanyaan atau Kendala Jaringan Anda
           </h2>
           <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-            Tidak menemukan jawaban yang sesuai? Isi formulir singkat ini dan teknisi NADI akan langsung menghubungi Anda melalui nomor WhatsApp dalam waktu kurang dari 5 menit.
+            Formulir di bawah merupakan simulasi alur helpdesk NADI Billing. Pada lingkungan operasional ISP Anda, tiket terhubung langsung ke antrean dispatch teknisi lapangan dan histori pelanggan.
           </p>
 
           <div className="space-y-3 pt-4 border-t border-slate-100">
@@ -353,7 +352,7 @@ export function HelpCenter() {
             </div>
             <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 sm:text-sm">
               <span className="text-emerald-600"><Icon name="checkCircle" size={18} /></span>
-              <span>Prioritas tinggi untuk status router down</span>
+              <span>Prioritas penanganan sesuai antrean dan paket ISP</span>
             </div>
           </div>
         </div>
@@ -361,14 +360,17 @@ export function HelpCenter() {
         <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-6 lg:col-span-7 sm:p-8">
           {ticketSubmitted ? (
             <div className="flex flex-col items-center justify-center py-8 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <span className="flex size-14 items-center justify-center rounded-full bg-blue-100 text-primary">
                 <Icon name="checkCircle" size={32} />
               </span>
               <h3 className="mt-4 text-xl font-extrabold text-slate-900">
-                Tiket Berhasil Diterbitkan!
+                Simulasi Tiket Diterbitkan!
               </h3>
-              <p className="mt-2 max-w-md text-sm text-slate-600">
-                Nomor Tiket: <strong className="text-primary font-mono">#{ticketId}</strong>. Tim teknisi siaga kami segera memproses kendala Anda dan mengirimkan tanggapan ke WhatsApp <strong>{ticketContact}</strong>.
+              <div className="my-3 rounded-xl border border-blue-200 bg-blue-50/80 p-3 text-xs text-blue-900 text-left">
+                <strong>Catatan Pratinjau:</strong> Ini adalah simulasi antarmuka lokal. Data formulir ini tidak dikirimkan ke server eksternal atau WhatsApp. Untuk kebutuhan operasional atau bantuan langsung, silakan gunakan kontak resmi tim NADI di atas.
+              </div>
+              <p className="max-w-md text-sm text-slate-600">
+                Nomor Tiket Contoh: <strong className="text-primary font-mono">#{ticketId}</strong> (Atas nama: {ticketName || "Mitra ISP"}).
               </p>
               <button
                 type="button"
@@ -378,7 +380,7 @@ export function HelpCenter() {
                 }}
                 className="mt-6 rounded-xl bg-primary px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-primary/90"
               >
-                KIRIM TIKET LAIN
+                SIMULASIKAN TIKET LAIN
               </button>
             </div>
           ) : (
@@ -453,8 +455,11 @@ export function HelpCenter() {
                 type="submit"
                 className="w-full rounded-xl bg-primary py-3 text-sm font-bold text-white shadow-md shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/20"
               >
-                KIRIM TIKET BANTUAN SEKARANG
+                SIMULASIKAN PENGIRIMAN TIKET
               </button>
+              <p className="text-center text-[11px] text-slate-500">
+                Mode Pratinjau: Formulir ini merupakan demonstrasi alur dan tidak menyimpan data ke server eksternal.
+              </p>
             </form>
           )}
         </div>
