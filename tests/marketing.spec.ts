@@ -167,3 +167,20 @@ test("documentation and help center have single main landmark and accessible tic
   await page.getByRole("button", { name: "SIMULASIKAN TIKET LAIN" }).click();
   await expect(page.locator("#ticket-name")).toBeVisible();
 });
+
+test("official logo, hero network stars, and workflow pill icon render properly", async ({ page }) => {
+  await page.goto("/");
+  // Check official logo in header
+  const logo = page.locator('header img[alt="NADI Billing"]');
+  await expect(logo).toBeVisible();
+  await expect(logo).toHaveAttribute("src", /logo-nadi/);
+
+  // Check workflow pill image in problem section
+  const workflowIcon = page.locator('section img[alt="NADI"]');
+  await expect(workflowIcon).toBeVisible();
+  await expect(workflowIcon).toHaveAttribute("src", /logo-icon/);
+
+  // Check that the removed text does not exist anywhere on the page
+  await expect(page.getByText("Semua fitur tersedia di setiap paket. Anda hanya membayar berdasarkan jumlah pelanggan aktif.")).toHaveCount(0);
+});
+

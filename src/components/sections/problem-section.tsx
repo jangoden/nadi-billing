@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { problems } from "@/data/marketing";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Icon } from "@/components/ui/icon";
@@ -43,8 +44,14 @@ export function ProblemSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <span className="inline-flex items-center gap-3 rounded-full border border-blue-200/80 bg-blue-50/80 px-6 py-3 text-sm font-bold text-primary shadow-xs backdrop-blur-sm">
-            <Icon name="bolt" size={18} className="text-primary" />
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-blue-200/80 bg-blue-50/80 px-6 py-3 text-sm font-bold text-primary shadow-xs backdrop-blur-sm">
+            <Image
+              src="/images/logo/logo-icon.png"
+              alt="NADI"
+              width={18}
+              height={18}
+              className="size-4.5 shrink-0 object-contain"
+            />
             <span>NADI menghubungkan semuanya dalam satu alur kerja.</span>
           </span>
         </div>
