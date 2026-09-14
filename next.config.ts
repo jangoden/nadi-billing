@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       { source: "/dokumentasi", destination: "/documentation", permanent: true },
       { source: "/integrasi", destination: "/integrations", permanent: true },
       { source: "/bantuan", destination: "/help", permanent: true },
+      { source: "/solutions/billing-transaksi", destination: "/solutions/billing-transactions", permanent: true },
+      { source: "/solutions/jaringan-ftth", destination: "/solutions/network-ftth", permanent: true },
+      { source: "/solutions/pelanggan-cs", destination: "/solutions/customer-support", permanent: true },
+      { source: "/solutions/keagenan-otomasi", destination: "/solutions/reseller-automation", permanent: true },
     ];
   },
 };

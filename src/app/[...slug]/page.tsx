@@ -8,7 +8,15 @@ import { pageMetadata } from "@/lib/metadata";
 type Props = { params: Promise<{ slug: string[] }> };
 
 export function generateStaticParams() {
-  return secondaryPages.map((page) => ({ slug: page.path.split("/") }));
+  const dedicatedRoutes = [
+    "solutions/network-ftth",
+    "solutions/billing-transactions",
+    "solutions/customer-support",
+    "solutions/reseller-automation",
+  ];
+  return secondaryPages
+    .filter((page) => !dedicatedRoutes.includes(page.path))
+    .map((page) => ({ slug: page.path.split("/") }));
 }
 
 export async function generateMetadata({ params }: Props) {

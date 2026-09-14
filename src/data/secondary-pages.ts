@@ -1,6 +1,6 @@
 export const secondaryPages = [
   {
-    path: "solutions/jaringan-ftth",
+    path: "solutions/network-ftth",
     title: "Solusi Jaringan & Infrastruktur FTTH",
     eyebrow: "Solusi Jaringan & FTTH",
     description: "Arsitektur jaringan ISP terpadu: Dual-Mode MikroTik (Local API & RADIUS CoA), peta spasial GIS ODP/ODC, monitoring OLT via SNMP, mesin deteksi gangguan 3-level, kontrol remote massal modem ONT via GenieACS TR-069, dan manajemen logistik gudang.",
@@ -9,7 +9,7 @@ export const secondaryPages = [
     topics: ["Dual-Mode MikroTik & RADIUS", "Peta GIS & Inventaris Gudang", "Fault Engine 3-Level Proaktif", "CPE & TR-069 Remote Massal"],
   },
   {
-    path: "solutions/billing-transaksi",
+    path: "solutions/billing-transactions",
     title: "Solusi Billing, Kasir & Toko Online",
     eyebrow: "Solusi Billing & Transaksi",
     description: "Kelola seluruh transaksi keuangan ISP tanpa celah: siklus tagihan bulanan otomatis yang idempotent, pencatatan kasir kantor dan loket dengan fitur void audit-safe, generator voucher batch cetak thermal 58/80mm, serta etalase toko voucher online mandiri berpembatasan anti-fraud.",
@@ -18,7 +18,7 @@ export const secondaryPages = [
     topics: ["Tagihan Bulanan Idempotent", "Kasir Kantor & Void Audit-Safe", "Cetak Voucher Thermal & A4", "Toko Voucher Online & Anti-Fraud"],
   },
   {
-    path: "solutions/pelanggan-cs",
+    path: "solutions/customer-support",
     title: "Solusi Manajemen Pelanggan & CS Desk",
     eyebrow: "Solusi Pelanggan & CS",
     description: "Tingkatkan retensi dan kepuasan pelanggan ISP: manajemen profil 360°, pelacakan alur prospek (Lead hingga Aktif), algoritma deteksi dini risiko churn, sistem tiket gangguan otomatis ke teknisi, live chat antrian CS terpadu, dan portal mandiri pelanggan.",
@@ -27,7 +27,7 @@ export const secondaryPages = [
     topics: ["Profil 360° & Deteksi Churn", "Live Chat Antrian CS & Respon Cepat", "Sistem Tiket & Auto-Assign Teknisi", "Portal Mandiri Self-Service WiFi"],
   },
   {
-    path: "solutions/keagenan-otomasi",
+    path: "solutions/reseller-automation",
     title: "Solusi Keagenan, Notifikasi & Keamanan",
     eyebrow: "Solusi Keagenan & Otomasi",
     description: "Perluas jangkauan bisnis dan jaga integritas operasional: jaringan mitra reseller voucher dan loket tagihan dengan sistem saldo deposit, komisi otomatis, gateway broadcast pengumuman pemeliharaan massal, autentikasi ganda 2FA, serta 11 hak akses granular RBAC dengan audit log permanen.",

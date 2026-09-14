@@ -64,7 +64,7 @@ test("mobile menu supports nested links, Escape, and navigation", async ({ page 
   await trigger.click();
   await mobile.locator("summary").filter({ hasText: "Solusi" }).click();
   await mobile.getByRole("link", { name: "Jaringan & FTTH", exact: true }).click();
-  await expect(page).toHaveURL(/\/solutions\/jaringan-ftth$/);
+  await expect(page).toHaveURL(/\/solutions\/network-ftth$/);
   await expect(mobile).toHaveCount(0);
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
 });
@@ -213,4 +213,115 @@ test("12 official modules directory on features page and homepage preview", asyn
   const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
   expect(audit.violations).toEqual([]);
 });
+
+test("solutions/network-ftth dedicated page renders architecture tabs, efficiency calculator, and passes accessibility", async ({ page }) => {
+  await page.goto("/solutions/network-ftth");
+  await expect(page.locator("h1")).toHaveCount(1);
+  await expect(page.locator("h1")).toContainText("Visibilitas Total Jaringan Fiber Optic");
+
+  // Verify Architecture Blueprint Tabs
+  const oltTab = page.getByRole("tab", { name: /OLT & Optical/i });
+  await expect(oltTab).toBeVisible();
+  await oltTab.click();
+  await expect(oltTab).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByText("Telemetri Redaman SNMP Multi-Vendor Real-Time")).toBeVisible();
+
+  // Verify Efficiency Calculator
+  await page.getByRole("button", { name: "3.000" }).click();
+  await expect(page.getByText("3.000 Pelanggan")).toBeVisible();
+
+  // Verify FAQ accordion
+  const faq1 = page.locator("#faq-1");
+  await expect(faq1).toBeVisible();
+  await faq1.locator("summary").click();
+  await expect(faq1).toHaveAttribute("open", "");
+
+  // Accessibility audit
+  const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(audit.violations).toEqual([]);
+});
+
+test("solutions/billing-transactions dedicated page renders billing tabs, leakage calculator, and passes accessibility", async ({ page }) => {
+  await page.goto("/solutions/billing-transactions");
+  await expect(page.locator("h1")).toHaveCount(1);
+  await expect(page.locator("h1")).toContainText("Siklus Keuangan & Penjualan Voucher ISP");
+
+  // Verify Billing Tabs
+  const kasirTab = page.getByRole("tab", { name: /Kasir POS/i });
+  await expect(kasirTab).toBeVisible();
+  await kasirTab.click();
+  await expect(kasirTab).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByText("Loket Pembayaran Kasir Multi-Shift dengan Otorisasi Void Berlapis")).toBeVisible();
+
+  // Verify Leakage Calculator
+  await page.getByRole("button", { name: "3.000" }).click();
+  await expect(page.getByText("3.000 Pelanggan")).toBeVisible();
+
+  // Verify FAQ accordion
+  const faq1 = page.locator("#faq-1");
+  await expect(faq1).toBeVisible();
+  await faq1.locator("summary").click();
+  await expect(faq1).toHaveAttribute("open", "");
+
+  // Accessibility audit
+  const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(audit.violations).toEqual([]);
+});
+
+test("solutions/customer-support dedicated page renders CRM tabs, retention calculator, and passes accessibility", async ({ page }) => {
+  await page.goto("/solutions/customer-support");
+  await expect(page.locator("h1")).toHaveCount(1);
+  await expect(page.locator("h1")).toContainText("Manajemen Pelanggan 360°");
+
+  // Verify CRM Tabs
+  const csTab = page.getByRole("tab", { name: /Antrian Live Chat CS/i });
+  await expect(csTab).toBeVisible();
+  await csTab.click();
+  await expect(csTab).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByText("Kelola Komplain WhatsApp & Web Chat dalam Satu Dasbor Antrian Rapi")).toBeVisible();
+
+  // Verify Retention Calculator
+  await page.getByRole("button", { name: "3.000" }).click();
+  await expect(page.getByText("3.000 Pelanggan")).toBeVisible();
+
+  // Verify FAQ accordion
+  const faq1 = page.locator("#faq-1");
+  await expect(faq1).toBeVisible();
+  await faq1.locator("summary").click();
+  await expect(faq1).toHaveAttribute("open", "");
+
+  // Accessibility audit
+  const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(audit.violations).toEqual([]);
+});
+
+test("solutions/reseller-automation dedicated page renders agency tabs, commission calculator, and passes accessibility", async ({ page }) => {
+  await page.goto("/solutions/reseller-automation");
+  await expect(page.locator("h1")).toHaveCount(1);
+  await expect(page.locator("h1")).toContainText("Ekosistem Mitra Reseller");
+
+  // Verify Agency Tabs
+  const broadcastTab = page.getByRole("tab", { name: /Broadcast Gateway/i });
+  await expect(broadcastTab).toBeVisible();
+  await broadcastTab.click();
+  await expect(broadcastTab).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByText("Kirim Pengumuman Perawatan & Notifikasi Massal Bebas Risiko Blokir")).toBeVisible();
+
+  // Verify Commission Calculator
+  await page.getByRole("button", { name: "30 Agen" }).click();
+  await expect(page.getByText("30 Mitra Warung")).toBeVisible();
+
+  // Verify FAQ accordion
+  const faq1 = page.locator("#faq-1");
+  await expect(faq1).toBeVisible();
+  await faq1.locator("summary").click();
+  await expect(faq1).toHaveAttribute("open", "");
+
+  // Accessibility audit
+  const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(audit.violations).toEqual([]);
+});
+
+
+
 

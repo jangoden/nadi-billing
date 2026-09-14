@@ -3,25 +3,25 @@ import type { NavigationLink } from "@/types/marketing";
 export const solutions: NavigationLink[] = [
   {
     label: "Jaringan & FTTH",
-    href: "/solutions/jaringan-ftth",
+    href: "/solutions/network-ftth",
     icon: "network",
     description: "MikroTik, RADIUS, GIS, Fault Engine & TR-069",
   },
   {
     label: "Billing & Transaksi",
-    href: "/solutions/billing-transaksi",
+    href: "/solutions/billing-transactions",
     icon: "receipt",
     description: "Tagihan bulanan, kasir aman, voucher & toko online",
   },
   {
     label: "Pelanggan & CS Desk",
-    href: "/solutions/pelanggan-cs",
+    href: "/solutions/customer-support",
     icon: "support",
     description: "CRM 360°, deteksi churn, tiket & antrian live chat",
   },
   {
     label: "Keagenan & Otomasi",
-    href: "/solutions/keagenan-otomasi",
+    href: "/solutions/reseller-automation",
     icon: "wallet",
     description: "Mitra reseller, deposit komisi, broadcast & RBAC",
   },
