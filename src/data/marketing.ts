@@ -11,6 +11,7 @@ export const pillars: Pillar[] = [
     features: [
       "Generator batch (hingga 500 kode unik)",
       "Siap cetak thermal 58/80mm & A4",
+      "Dual-mode: push MikroTik Local & RADIUS",
       "Ekosistem penjualan mitra agen & komisi",
     ],
   },
@@ -37,7 +38,7 @@ export const pillars: Pillar[] = [
     features: [
       "Lokalisasi gangguan 3-level (Dropcore/Distribusi/Cascading)",
       "Monitoring redaman RX Power & tren degradasi 7 hari",
-      "Integrasi nyata MikroTik, FreeRADIUS & GenieACS",
+      "Dual-mode AAA: MikroTik Local API & FreeRADIUS",
     ],
   },
   {
@@ -83,7 +84,7 @@ export const problems: (FeatureItem & { label: string })[] = [
 ];
 
 export const integrations: { name: string; category: string; icon: FeatureItem["icon"] }[] = [
-  { name: "MikroTik RouterOS", category: "API, QoS & Auto Backup", icon: "router" },
+  { name: "MikroTik Local", category: "Hotspot User & PPP Secret", icon: "router" },
   { name: "FreeRADIUS", category: "Auth, Acct & CoA Disconnect", icon: "server" },
   { name: "GenieACS (TR-069)", category: "Manajemen Jarak Jauh ONT", icon: "hub" },
   { name: "SNMP (OLT / PON)", category: "Telemetri Port & Redaman", icon: "network" },
@@ -115,7 +116,7 @@ export const voucherFlow = [
   "Cetak A4 / Thermal",
   "Distribusi via Agen & Kios",
   "Aktivasi Pelanggan",
-  "Login Hotspot via RADIUS",
+  "Login Hotspot (RADIUS / MikroTik Local)",
 ];
 
 export const billingFlow = [
@@ -146,7 +147,7 @@ export const networkConcepts = [
 
 export const includedFeatures = [
   "Manajemen MikroTik RouterOS & Backup Harian",
-  "Server FreeRADIUS & CoA Disconnect",
+  "Dual-Mode AAA: MikroTik Local API & FreeRADIUS Server",
   "GenieACS TR-069 & Self-Service WiFi",
   "Fault Detection Engine 3-Level & SLA",
   "GIS Topologi Fiber & Inventaris ODP/ODC",
@@ -198,14 +199,14 @@ export const faqs = [
       "NADI Billing adalah platform SaaS manajemen bisnis ISP yang menyatukan billing pelanggan, manajemen jaringan (MikroTik, FreeRADIUS, GIS, OLT, ONT/GenieACS), CRM, reseller, dan layanan pelanggan dalam satu sistem dengan integrasi nyata ke perangkat jaringan (bukan sekadar pencatatan manual).",
   },
   {
-    question: "Apakah NADI Billing mendukung MikroTik RouterOS?",
+    question: "Apakah NADI Billing mendukung MikroTik RouterOS tanpa server FreeRADIUS?",
     answer:
-      "Ya, terintegrasi langsung melalui RouterOS API resmi. Anda dapat melakukan tes koneksi, sinkronisasi resource real-time, push profil bandwidth & QoS, hingga penjadwalan backup konfigurasi router harian otomatis ke server.",
+      "Ya, tentu saja. NADI Billing mendukung Dual-Mode AAA: Mode MikroTik Local (mengelola Hotspot User, PPP Secret, limit bandwidth, pemutusan sesi, dan auto-isolir langsung ke router via RouterOS API tanpa butuh server Linux/RADIUS tambahan) serta Mode FreeRADIUS Terpusat (dengan CoA Disconnect Port 3799 untuk skala ISP multi-router). Anda juga mendapatkan sinkronisasi resource real-time dan backup konfigurasi harian otomatis via FTP.",
   },
   {
     question: "Bagaimana sistem voucher hotspot bekerja?",
     answer:
-      "NADI Billing menyediakan generator voucher batch (hingga 500 kode sekali klik), template kustom dengan QR code siap cetak format A4 dan thermal (58/80mm), serta integrasi ke portal agen reseller dengan komisi otomatis.",
+      "NADI Billing menyediakan generator voucher batch (hingga 500 kode sekali klik) dengan mode username=password, template kustom QR code siap cetak format A4 dan thermal (58/80mm), serta mendukung dual-mode autentikasi: push langsung ke MikroTik Hotspot User lokal atau tersinkronisasi via database FreeRADIUS, lengkap dengan integrasi portal agen reseller dan perhitungan komisi otomatis.",
   },
   {
     question: "Bagaimana pembayaran tagihan pelanggan dicatat?",

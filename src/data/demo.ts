@@ -20,8 +20,8 @@ export const demoFlows: {
       "Sistem menerbitkan hingga 500 kode unik instan dengan mode username=password dan QR code.",
       "Voucher dicetak rapi langsung dari browser dalam layout printer thermal 58/80mm atau A4 kisi.",
       "Voucher didistribusikan ke outlet langsung atau dijual oleh mitra reseller via portal agen.",
-      "Pelanggan memasukkan kredensial voucher pada captive portal hotspot untuk login via autentikasi FreeRADIUS.",
-      "Sesi pelanggan terverifikasi di server RADIUS dan aktif pada MikroTik dengan kuota/durasi terpantau.",
+      "Pelanggan memasukkan kredensial voucher pada captive portal hotspot untuk login via autentikasi FreeRADIUS atau MikroTik Local.",
+      "Sesi pelanggan terverifikasi (di server RADIUS atau database router lokal) dan aktif pada MikroTik dengan kuota/durasi terpantau.",
     ],
   },
   {
@@ -50,7 +50,7 @@ export const demoFlows: {
       "Laporan SLA (MTTD/MTTR)",
     ],
     descriptions: [
-      "Sistem memantau resource router MikroTik, sesi aktif RADIUS, dan polling OLT/ONU secara rutin.",
+      "Sistem memantau resource router MikroTik, sesi aktif (Local / RADIUS), dan polling OLT/ONU secara rutin.",
       "Sensor redaman optik mendeteksi penurunan kualitas sinyal ONU dan tren degradasi >3dB dalam 7 hari.",
       "Algoritma melokalisasi akar masalah secara otomatis: dropcore 1 pelanggan, kabel ODP, atau jalur cascading.",
       "Tiket gangguan darurat dan penugasan teknisi terdekat langsung dibuat otomatis oleh sistem.",

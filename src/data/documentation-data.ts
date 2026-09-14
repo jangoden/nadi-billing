@@ -61,23 +61,50 @@ export const documentationCategories: DocCategory[] = [
         ],
         steps: [
           { title: "1. Daftarkan Router MikroTik", detail: "Buka Console > Jaringan > Tambah Router. Masukkan Host/IP, Port API (default 8728), Username, Password API, dan lakukan 'Test Connection'." },
-          { title: "2. Hubungkan ke Server FreeRADIUS", detail: "Konfigurasi NAS client pada FreeRADIUS dan tautkan kredensial rahasia (shared secret) ke router MikroTik Anda." },
+          { title: "2. Tentukan Mode AAA (MikroTik Local / FreeRADIUS)", detail: "Pilih Mode MikroTik Local untuk pengelolaan praktis via RouterOS API langsung tanpa server eksternal, atau Mode FreeRADIUS untuk skala multi-router terpusat." },
           { title: "3. Tentukan Paket Layanan & Profil QoS", detail: "Buat profil paket bandwidth (rate-limit, burst, priority) yang langsung di-push ke RouterOS." },
           { title: "4. Impor Data Pelanggan atau Terbitkan Voucher", detail: "Gunakan fitur import CSV massal pelanggan atau langsung generate batch voucher hotspot siap cetak." }
         ]
       },
       {
         id: "mikrotik-initial-cli",
-        title: "Script Konfigurasi Awal MikroTik",
+        title: "Script Konfigurasi Awal MikroTik (Local API & RADIUS)",
         badge: "RouterOS CLI",
-        summary: "Perintah terminal RouterOS untuk mendaftarkan server RADIUS dan mengaktifkan Incoming CoA Port 3799.",
+        summary: "Perintah terminal RouterOS untuk setup Mode MikroTik Local (API) maupun Mode FreeRADIUS Server (CoA 3799).",
         description: [
-          "Jalankan baris perintah berikut pada terminal Winbox Anda untuk mengaktifkan AAA RADIUS dan fitur pemutusan sesi real-time (CoA Disconnect):"
+          "Jalankan baris perintah berikut pada terminal Winbox Anda sesuai dengan mode arsitektur yang Anda gunakan:"
         ],
         snippets: [
           {
             language: "routeros",
-            code: `# 1. Daftarkan RADIUS Server NADI
+            code: `# --- OPSI A: MODE MIKROTIK LOCAL (RouterOS API Direct) ---
+# 1. Buat User & Group API Khusus NADI Billing
+/user group
+add name=nadi-api policy=api,read,write,test,password comment="Grup API NADI Billing"
+
+/user
+add name=nadi_admin group=nadi-api password="GANTI_PASSWORD_AMAN" comment="User API NADI"
+
+# 2. Pastikan Layanan API Aktif (Port default 8728)
+/ip service
+set api disabled=no port=8728
+
+# 3. Siapkan Pool & Profile Isolir untuk Hotspot & PPPoE
+/ip pool
+add name=pool-isolir ranges=10.200.0.2-10.200.0.254
+
+/ppp profile
+add name=ISOLIR local-address=10.200.0.1 remote-address=pool-isolir \\
+    rate-limit="128k/256k" comment="Profile Isolir NADI Billing"
+
+/ip hotspot user profile
+add name=ISOLIR rate-limit="128k/256k" comment="Profile Isolir Hotspot NADI"`,
+            caption: "Opsi A: Terminal MikroTik untuk Mode Local (Tanpa Server Tambahan)"
+          },
+          {
+            language: "routeros",
+            code: `# --- OPSI B: MODE FREERADIUS SERVER (Terpusat & Multi-Router) ---
+# 1. Daftarkan RADIUS Server NADI
 /radius
 add address=10.10.0.1 secret="NADI_RADIUS_SECRET" \\
     service=hotspot,ppp authentication-port=1812 accounting-port=1813 \\
@@ -92,13 +119,13 @@ set accept=yes port=3799
 set use-radius=yes accounting=yes interim-update=5m
 /ip hotspot profile
 set [ find default=yes ] use-radius=yes radius-accounting=yes`,
-            caption: "Terminal MikroTik (RouterOS v6 & v7 compatible)"
+            caption: "Opsi B: Terminal MikroTik untuk Mode FreeRADIUS & CoA 3799"
           }
         ],
         callout: {
-          type: "important",
-          title: "Wajib Buka Port 3799 UDP",
-          message: "Incoming port 3799 UDP harus diizinkan pada firewall filter input MikroTik agar perintah CoA Disconnect dari Console NADI dapat langsung memutus sesi PPPoE bermasalah tanpa restart router."
+          type: "tip",
+          title: "Fleksibel Tanpa Ketergantungan",
+          message: "Jika Anda memulai dari 1 router tanpa server Linux, pilih Opsi A (Mode Local). Saat bisnis berkembang menjadi multi-router atau ribuan pelanggan, Anda dapat mengaktifkan Opsi B (FreeRADIUS) kapan saja."
         }
       }
     ]
@@ -107,17 +134,58 @@ set [ find default=yes ] use-radius=yes radius-accounting=yes`,
     id: "mikrotik-ppp",
     title: "MikroTik & RADIUS AAA",
     icon: "router",
-    description: "Konfigurasi mendalam RouterOS API, monitoring sesi RADIUS aktif, profil bandwidth QoS, dan backup otomatis harian.",
+    description: "Konfigurasi mendalam RouterOS API (Mode Local & RADIUS AAA), monitoring sesi aktif, profil bandwidth QoS, dan backup otomatis harian.",
     articles: [
+      {
+        id: "mikrotik-local-api-mode",
+        title: "Mode MikroTik Local (RouterOS API Direct)",
+        badge: "Local Provisioning",
+        summary: "Kelola pengguna Hotspot (/ip/hotspot/user), akun PPPoE (/ppp/secret), dan auto-isolir langsung di router tanpa server FreeRADIUS.",
+        description: [
+          "Bagi pengelola RT/RW Net atau ISP skala pemula-menengah yang hanya mengoperasikan 1-2 router MikroTik, NADI Billing menyediakan Mode MikroTik Local murni tanpa ketergantungan pada server FreeRADIUS eksternal.",
+          "1. Hotspot User Provisioning: Saat batch voucher dibuat di NADI, kredensial langsung didaftarkan ke '/ip hotspot user' via RouterOS API lengkap dengan profil durasi dan limit uptime.",
+          "2. PPPoE Secret Provisioning: Pendaftaran pelanggan baru langsung membuat secret di '/ppp secret' router BRAS terkait lengkap dengan IP pool dan profile kecepatan.",
+          "3. Pemutusan Sesi & Auto-Isolir Lokal: Ketika invoice jatuh tempo atau admin memutus sesi dari dashboard, NADI Billing mengubah profil secret menjadi 'ISOLIR' dan mengeksekusi '/ppp/active/remove' via API seketika sehingga router klien otomatis dial ulang ke profil isolir."
+        ],
+        snippets: [
+          {
+            language: "php",
+            code: `// Cuplikan Alur Provisioning Local RouterOS API
+// 1. Tambah Voucher ke Hotspot User Lokal
+$client->write('/ip/hotspot/user/add', [
+    'name' => 'VCH-88291',
+    'password' => '88291',
+    'profile' => 'Paket-3Jam',
+    'limit-uptime' => '3h',
+    'comment' => 'NADI-Batch-2026-09'
+]);
+
+// 2. Isolir Pelanggan PPPoE Menunggak
+$client->write('/ppp/secret/set', [
+    '.id' => $secretId,
+    'profile' => 'ISOLIR'
+]);
+$client->write('/ppp/active/remove', [
+    '.id' => $activeSessionId
+]);`,
+            caption: "Eksekusi API RouterOS untuk Akun Lokal & Isolir"
+          }
+        ],
+        callout: {
+          type: "tip",
+          title: "Kapan Memilih Mode Local vs FreeRADIUS?",
+          message: "Pilih Mode Local untuk router tunggal dengan skala di bawah 1.000 pelanggan aktif agar hemat biaya infrastruktur tanpa perlu VPS/Server Linux. Pilih Mode FreeRADIUS jika Anda membutuhkan roaming Hotspot antar-AP atau mengelola puluhan router terpusat."
+        }
+      },
       {
         id: "mikrotik-api-sync",
         title: "Sinkronisasi Resource Router & Backup FTP",
         badge: "Network Core",
         summary: "Bagaimana NADI Billing memantau CPU/memori router dan mencadangkan konfigurasi harian otomatis via FTP.",
         description: [
-          "NADI Billing menggunakan library resmi `evilfreelancer/routeros-api-php` untuk berkomunikasi langsung ke port API MikroTik (8728/8729).",
+          "NADI Billing menggunakan library resmi evilfreelancer/routeros-api-php untuk berkomunikasi langsung ke port API MikroTik (8728/8729).",
           "Setiap 5 menit, scheduler otomatis memeriksa penggunaan CPU, memori, dan uptime router.",
-          "Setiap malam, scheduler `console:backup-all-routers` mengeksekusi script backup di router, lalu mengunduh file `.backup` via FTP ke media penyimpanan server Laravel untuk pemulihan bencana."
+          "Setiap malam, scheduler console:backup-all-routers mengeksekusi script backup di router, lalu mengunduh file .backup via FTP ke media penyimpanan server Laravel untuk pemulihan bencana."
         ]
       },
       {
@@ -128,7 +196,7 @@ set [ find default=yes ] use-radius=yes radius-accounting=yes`,
         description: [
           "Ketika pelanggan mengalami sesi gantung (stale session) atau admin perlu mereset koneksi pelanggan dari dashboard:",
           "1. Admin menekan tombol 'Putuskan Sesi' pada menu Sesi Aktif RADIUS di Console.",
-          "2. `SqlRadiusSessionService` mengirimkan paket PoD (Packet of Disconnect) via UDP 3799 ke router NAS terkait.",
+          "2. SqlRadiusSessionService mengirimkan paket PoD (Packet of Disconnect) via UDP 3799 ke router NAS terkait.",
           "3. MikroTik memutus sesi PPP/Hotspot seketika dan mencatat event di auth log.",
           "4. Perangkat ONT pelanggan dial ulang otomatis dalam 1-3 detik untuk mendapatkan koneksi segar."
         ],

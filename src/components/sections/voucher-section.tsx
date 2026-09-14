@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { voucherFeatures, voucherFlow } from "@/data/marketing";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Icon } from "@/components/ui/icon";
@@ -20,7 +21,7 @@ export function VoucherSection() {
           </h2>
 
           <p className="section-copy text-base text-slate-600 sm:text-lg">
-            Terbitkan ratusan voucher hotspot sekali klik dengan kode unik dan mode username=password. Siap cetak ke printer thermal 58/80mm atau lembar A4, dan distribusikan langsung lewat jaringan mitra reseller dengan komisi otomatis.
+            Terbitkan ratusan voucher hotspot sekali klik dengan kode unik dan mode username=password. Siap cetak ke printer thermal 58/80mm atau lembar A4, didukung push langsung ke MikroTik Hotspot User lokal atau FreeRADIUS, dan distribusikan lewat jaringan mitra reseller dengan komisi otomatis.
           </p>
 
           <div className="space-y-3 pt-2">
@@ -52,9 +53,9 @@ export function VoucherSection() {
           <figure className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-8">
             <figcaption className="mb-6 flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 font-label font-bold text-white shadow-sm">
-                  NB
-                </span>
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white p-1 shadow-xs">
+                  <Image src="/images/logo/logo-icon.png" alt="NADI Logo" width={40} height={40} className="size-full object-contain" />
+                </div>
                 <div>
                   <p className="text-sm font-bold text-slate-900">Generator & Cetak Voucher</p>
                   <p className="label text-[11px] text-slate-600">Template Kustom & Distribusi Agen</p>
@@ -103,7 +104,7 @@ export function VoucherSection() {
                 </span>
                 <div className="flex-1">
                   <p className="text-xs font-bold text-emerald-950">Voucher Siap Distribusi & Tercatat di Sistem</p>
-                  <p className="label text-[11px] text-emerald-800">Layout print thermal & A4 siap pakai, masa aktif dihitung saat voucher pertama kali login.</p>
+                  <p className="label text-[11px] text-emerald-800">Layout print thermal & A4 siap pakai, kompatibel dengan MikroTik Local Hotspot maupun FreeRADIUS.</p>
                 </div>
               </div>
             </div>

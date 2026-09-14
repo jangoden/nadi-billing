@@ -308,7 +308,12 @@ export function DocViewer() {
                                     <span>{isCopied ? "Tersalin!" : "Salin Script"}</span>
                                   </button>
                                 </div>
-                                <div className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-blue-200/90 sm:text-sm">
+                                <div
+                                  tabIndex={0}
+                                  role="region"
+                                  aria-label={`Blok kode ${snippet.caption || snippet.language}`}
+                                  className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-blue-200/90 sm:text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
+                                >
                                   <pre>
                                     <code>{snippet.code}</code>
                                   </pre>

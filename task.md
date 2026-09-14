@@ -198,3 +198,55 @@ Dokumen ini berisi daftar tugas (TODO checklist) penyesuaian website pemasaran N
 - [x] **8.2. Linting**: `npm run lint` (lolos 0 warning/error).
 - [x] **8.3. Kompilasi Build**: `npm run build` (lolos 18/18 static pages).
 - [x] **8.4. Pengujian E2E Lengkap**: `npm run test:e2e` (lolos 9/9 skenario uji Playwright & kepatuhan WCAG 2.1 AA).
+
+---
+
+## FASE 9: Penyelarasan Dual-Mode AAA (MikroTik Local & FreeRADIUS)
+
+- [x] **9.1. Fondasi Data & Integrasi Marketing (`src/data/marketing.ts`, `demo.ts`, `secondary-pages.ts`)**:
+  - [x] Perbarui pilar produk voucher dan network untuk menegaskan dukungan fleksibel: Dual-Mode AAA (MikroTik Local API & FreeRADIUS).
+  - [x] Perbarui daftar integrasi, alur voucher (`Login Hotspot (RADIUS / MikroTik Local)`), dan fitur bawaan.
+  - [x] Perbarui FAQ resmi menjelaskan pengoperasian tanpa server FreeRADIUS (Mode MikroTik Local murni).
+  - [x] Sesuaikan alur demo dan topik solusi RT/RW Net.
+- [x] **9.2. Pusat Dokumentasi Teknis (`src/data/documentation-data.ts`)**:
+  - [x] Perbarui langkah onboarding: "Pilih Mode AAA (MikroTik Local / FreeRADIUS)".
+  - [x] Sediakan script CLI MikroTik ganda: Opsi A (Mode Local API) dan Opsi B (Mode FreeRADIUS & CoA 3799).
+  - [x] Tambahkan artikel baru `mikrotik-local-api-mode` ("Mode MikroTik Local (RouterOS API Direct)": Hotspot User, PPP Secret & Auto-Isolir).
+  - [x] Tambahkan panduan komparasi kapan memilih Mode Local vs FreeRADIUS.
+- [x] **9.3. Pusat Bantuan & FAQ Troubleshooting (`src/data/help-data.ts`)**:
+  - [x] Tambahkan FAQ bantuan mengenai opsi tanpa server Linux/FreeRADIUS untuk pengusaha router tunggal.
+  - [x] Tambahkan indikator kapan operator sebaiknya bertransisi ke Mode FreeRADIUS.
+- [x] **9.4. Penyelarasan Visual & Komponen UI (`src/components/`)**:
+  - [x] Perbarui copy `WhyNadiSection`, `VoucherSection`, dan `ProductPreview`.
+- [x] **9.5. Migrasi Logo Resmi NADI Billing (`public/images/logo`)**:
+  - [x] Jadikan `logo-nadi.png` sebagai logo utama di komponen `Logo` (Navbar & Footer).
+  - [x] Jadikan `logo-icon.png` sebagai favicon dan app icon (`src/app/icon.png`, `layout.tsx`, `public/favicon.ico`).
+  - [x] Pasang `logo-icon.png` pada kartu preview voucher dan address bar browser mockup produk.
+- [x] **9.6. Verifikasi Kualitas Akhir**:
+  - [x] Lolos typecheck TypeScript (`npm run typecheck`).
+  - [x] Lolos linting ESLint (`npm run lint`).
+  - [x] Lolos kompilasi build produksi (`npm run build`).
+  - [x] Lolos regression test suite (`npm run test:e2e`).
+
+---
+
+## FASE 10: Transformasi Hero Section Animasi & Elemen Jaringan ISP (60 FPS)
+
+- [x] **10.1. Animasi Latar Topologi Serat Optik (`src/components/marketing/hero-network-canvas.tsx`)**:
+  - [x] Rancang topologi serat optik SVG realistis (Core BRAS MikroTik, Aggregation OLT, ODC 1:8, ODP, dan ONT pelanggan).
+  - [x] Terapkan aliran paket data cahaya bergerak 60 FPS menggunakan CSS keyframe `@keyframes packetTravel`.
+  - [x] Hadirkan gelombang radar telemetri melingkar pada node sentral dan tech dot matrix grid.
+- [x] **10.2. Real-Time Telemetry HUD Ticker (`src/components/marketing/hero-telemetry-ticker.tsx`)**:
+  - [x] Tampilkan status live router BRAS (MikroTik CCR CPU 4%), 2.894 sesi aktif, sinyal GPON RX -18.4 dBm, dan badge Dual-Mode AAA.
+- [x] **10.3. Floating Live Telemetry Cards (`src/components/marketing/product-preview.tsx`)**:
+  - [x] Tambahkan kartu mengambang kiri: MikroTik BRAS Online (CCR2004, 842 PPPoE Active, Local API 0ms, CoA 3799 UDP).
+  - [x] Tambahkan kartu mengambang kanan: FTTH Optical Telemetry & Fault Engine (1.240 ONU, RX avg -18.2 dBm, Radar 3-Level OK).
+  - [x] Terapkan animasi mengapung lembut (`animate-float-gentle` & `animate-float-reverse`).
+- [x] **10.4. Penataan Ulang Komposisi Hero (`src/components/sections/hero-section.tsx`)**:
+  - [x] Integrasikan canvas animasi dan telemetry ticker secara harmonis dan responsif.
+- [x] **10.5. Verifikasi Menyeluruh**:
+  - [x] Lolos typecheck TypeScript (`npm run typecheck`).
+  - [x] Lolos linting ESLint (`npm run lint`).
+  - [x] Lolos kompilasi build produksi (`npm run build`).
+  - [x] Lolos regression test suite Playwright (`npm run test:e2e`).
+

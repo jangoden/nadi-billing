@@ -15,7 +15,7 @@ export function WhyNadiSection() {
         <SectionHeading
           eyebrow="Operasional yang Saling Terhubung"
           title="Lebih dari sekadar billing."
-          description="Billing dan voucher adalah fondasi. NADI melengkapinya dengan telemetri jaringan, FreeRADIUS CoA isolir, dan pengelolaan seluruh perjalanan pelanggan."
+          description="Billing dan voucher adalah fondasi. NADI melengkapinya dengan telemetri jaringan, manajemen dual-mode MikroTik Local & FreeRADIUS, serta pengelolaan seluruh perjalanan pelanggan."
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">

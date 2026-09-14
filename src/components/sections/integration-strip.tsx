@@ -16,7 +16,7 @@ export function IntegrationStrip() {
           Terhubung langsung dengan ekosistem jaringan Anda.
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-xs text-slate-500 sm:text-sm">
-          NADI Billing berkomunikasi langsung melalui API, protokol AAA, dan telemetri perangkat untuk kendali operasional tanpa jeda.
+          Dukungan fleksibel Dual-Mode AAA: <strong>MikroTik Local</strong> (Hotspot User &amp; PPP Secret via API) dan <strong>FreeRADIUS Server</strong> terpusat, terhubung dengan TR-069, OLT, dan VPN operasional Anda.
         </p>
 
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-6">

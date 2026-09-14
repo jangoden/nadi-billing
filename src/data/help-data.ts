@@ -89,6 +89,31 @@ export const helpTopics: HelpTopic[] = [
     tips: "Gunakan tombol 'Test Connection' pada detail router di Console untuk memverifikasi respons API MikroTik secara langsung."
   },
   {
+    id: "mikrotik-local-vs-radius",
+    category: "Koneksi Router & RADIUS",
+    question: "Apakah saya wajib memiliki server FreeRADIUS untuk menggunakan NADI Billing?",
+    badge: "Arsitektur Fleksibel",
+    answer: [
+      "1. Tidak wajib. NADI Billing mendukung Mode MikroTik Local murni via RouterOS API.",
+      "2. Anda dapat menerbitkan voucher Hotspot langsung ke '/ip hotspot user' dan mendaftarkan pelanggan ke '/ppp secret' tanpa membutuhkan VPS atau server FreeRADIUS eksternal.",
+      "3. Mode Local sangat ideal bagi operator RT/RW Net dan Mini ISP yang hanya menggunakan router tunggal (misal RB750Gr3, RB4011, atau CCR) agar biaya operasional nol server tambahan.",
+      "4. Ketika jaringan Anda bertumbuh menjadi multi-router (multi-BRAS) atau membutuhkan roaming voucher lintas tower, Anda dapat beralih ke Mode FreeRADIUS kapan saja."
+    ],
+    tips: "Pilih mode AAA pada Console NADI saat mendaftarkan router: MikroTik Local (API) atau FreeRADIUS Server."
+  },
+  {
+    id: "when-to-migrate-radius",
+    category: "Koneksi Router & RADIUS",
+    question: "Kapan sebaiknya beralih dari Mode MikroTik Local ke Mode FreeRADIUS?",
+    badge: "Skalabilitas Jaringan",
+    answer: [
+      "1. Roaming Hotspot Multi-Router: Jika Anda memiliki banyak titik hotspot di lokasi berbeda dan ingin satu kode voucher dapat digunakan login di router mana pun.",
+      "2. Skala Pelanggan Besar (> 1.000 user): Memindahkan penyimpanan akun ke database SQL FreeRADIUS akan menjaga CPU dan memori flash router MikroTik tetap dingin dan awet.",
+      "3. Pemutusan Sesi Skala Tinggi: Menggunakan paket RFC 3576 CoA Disconnect Port 3799 UDP terbukti sangat efisien untuk pemutusan sesi massal saat jatuh tempo."
+    ],
+    tips: "Untuk kapasitas di bawah 1.000 pelanggan aktif pada router tunggal, Mode MikroTik Local adalah pilihan paling praktis dan ekonomis."
+  },
+  {
     id: "coa-not-triggering",
     category: "Koneksi Router & RADIUS",
     question: "Mengapa perintah CoA Disconnect tidak memutus sesi pelanggan?",
