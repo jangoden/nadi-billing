@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { IntegrationStrip } from "@/components/sections/integration-strip";
 import { ProblemSection } from "@/components/sections/problem-section";
 import { CorePillarsSection } from "@/components/sections/core-pillars-section";
+import { ModuleMatrixPreview } from "@/components/sections/module-matrix-preview";
 import { VoucherSection } from "@/components/sections/voucher-section";
 import { BillingSection } from "@/components/sections/billing-section";
 import { NetworkIntelligenceSection } from "@/components/sections/network-intelligence-section";
@@ -21,6 +22,7 @@ export default function HomePage() {
     <IntegrationStrip />
     <ProblemSection />
     <CorePillarsSection />
+    <ModuleMatrixPreview />
     <VoucherSection />
     <BillingSection />
     <NetworkIntelligenceSection />

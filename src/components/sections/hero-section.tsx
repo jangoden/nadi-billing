@@ -58,7 +58,7 @@ export function HeroSection() {
 
         {/* Value Micro-Pills */}
         <ul className="label mb-12 flex flex-wrap justify-center gap-x-6 gap-y-3 text-[11px] tracking-wide text-slate-500 uppercase">
-          {["Dual-Mode MikroTik & FreeRADIUS", "Payment Gateway Otomatis", "Monitoring NOC Real-time"].map((text) => (
+          {["Dual-Mode MikroTik & FreeRADIUS", "Billing & Kasir Audit-Safe", "Monitoring NOC Real-time"].map((text) => (
             <li key={text} className="flex items-center gap-1.5">
               <Icon name="checkCircle" size={16} className="text-secondary" />
               <span>{text}</span>
