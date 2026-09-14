@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   title: { default: "NADI Billing — ISP Operating Platform", template: "%s | NADI Billing" },
   description: "Semua operasional ISP. Satu platform. Voucher, billing, keuangan, jaringan, dan CRM untuk RT/RW Net, Mini ISP, ISP FTTH, serta hotspot.",
   applicationName: "NADI Billing",
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: "/images/logo/logo-icon.png",
+    shortcut: "/images/logo/logo-icon.png",
+    apple: "/images/logo/logo-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
