@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/ui/icon";
 
 export function ProductPreview() {
@@ -6,10 +7,10 @@ export function ProductPreview() {
       className="relative w-full text-left"
       aria-label="Ilustrasi antarmuka operasional terhubung NADI Billing"
     >
-      {/* Outer ambient glow behind window */}
+      {/* Outer subtle ambient fiber mesh glow behind window */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-b from-blue-500/15 via-cyan-400/10 to-indigo-500/10 blur-2xl"
+        className="animate-ambient-breathe pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-r from-blue-600/20 via-cyan-400/15 to-blue-500/20 blur-3xl"
       />
 
       {/* Main application window mockup */}
@@ -23,7 +24,8 @@ export function ProductPreview() {
               <span className="size-3 rounded-full bg-emerald-400/80 border border-emerald-500/30" />
             </div>
             <div className="hidden items-center gap-2 pl-3 sm:flex">
-              <span className="label rounded-md border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-medium text-slate-500 shadow-xs">
+              <span className="label inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-medium text-slate-500 shadow-xs">
+                <Image src="/images/logo/logo-icon.png" alt="" width={14} height={14} className="size-3.5 object-contain" />
                 https://app.nadibilling.id/console/dashboard
               </span>
             </div>
@@ -35,7 +37,7 @@ export function ProductPreview() {
               Console Terhubung
             </span>
             <span className="label hidden rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-primary sm:inline-block">
-              MikroTik &amp; RADIUS Live
+              MikroTik Local &amp; RADIUS Live
             </span>
           </div>
         </figcaption>
@@ -46,7 +48,7 @@ export function ProductPreview() {
             <Icon name="chart" size={14} /> Telemetri Terpadu
           </span>
           <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
-            <Icon name="router" size={14} /> MikroTik &amp; RADIUS
+            <Icon name="router" size={14} /> MikroTik Local &amp; RADIUS
           </span>
           <span className="border-b-2 border-transparent pb-2.5 px-3 text-slate-500 flex items-center gap-1.5 cursor-default">
             <Icon name="receipt" size={14} /> Billing &amp; Kasir
@@ -97,8 +99,8 @@ export function ProductPreview() {
                 <span className="label text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Fault Detection</span>
                 <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-semibold text-indigo-700">3-Level Engine</span>
               </div>
-              <p className="mt-2 text-xl font-extrabold text-slate-900">MikroTik &amp; RADIUS</p>
-              <p className="label mt-1 text-[11px] text-slate-500">RX Power avg -19.4 dBm</p>
+              <p className="mt-2 text-xl font-extrabold text-slate-900">Dual-Mode AAA</p>
+              <p className="label mt-1 text-[11px] text-slate-500">MikroTik Local &amp; RADIUS</p>
               <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-rose-50 px-2.5 py-1 text-[11px] font-semibold text-rose-700">
                 <Icon name="warning" size={14} />
                 <span>1 ODP Redaman Waspada</span>
@@ -210,17 +212,34 @@ export function ProductPreview() {
           </div>
         </div>
 
-        {/* Bottom Connected Banner */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 bg-white px-4 py-3 text-xs sm:px-6">
-          <p className="flex items-center gap-2 text-slate-600">
-            <Icon name="sync" size={16} className="text-primary animate-spin" />
-            <span>
-              <strong>Ekosistem Terpadu:</strong> MikroTik RouterOS &bull; FreeRADIUS &bull; GenieACS &bull; Fault Engine &bull; Billing &bull; 4 Portal
+        {/* Bottom Integrated Network Telemetry Status Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 bg-slate-50/80 px-4 py-2.5 text-xs sm:px-6 backdrop-blur-xs">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 font-mono text-[11px] text-slate-600">
+            <div className="flex items-center gap-1.5">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="font-bold text-slate-800">BRAS MikroTik</span>
+              <span className="rounded bg-emerald-100/80 px-1 py-0.5 text-[10px] font-bold text-emerald-800">CPU 4%</span>
+            </div>
+            <span className="hidden text-slate-300 sm:inline">&bull;</span>
+            <div className="hidden items-center gap-1.5 sm:flex">
+              <span className="text-slate-500">Dual-Mode:</span>
+              <span className="font-semibold text-slate-800">Local API + CoA 3799</span>
+            </div>
+            <span className="hidden text-slate-300 md:inline">&bull;</span>
+            <div className="hidden items-center gap-1.5 md:flex">
+              <span className="text-slate-500">GPON Telemetry:</span>
+              <span className="font-semibold text-emerald-700">-18.4 dBm (Normal)</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="label text-[11px] font-semibold text-primary">
+              Telemetri Live 24/7
             </span>
-          </p>
-          <span className="label font-bold text-secondary">
-            Integrasi Nyata ke Perangkat
-          </span>
+          </div>
         </div>
       </div>
     </figure>

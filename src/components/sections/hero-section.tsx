@@ -1,10 +1,14 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Icon } from "@/components/ui/icon";
 import { ProductPreview } from "@/components/marketing/product-preview";
+import { HeroNetworkStars } from "@/components/marketing/hero-network-stars";
 
 export function HeroSection() {
   return (
     <section className="section relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-28">
+      {/* Network stars background with 20% transparency and smooth gradients */}
+      <HeroNetworkStars />
+
       {/* Background ambient radial gradients */}
       <div
         aria-hidden="true"
@@ -41,11 +45,6 @@ export function HeroSection() {
           Kelola voucher, pembayaran, billing, keuangan, jaringan, dan pelanggan dalam satu sistem yang saling terhubung.
         </p>
 
-        {/* Value Promise Pill */}
-        <div className="label my-2 flex max-w-3xl items-center gap-2.5 rounded-full border border-slate-200/90 bg-white/90 px-5 py-2.5 text-left text-[12px] font-medium text-slate-700 shadow-xs backdrop-blur-sm sm:text-[13px]">
-          <Icon name="shield" size={18} className="shrink-0 text-primary" />
-          <span>Semua fitur tersedia di setiap paket. Anda hanya membayar berdasarkan jumlah pelanggan aktif.</span>
-        </div>
 
         {/* Action Buttons */}
         <div className="mt-6 mb-8 flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
@@ -59,7 +58,7 @@ export function HeroSection() {
 
         {/* Value Micro-Pills */}
         <ul className="label mb-12 flex flex-wrap justify-center gap-x-6 gap-y-3 text-[11px] tracking-wide text-slate-500 uppercase">
-          {["Semua fitur tersedia", "Kapasitas sesuai pelanggan", "Dukungan teknis"].map((text) => (
+          {["Dual-Mode MikroTik & FreeRADIUS", "Payment Gateway Otomatis", "Monitoring NOC Real-time"].map((text) => (
             <li key={text} className="flex items-center gap-1.5">
               <Icon name="checkCircle" size={16} className="text-secondary" />
               <span>{text}</span>

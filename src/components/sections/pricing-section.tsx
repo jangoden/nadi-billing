@@ -40,9 +40,6 @@ export function PricingSection() {
             </ul>
           </div>
 
-          <p className="label mt-8 border-t border-slate-100 pt-5 text-center text-xs text-slate-600">
-            Semua fitur tersedia di setiap paket. Anda hanya membayar berdasarkan jumlah pelanggan aktif.
-          </p>
         </div>
       </div>
     </section>

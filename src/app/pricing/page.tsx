@@ -15,8 +15,8 @@ export default function PricingPage() {
     <>
       <PageIntro
         eyebrow="Harga NADI Billing"
-        title="Semua fitur. Kapasitas sesuai kebutuhan."
-        description="Semua fitur tersedia di setiap paket. Anda hanya membayar berdasarkan jumlah pelanggan aktif."
+        title="Kapasitas fleksibel sesuai skala kebutuhan Anda."
+        description="Pilih tingkatan kapasitas pelanggan aktif yang tepat untuk skala operasional ISP Anda."
         showDemo={false}
       />
       <PricingSection />
