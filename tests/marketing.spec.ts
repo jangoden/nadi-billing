@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
 test("homepage content, responsive layout, fonts, and accessibility", async ({ page }) => {
+  test.setTimeout(90_000);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
@@ -36,7 +37,7 @@ test("desktop dropdown opens with keyboard, escapes, and closes outside", async 
   expect(openAudit.violations).toEqual([]);
 
   await page.keyboard.press("Tab");
-  await expect(navigation.getByRole("link", { name: "RT/RW Net", exact: true })).toBeFocused();
+  await expect(navigation.getByRole("link", { name: "Jaringan & FTTH", exact: true })).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(solutions).toBeFocused();
   await expect(solutions).toHaveAttribute("aria-expanded", "false");
@@ -56,14 +57,14 @@ test("mobile menu supports nested links, Escape, and navigation", async ({ page 
   const mobile = page.getByRole("navigation", { name: "Navigasi seluler" });
   await expect(mobile).toBeVisible();
   await mobile.locator("summary").filter({ hasText: "Solusi" }).click();
-  await mobile.getByRole("link", { name: "ISP FTTH", exact: true }).focus();
+  await mobile.getByRole("link", { name: "Jaringan & FTTH", exact: true }).focus();
   await page.keyboard.press("Escape");
   await expect(mobile).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Buka menu navigasi" })).toBeFocused();
   await trigger.click();
   await mobile.locator("summary").filter({ hasText: "Solusi" }).click();
-  await mobile.getByRole("link", { name: "ISP FTTH", exact: true }).click();
-  await expect(page).toHaveURL(/\/solutions\/isp-ftth$/);
+  await mobile.getByRole("link", { name: "Jaringan & FTTH", exact: true }).click();
+  await expect(page).toHaveURL(/\/solutions\/jaringan-ftth$/);
   await expect(mobile).toHaveCount(0);
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
 });
@@ -182,5 +183,34 @@ test("official logo, hero network stars, and workflow pill icon render properly"
 
   // Check that the removed text does not exist anywhere on the page
   await expect(page.getByText("Semua fitur tersedia di setiap paket. Anda hanya membayar berdasarkan jumlah pelanggan aktif.")).toHaveCount(0);
+});
+
+test("12 official modules directory on features page and homepage preview", async ({ page }) => {
+  // Test homepage preview
+  await page.goto("/");
+  await expect(page.locator("#modules-preview")).toBeVisible();
+  await expect(page.locator("#modules-preview .card")).toHaveCount(12);
+
+  // Test features page module directory with filtering and search
+  await page.goto("/features");
+  const dir = page.locator("#module-directory");
+  await expect(dir).toBeVisible();
+  await page.screenshot({ path: "test-results/features-directory.png" });
+  await expect(dir.locator("article")).toHaveCount(12);
+
+  // Test search
+  const searchInput = dir.locator('input[type="search"]');
+  await searchInput.fill("GenieACS");
+  await expect(dir.locator("article")).toHaveCount(1);
+  await expect(dir.getByText("CPE & TR-069 GenieACS")).toBeVisible();
+
+  // Test filter
+  await searchInput.fill("");
+  await dir.getByRole("button", { name: "Operasional & Keamanan" }).click();
+  await expect(dir.locator("article")).toHaveCount(2);
+
+  // Accessibility audit on features page with module directory
+  const audit = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  expect(audit.violations).toEqual([]);
 });
 

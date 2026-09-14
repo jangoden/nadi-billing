@@ -2,28 +2,28 @@ import type { NavigationLink } from "@/types/marketing";
 
 export const solutions: NavigationLink[] = [
   {
-    label: "RT/RW Net",
-    href: "/solutions/rt-rw-net",
-    icon: "hub",
-    description: "Otomasi voucher, MikroTik & tagihan warga",
-  },
-  {
-    label: "Mini ISP",
-    href: "/solutions/mini-isp",
-    icon: "router",
-    description: "Billing otomatis & ekosistem reseller",
-  },
-  {
-    label: "ISP FTTH",
-    href: "/solutions/isp-ftth",
+    label: "Jaringan & FTTH",
+    href: "/solutions/jaringan-ftth",
     icon: "network",
-    description: "Radar gangguan 3-level & GenieACS TR-069",
+    description: "MikroTik, RADIUS, GIS, Fault Engine & TR-069",
   },
   {
-    label: "Hotspot & Voucher",
-    href: "/solutions/hotspot-voucher",
-    icon: "store",
-    description: "Cetak batch cepat & jaringan keagenan",
+    label: "Billing & Transaksi",
+    href: "/solutions/billing-transaksi",
+    icon: "receipt",
+    description: "Tagihan bulanan, kasir aman, voucher & toko online",
+  },
+  {
+    label: "Pelanggan & CS Desk",
+    href: "/solutions/pelanggan-cs",
+    icon: "support",
+    description: "CRM 360°, deteksi churn, tiket & antrian live chat",
+  },
+  {
+    label: "Keagenan & Otomasi",
+    href: "/solutions/keagenan-otomasi",
+    icon: "wallet",
+    description: "Mitra reseller, deposit komisi, broadcast & RBAC",
   },
 ];
 
